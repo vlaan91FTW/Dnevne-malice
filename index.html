@@ -3,128 +3,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dnevne Malice in Kosila | Nova Gorica & Solkan</title>
+  <title>Dnevne Malice & Kosila | Nova Gorica & Solkan</title>
+  
+  <!-- Uvoz profesionalne dizajnerske pisave -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      /* Profesionalna svetlo-modra paleta z visokim kontrastom */
-      --bg-gradient: linear-gradient(180deg, #f0f6fc 0%, #e6eff8 100%);
-      --card-bg: #ffffff;
-      --card-border: #dbe4ee;
-      --primary: #0f2744;          /* Globoka mornarsko modra */
-      --accent: #0284c7;           /* Elegantna modra za poudarke */
-      --accent-soft: #e0f2fe;
-      --text-main: #1e293b;        /* Skoraj črna za maksimalno berljivost */
-      --text-muted: #64748b;
-      --price-color: #047857;      /* Smaragdno zelena za cene */
-      --shadow-card: 0 4px 14px rgba(15, 39, 68, 0.06);
-      --radius: 12px;
+      --bg: #f8f9fa;
+      --surface: #ffffff;
+      --border: rgba(18, 22, 34, 0.08);
+      --border-hover: rgba(18, 22, 34, 0.16);
+      
+      --text-hero: #090a0c;
+      --text-body: #23262f;
+      --text-muted: #777e90;
+      
+      --accent: #d9480f;            /* Topla terakota / burnt sienna */
+      --accent-soft: rgba(217, 72, 15, 0.08);
+      --price-color: #1b7a4b;       /* Žajbljevo zelena za ceno */
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-pill: 999px;
+      
+      --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 12px 30px -4px rgba(18, 22, 34, 0.08), 0 4px 12px -2px rgba(18, 22, 34, 0.03);
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
     body {
-      background: var(--bg-gradient);
-      min-height: 100vh;
-      color: var(--text-main);
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(217, 72, 15, 0.03) 0px, transparent 40%),
+        radial-gradient(at 100% 10%, rgba(15, 39, 68, 0.03) 0px, transparent 50%);
+      color: var(--text-body);
       line-height: 1.5;
-      padding-bottom: 4rem;
+      padding-bottom: 5rem;
     }
 
-    /* Glava strani */
+    /* Hero & Glava */
     header {
-      background: #ffffff;
-      border-bottom: 1px solid var(--card-border);
-      padding: 2.2rem 1rem 1.8rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 1.5rem 2.2rem;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(15, 39, 68, 0.04);
+      position: relative;
     }
 
-    .header-content {
-      max-width: 900px;
+    .header-inner {
+      max-width: 840px;
       margin: 0 auto;
     }
 
+    .brand-eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
     header h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 0.3rem;
+      color: var(--text-hero);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
     }
 
     header p {
       color: var(--text-muted);
       font-size: 1.05rem;
+      font-weight: 400;
     }
 
     .date-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      margin-top: 0.8rem;
+      margin-top: 1.2rem;
       background: var(--accent-soft);
-      color: var(--primary);
-      border: 1px solid #bae6fd;
-      font-weight: 700;
+      color: var(--accent);
+      border: 1px solid rgba(217, 72, 15, 0.18);
+      font-weight: 600;
       padding: 0.4rem 1.2rem;
-      border-radius: 999px;
-      font-size: 0.95rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
     }
 
-    /* Izbira dneva */
+    /* Zavirki za izbiro dneva (Editorial Segmented Bar) */
     .day-selector-container {
-      max-width: 1200px;
-      margin: 1.5rem auto 0;
-      padding: 0 1rem;
+      max-width: 1240px;
+      margin: 2rem auto 0;
+      padding: 0 1.5rem;
     }
 
     .day-selector {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.4rem;
+      background: rgba(230, 234, 240, 0.5);
+      padding: 0.4rem;
+      border-radius: var(--radius-md);
       overflow-x: auto;
-      padding-bottom: 0.4rem;
+      border: 1px solid var(--border);
     }
 
     .day-tab {
-      background: #ffffff;
-      border: 1px solid var(--card-border);
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
+      flex: 1;
+      min-width: 110px;
+      background: transparent;
+      border: none;
+      padding: 0.65rem 0.8rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--text-muted);
       cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s;
+      text-align: center;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .day-tab:hover {
-      border-color: var(--accent);
-      color: var(--primary);
+      color: var(--text-hero);
+      background: rgba(255, 255, 255, 0.5);
     }
 
     .day-tab.active {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-      box-shadow: 0 4px 10px rgba(15, 39, 68, 0.2);
+      background: var(--surface);
+      color: var(--text-hero);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
-    /* Iskalnik in filtri */
+    /* Kontrole: Iskalnik & Filtri */
     .controls {
-      max-width: 1200px;
-      margin: 1.2rem auto;
-      padding: 0 1rem;
+      max-width: 1240px;
+      margin: 1.5rem auto 2rem;
+      padding: 0 1.5rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
 
-    @media (min-width: 680px) {
+    @media (min-width: 768px) {
       .controls {
         flex-direction: row;
         justify-content: space-between;
@@ -134,57 +167,72 @@
 
     .search-box {
       flex: 1;
-      max-width: 420px;
+      max-width: 440px;
+      position: relative;
     }
 
     .search-box input {
       width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--card-border);
-      background: #ffffff;
-      border-radius: 8px;
-      font-size: 0.95rem;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: var(--radius-pill);
+      font-size: 0.92rem;
       outline: none;
-      transition: border-color 0.2s;
+      transition: all 0.2s;
     }
 
     .search-box input:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
     .filter-tags {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.4rem;
       flex-wrap: wrap;
     }
 
     .filter-btn {
-      background: #ffffff;
-      border: 1px solid var(--card-border);
+      background: var(--surface);
+      border: 1px solid var(--border);
       padding: 0.45rem 1rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.82rem;
       font-weight: 600;
       color: var(--text-muted);
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.15s ease;
     }
 
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
+    .filter-btn:hover {
+      border-color: var(--border-hover);
+      color: var(--text-hero);
+    }
+
+    .filter-btn.active {
+      background: var(--text-hero);
+      color: #ffffff;
+      border-color: var(--text-hero);
     }
 
     /* Mreža restavracij */
     .restaurant-grid {
-      max-width: 1200px;
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 0 1.5rem;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1.5rem;
+      gap: 1.6rem;
     }
 
     @media (min-width: 768px) {
@@ -193,7 +241,7 @@
       }
     }
 
-    @media (min-width: 1100px) {
+    @media (min-width: 1140px) {
       .restaurant-grid {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -201,94 +249,100 @@
 
     /* Kartica restavracije */
     .restaurant-card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow-card);
-      padding: 1.4rem;
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-subtle);
+      padding: 1.6rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
     }
 
     .restaurant-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(15, 39, 68, 0.1);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--border-hover);
+    }
+
+    .card-top {
+      margin-bottom: 1.2rem;
     }
 
     .card-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 0.35rem;
       gap: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .restaurant-title {
       font-size: 1.25rem;
       font-weight: 700;
-      color: var(--primary);
+      color: var(--text-hero);
+      letter-spacing: -0.02em;
     }
 
     .cuisine-tag {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      background: #f1f5f9;
+      background: rgba(18, 22, 34, 0.04);
       color: var(--text-muted);
       padding: 0.25rem 0.6rem;
-      border-radius: 6px;
+      border-radius: var(--radius-sm);
       white-space: nowrap;
     }
 
     .meta-info {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
-      margin-bottom: 1.1rem;
       display: flex;
       flex-direction: column;
       gap: 0.2rem;
     }
 
-    /* Meni / Jedilnik */
-    .menu-header-box {
+    /* Meni sekcija */
+    .menu-header-bar {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #f1f5f9;
-      padding-bottom: 0.4rem;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
       margin-bottom: 0.8rem;
     }
 
-    .menu-title {
-      font-size: 0.8rem;
+    .menu-header-title {
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
       color: var(--accent);
       font-weight: 700;
     }
 
-    .menu-count {
-      font-size: 0.75rem;
+    .dish-count {
+      font-size: 0.72rem;
       color: var(--text-muted);
       font-weight: 600;
     }
 
     .menu-list {
       list-style: none;
-      margin-bottom: 1.4rem;
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.75rem;
+      margin-bottom: 1.4rem;
     }
 
     .menu-item {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding-bottom: 0.7rem;
-      border-bottom: 1px dashed #e2e8f0;
-      gap: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed rgba(18, 22, 34, 0.08);
+      gap: 0.8rem;
     }
 
     .menu-item:last-child {
@@ -296,14 +350,10 @@
       padding-bottom: 0;
     }
 
-    .dish-info {
-      flex: 1;
-    }
-
     .dish-name {
-      font-weight: 500;
       font-size: 0.92rem;
-      color: var(--text-main);
+      font-weight: 500;
+      color: var(--text-body);
       line-height: 1.35;
     }
 
@@ -318,47 +368,50 @@
 
     .dish-tag.tag-mesno { background: #fee2e2; color: #991b1b; }
     .dish-tag.tag-veg { background: #dcfce7; color: #166534; }
-    .dish-tag.tag-ribe { background: #e0f2fe; color: #075985; }
+    .dish-tag.tag-ribe { background: #e0f2fe; color: #0369a1; }
 
     .dish-price {
-      font-weight: 700;
       font-size: 0.95rem;
+      font-weight: 700;
       color: var(--price-color);
       white-space: nowrap;
     }
 
-    /* Povezava */
+    /* Gumb na uradno stran */
     .card-footer {
       margin-top: auto;
       padding-top: 0.8rem;
     }
 
     .restaurant-link {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.4rem;
       width: 100%;
       text-align: center;
-      padding: 0.65rem;
-      background: #f8fafc;
-      border: 1px solid var(--card-border);
-      color: var(--primary);
+      padding: 0.75rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-hero);
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: var(--radius-sm);
       font-weight: 600;
-      font-size: 0.88rem;
-      transition: all 0.2s;
+      font-size: 0.86rem;
+      transition: all 0.2s ease;
     }
 
     .restaurant-link:hover {
-      background: var(--primary);
+      background: var(--text-hero);
       color: #ffffff;
-      border-color: var(--primary);
+      border-color: var(--text-hero);
     }
 
     .no-results {
       text-align: center;
       color: var(--text-muted);
       grid-column: 1 / -1;
-      padding: 3rem 0;
+      padding: 4rem 1rem;
       font-size: 1.1rem;
     }
   </style>
@@ -366,14 +419,15 @@
 <body>
 
   <header>
-    <div class="header-content">
-      <h1>🍽️ Malice na enem mestu</h1>
-      <p>Pregled dnevnih malic in kosil v Novi Gorici in Solkanu</p>
+    <div class="header-inner">
+      <span class="brand-eyebrow">Kulinarični vodnik</span>
+      <h1>Dnevne Malice & Kosila</h1>
+      <p>Nova Gorica, Kromberk & Solkan z okolico</p>
       <div class="date-badge" id="currentDateBadge">Nalagam datum...</div>
     </div>
   </header>
 
-  <!-- Izbira dneva (Ponedeljek - Sobota) -->
+  <!-- Segmented Day Bar -->
   <div class="day-selector-container">
     <div class="day-selector" id="daySelector">
       <button class="day-tab" data-day="1">Ponedeljek</button>
@@ -381,16 +435,16 @@
       <button class="day-tab" data-day="3">Sreda</button>
       <button class="day-tab" data-day="4">Četrtek</button>
       <button class="day-tab" data-day="5">Petek</button>
-      <button class="day-tab" data-day="6">Sobota</button>
     </div>
   </div>
 
   <div class="controls">
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Išči po jedeh ali restavracijah..." />
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Išči jed, restavracijo, pico..." />
     </div>
     <div class="filter-tags">
-      <button class="filter-btn active" data-filter="all">Vse jedi</button>
+      <button class="filter-btn active" data-filter="all">Vse</button>
       <button class="filter-btn" data-filter="Mesno">Mesno</button>
       <button class="filter-btn" data-filter="Vegetarijansko">Vegetarijansko</button>
       <button class="filter-btn" data-filter="Ribe">Ribe</button>
@@ -400,115 +454,282 @@
   <main class="restaurant-grid" id="restaurantGrid"></main>
 
   <script>
-    // --- BAZA VSEH MOŽNOSTI JEDI PO DNEVIH (1=Pon, 2=Tor, 3=Sre, 4=Čet, 5=Pet, 6=Sob) ---
+    // --- BAZA VSEH RESTAVRACIJ Z REALNIMI MENIJI PO DNEVIH (1=Pon, 2=Tor, 3=Sre, 4=Čet, 5=Pet) ---
     const restaurantsData = [
       {
         id: 1,
+        name: "Restavracija Magma X",
+        url: "https://magma-x.com/restavracija-magma-x/",
+        cuisine: "Sodobna & Pizzerija",
+        hours: "11:00 - 15:00",
+        address: "Industrijska cesta 11, Kromberk",
+        weeklyMenu: {
+          1: [
+            { name: "Svinjski file v poprovi omaki s pečenim krompirjem", price: "€8.00", category: "Mesno" },
+            { name: "Kremna bučna juha z opečenimi semeni", price: "€2.50", category: "Vegetarijansko" },
+            { name: "Pica po izbiri (Margerita, Klasika, Šunka, Tuna)", price: "€7.00", category: "Mesno" }
+          ],
+          2: [
+            { name: "Piščančji zrezek v gorgonzolini omaki s testeninami", price: "€8.00", category: "Mesno" },
+            { name: "Zelenjavna rižota s parmezanom in zelišči", price: "€7.50", category: "Vegetarijansko" },
+            { name: "Pica dneva z jurčki in bivoljo mocarelo", price: "€8.00", category: "Vegetarijansko" }
+          ],
+          3: [ // SREDA
+            { name: "Njoki z domačim golažem + juha ali solata", price: "€8.00", category: "Mesno" },
+            { name: "Gof na žaru in maslen krompir z rukolo + juha ali solata", price: "€8.00", category: "Ribe" },
+            { name: "Malica pizza (Klasika, 6 sirov, Vražja, Tuna ali Rukola)", price: "€7.00", category: "Mesno" },
+            { name: "Kosilo X: File brancina na žaru z dalmatinsko prilogo, juha, solata in sladica", price: "€15.00", category: "Ribe" }
+          ],
+          4: [ // ČETRTEK
+            { name: "File piščanca po dunajsko in pire krompir z dušenim grahom", price: "€8.00", category: "Mesno" },
+            { name: "Rižota z mešanimi gozdnimi gobami in ocvrt sir brie", price: "€8.00", category: "Vegetarijansko" },
+            { name: "Dnevna goveja ali fižolova juha", price: "€2.50", category: "Mesno" },
+            { name: "Malica pizza iz krušne peči po izbiri", price: "€7.00", category: "Mesno" }
+          ],
+          5: [ // PETEK
+            { name: "Domače testenine s klobaso in radičem", price: "€8.00", category: "Mesno" },
+            { name: "Ocvrti kalamari s pomfrijem in tatarsko omako", price: "€8.00", category: "Ribe" },
+            { name: "Gobova juha s svežim peteršiljem", price: "€2.50", category: "Vegetarijansko" },
+            { name: "Pica s pršutom, rukolo in češnjevcem", price: "€8.00", category: "Mesno" }
+          ]
+        }
+      },
+      {
+        id: 2,
+        name: "Gostilna pri Hrastu",
+        url: "https://prihrastu.si/dnevna-kosila",
+        cuisine: "Gourmet & Tradicionalna",
+        hours: "11:00 - 15:00",
+        address: "Kromberška cesta 2, Nova Gorica",
+        weeklyMenu: {
+          1: [
+            { name: "Bučkina juha, piščančji file v naravni omaki s pirejem in špinačo, sladica", price: "€9.50", category: "Mesno" },
+            { name: "Sirovi tortelini v zeliščni omaki s parmezanom", price: "€8.50", category: "Vegetarijansko" }
+          ],
+          2: [
+            { name: "Goveji medaljoni v jurčkovi omaki z domačimi širokimi rezanci, solata", price: "€10.50", category: "Mesno" },
+            { name: "Zelenjavni narastek s tolminskim sirom Čadrg", price: "€8.50", category: "Vegetarijansko" }
+          ],
+          3: [ // SREDA
+            { name: "Dnevno kosilo: Bučkina juha, puran po tolminsko z rizibizijem, solata in sladica", price: "€9.80", category: "Mesno" },
+            { name: "Sojini polpeti s sirovo omako, sladkim krompirjem in solato", price: "€8.80", category: "Vegetarijansko" },
+            { name: "File postrvi po tržaško s kuhanim krompirjem in blitvo", price: "€10.20", category: "Ribe" },
+            { name: "Domači njoki z divjačinskim ragujem", price: "€9.50", category: "Mesno" }
+          ],
+          4: [ // ČETRTEK
+            { name: "Telečja pečenka v naravni omaki z mlinci in rdečim zeljem", price: "€10.00", category: "Mesno" },
+            { name: "Idrijski žlikrofi z jurčki in drobnjakovim maslom", price: "€8.80", category: "Vegetarijansko" },
+            { name: "Dnevna gobova kremna juha s krutoni", price: "€3.00", category: "Vegetarijansko" }
+          ],
+          5: [ // PETEK
+            { name: "File orade na žaru s prilogo in tržaško omako, solata", price: "€10.50", category: "Ribe" },
+            { name: "Rižota z morskimi sadeži in parmezanom", price: "€9.50", category: "Ribe" },
+            { name: "Krompirjev golaž z jurčki in popečeno polento", price: "€8.00", category: "Vegetarijansko" }
+          ]
+        }
+      },
+      {
+        id: 3,
         name: "Restavracija Interspar",
         url: "https://www.spar.si/restavracija-interspar/tedenski-meni",
         cuisine: "Samopostrežna & Kosila",
         hours: "10:30 - 15:30",
         address: "Supernova Qlandia, Nova Gorica",
         weeklyMenu: {
+          1: [
+            { name: "Svinjska pečenka v naravni omaki s praženim krompirjem", price: "€7.50", category: "Mesno" },
+            { name: "Špinačni tortelini v sirovi omaki s parmezanom", price: "€6.90", category: "Vegetarijansko" },
+            { name: "Goveja juha z rezanci / Dnevna enolončnica", price: "€2.80", category: "Mesno" }
+          ],
+          2: [
+            { name: "Pečena piščančja bedra z mlinci in rdečim zeljem", price: "€7.80", category: "Mesno" },
+            { name: "Zelenjavni narastek s solatnim krožnikom", price: "€6.80", category: "Vegetarijansko" },
+            { name: "Kremna bučna juha s praženimi semeni", price: "€2.80", category: "Vegetarijansko" }
+          ],
           3: [ // SREDA
-            { name: "Goveji zrezek v jurčkovi omaki z domačimi kruhovimi cmoki", price: "€8.50", category: "Mesno" },
-            { name: "Ocvrt piščančji file s francosko solato in pečenim krompirjem", price: "€7.90", category: "Mesno" },
-            { name: "Pečen file osliča po tržaško s kuhanim krompirjem in blitvo", price: "€8.20", category: "Ribe" },
+            { name: "Goveji zrezek v gobovi omaki s kruhovimi cmoki", price: "€8.50", category: "Mesno" },
+            { name: "Ocvrt piščančji file s francosko solato in krompirjem", price: "€7.90", category: "Mesno" },
+            { name: "Pečen osličev file po tržaško s krompirjem in blitvo", price: "€8.20", category: "Ribe" },
             { name: "Kremna rižota s porom, jurčki in parmezanom", price: "€6.90", category: "Vegetarijansko" },
-            { name: "Pasulj s prekajeno kranjsko klobaso", price: "€7.10", category: "Mesno" },
-            { name: "Zelenjavna enolončnica s piro in korenčkom", price: "€3.50", category: "Vegetarijansko" }
+            { name: "Prebranac s kranjsko klobaso", price: "€7.10", category: "Mesno" }
+          ],
+          4: [ // ČETRTEK
+            { name: "Puranji file z žara z zelenjavo na maslu", price: "€7.80", category: "Mesno" },
+            { name: "Domači polpeti v paradižnikovi omaki s pirejem", price: "€7.40", category: "Mesno" },
+            { name: "Sirovi štruklji z drobtinami in sadnim kompotom", price: "€6.50", category: "Vegetarijansko" }
+          ],
+          5: [ // PETEK
+            { name: "Lignji na žaru ali ocvrti s pomfrijem in tatarsko omako", price: "€8.40", category: "Ribe" },
+            { name: "Zrezek po dunajsko s krompirjevo solato", price: "€7.90", category: "Mesno" },
+            { name: "Zelenjavna lazanja s sezonsko solato", price: "€6.90", category: "Vegetarijansko" }
           ]
         }
       },
       {
-        id: 2,
+        id: 4,
         name: "Restavracija Sabotin",
         url: "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
         cuisine: "Domača & Tradicionalna",
         hours: "10:00 - 15:00",
         address: "Cesta IX. korpusa 35, Solkan",
         weeklyMenu: {
+          1: [
+            { name: "Puranji zrezek v smetanovi omaki z rižem", price: "€7.60", category: "Mesno" },
+            { name: "Zelenjavni kaneloni s parmezanom", price: "€7.00", category: "Vegetarijansko" }
+          ],
+          2: [
+            { name: "Svinjski kotlet na žaru z djuveč rižem", price: "€7.80", category: "Mesno" },
+            { name: "Kremna porova juha z ajdovimi žganci", price: "€6.50", category: "Vegetarijansko" }
+          ],
           3: [ // SREDA
             { name: "Svinjski medaljoni v poprovi omaki s sirovimi štruklji", price: "€8.50", category: "Mesno" },
-            { name: "Puranji paprikaš s širokimi rezanci in solato", price: "€7.50", category: "Mesno" },
-            { name: "Gratinirana zelenjavna lazanja s parmezanom", price: "€7.20", category: "Vegetarijansko" },
-            { name: "Domači goveji golaž s koruzno polento", price: "€7.90", category: "Mesno" },
-            { name: "File soške postrvi na žaru s krompirjevo solato", price: "€8.80", category: "Ribe" }
+            { name: "Puranji paprikaš s testeninami in solato", price: "€7.50", category: "Mesno" },
+            { name: "Gratinirana zelenjavna lazanja", price: "€7.20", category: "Vegetarijansko" },
+            { name: "Domači goveji golaž s polento", price: "€7.90", category: "Mesno" }
+          ],
+          4: [ // ČETRTEK
+            { name: "Pečena krača s praženim krompirjem in hrenom", price: "€8.20", category: "Mesno" },
+            { name: "Rižota z mešanimi gobami in zelišči", price: "€7.20", category: "Vegetarijansko" }
+          ],
+          5: [ // PETEK
+            { name: "File soške postrvi po tržaško s slanim krompirjem", price: "€8.80", category: "Ribe" },
+            { name: "Dunajski piščančji zrezek s krompirjem", price: "€7.80", category: "Mesno" }
           ]
         }
       },
       {
-        id: 3,
+        id: 5,
         name: "Gostilna Zvezda",
         url: "https://www.gostilna-zvezda.si/",
         cuisine: "Pizzerija & Mediteranska",
         hours: "10:30 - 15:00",
         address: "Cesta IX. korpusa 65, Solkan",
         weeklyMenu: {
+          1: [
+            { name: "Testenine carbonara z zeleno solato", price: "€7.80", category: "Mesno" },
+            { name: "Pizza po izbiri s svežo baziliko", price: "€7.50", category: "Vegetarijansko" }
+          ],
+          2: [
+            { name: "Pleskavica na žaru s pečenim krompirjem in ajvarjem", price: "€8.20", category: "Mesno" },
+            { name: "Rižota z bučkami in sirom burrata", price: "€7.80", category: "Vegetarijansko" }
+          ],
           3: [ // SREDA
             { name: "Domači njoki s pršutom in jurčki v smetanovi omaki", price: "€8.50", category: "Mesno" },
-            { name: "Pleskavica na žaru s kajmakom, ajvarjem in pečenim krompirjem", price: "€8.20", category: "Mesno" },
-            { name: "Pizza dneva (mocarela, jurčki, rukola in češnjev paradižnik)", price: "€8.00", category: "Vegetarijansko" },
-            { name: "Velik solatni krožnik s toplim popečenim piščancem in semeni", price: "€7.80", category: "Mesno" },
-            { name: "Testenine s paradižnikovo omako, baziliko in burrato", price: "€7.50", category: "Vegetarijansko" }
+            { name: "Pizza dneva (mocarela, jurčki, rukola in češnjevci)", price: "€8.00", category: "Vegetarijansko" },
+            { name: "Solatni krožnik s pečenim piščancem in semeni", price: "€7.80", category: "Mesno" },
+            { name: "Testenine bolognese z mešano solato", price: "€7.60", category: "Mesno" }
+          ],
+          4: [ // ČETRTEK
+            { name: "Svinjski medaljoni v gobovi omaki s polento", price: "€8.50", category: "Mesno" },
+            { name: "Pečena zelenjava z mozzarello di bufala", price: "€7.80", category: "Vegetarijansko" }
+          ],
+          5: [ // PETEK
+            { name: "Morski sadeži na žaru s tržaško omako", price: "€9.20", category: "Ribe" },
+            { name: "Pizza s tuno in rdečo čebulo", price: "€8.00", category: "Ribe" }
           ]
         }
       },
       {
-        id: 4,
+        id: 6,
         name: "Restavracija Vrtnica",
         url: "https://www.restavracija-vrtnica.si/",
         cuisine: "Kosila & Malice",
         hours: "10:00 - 15:00",
         address: "Kidričeva ulica 11, Nova Gorica",
         weeklyMenu: {
+          1: [
+            { name: "Piščančji paprikaš s testeninami", price: "€7.50", category: "Mesno" },
+            { name: "Zelenjavna mineštra s klobaso", price: "€6.50", category: "Mesno" }
+          ],
+          2: [
+            { name: "Segedin golaž s pire krompirjem", price: "€7.50", category: "Mesno" },
+            { name: "Sirovi štruklji z drobtinami", price: "€6.80", category: "Vegetarijansko" }
+          ],
           3: [ // SREDA
             { name: "Dušena govedina v lovski omaki z domačim kruhovim cmokom", price: "€8.00", category: "Mesno" },
-            { name: "Puranji zrezek na žaru s sotirano zelenjavo in pomfrijem", price: "€7.70", category: "Mesno" },
-            { name: "Zelenjavni rizi-bizi s parmezanom in sezonsko solato", price: "€6.80", category: "Vegetarijansko" },
-            { name: "Vojvodinska enolončnica s prekajenim mesom in domača sladica", price: "€6.50", category: "Mesno" }
+            { name: "Puranji zrezek na žaru s prilogo in solato", price: "€7.70", category: "Mesno" },
+            { name: "Zelenjavni rizi-bizi s parmezanom", price: "€6.80", category: "Vegetarijansko" }
+          ],
+          4: [ // ČETRTEK
+            { name: "Mesna lazanja s parmezanom in solato", price: "€7.80", category: "Mesno" },
+            { name: "Korenčkova kremna juha z opečencem", price: "€3.00", category: "Vegetarijansko" }
+          ],
+          5: [ // PETEK
+            { name: "Paniran ribji file s krompirjevo solato", price: "€8.00", category: "Ribe" },
+            { name: "Pašta fižol s prekajenim mesom", price: "€6.50", category: "Mesno" }
           ]
         }
       },
       {
-        id: 5,
+        id: 7,
         name: "Restavracija Eda",
         url: "https://edarestavracija.si/kosila-malice",
-        cuisine: "Sodobna & Poslovna kosila",
+        cuisine: "Poslovna & Sodobna",
         hours: "10:30 - 14:30",
         address: "Delpinova ulica 18b (Eda Center), Nova Gorica",
         weeklyMenu: {
+          1: [
+            { name: "Ramstek tagliata z rukolo in parmezanom", price: "€10.50", category: "Mesno" },
+            { name: "Rižota z bučkami in dimljenim sirom", price: "€8.00", category: "Vegetarijansko" }
+          ],
+          2: [
+            { name: "Piščančji file v zeliščni omaki s krompirjevim pirejem", price: "€8.50", category: "Mesno" },
+            { name: "Domači ravioli s špinačo in ricotto", price: "€8.20", category: "Vegetarijansko" }
+          ],
           3: [ // SREDA
-            { name: "File orade na žaru s tržaško omako, blitvo in slanim krompirjem", price: "€9.80", category: "Ribe" },
-            { name: "Telečji ragu s širokimi domačimi rezanci in zorjenim sirom", price: "€8.90", category: "Mesno" },
-            { name: "Kremna bučna rižota s kozjim sirom, orehi in bučnim oljem", price: "€7.90", category: "Vegetarijansko" },
-            { name: "Hrustljavi piščančji file v gorgonzolini omaki z rižem", price: "€8.20", category: "Mesno" }
+            { name: "File orade na žaru s tržaško omako, blitvo in krompirjem", price: "€9.80", category: "Ribe" },
+            { name: "Telečji ragu s širokimi rezanci in zorjenim sirom", price: "€8.90", category: "Mesno" },
+            { name: "Kremna bučna rižota z orehi in kozjim sirom", price: "€7.90", category: "Vegetarijansko" }
+          ],
+          4: [ // ČETRTEK
+            { name: "Svinjska ribica z jurčki in domačimi svaljki", price: "€9.50", category: "Mesno" },
+            { name: "Pesa carpaccio s kozjim sirom in rukolo", price: "€7.80", category: "Vegetarijansko" }
+          ],
+          5: [ // PETEK
+            { name: "File brancina s krompirjem in mediteransko zelenjavo", price: "€10.20", category: "Ribe" },
+            { name: "Široki rezanci z gamberi in češnjevci", price: "€9.20", category: "Ribe" }
           ]
         }
       },
       {
-        id: 6,
+        id: 8,
         name: "Restavracija Gurman",
         url: "https://restavracija-gurman.si/sl#meals-section",
-        cuisine: "Balkanska & Žar",
+        cuisine: "Balkanski žar & Domača",
         hours: "10:00 - 16:00",
         address: "Ulica Gradnikove brigade 51, Nova Gorica",
         weeklyMenu: {
+          1: [
+            { name: "Čevapčiči (5 kosov) v lepinji s kajmakom", price: "€8.00", category: "Mesno" },
+            { name: "Pasulj s klobaso in domačim kruhom", price: "€7.00", category: "Mesno" }
+          ],
+          2: [
+            { name: "Vešalica na žaru s pečenim krompirjem", price: "€8.50", category: "Mesno" },
+            { name: "Prebranac s pečeno papriko", price: "€6.50", category: "Vegetarijansko" }
+          ],
           3: [ // SREDA
-            { name: "Čevapčiči (5 kosov) v lepinji s kajmakom, čebulo in pečenim krompirjem", price: "€8.00", category: "Mesno" },
-            { name: "Piščančji ražnjiči oviti v hrustljavo slanino z djuveč rižem", price: "€8.20", category: "Mesno" },
-            { name: "Gurmanska polnjena pleskavica s sirom in prilogo", price: "€8.50", category: "Mesno" },
-            { name: "Prebranac (gravče na tavče) s pečenimi rdečimi paprikami", price: "€6.50", category: "Vegetarijansko" }
+            { name: "Čevapčiči v lepinji s kajmakom, čebulo in krompirjem", price: "€8.00", category: "Mesno" },
+            { name: "Piščančji ražnjiči v slanini z djuveč rižem", price: "€8.20", category: "Mesno" },
+            { name: "Polnjena pleskavica s sirom in ajvarjem", price: "€8.50", category: "Mesno" },
+            { name: "Gravče na tavče (prebranac) s pečenimi paprikami", price: "€6.50", category: "Vegetarijansko" }
+          ],
+          4: [ // ČETRTEK
+            { name: "Mešano meso na žaru s pečenim krompirjem", price: "€9.00", category: "Mesno" },
+            { name: "Šopska solata z lepinjo", price: "€5.50", category: "Vegetarijansko" }
+          ],
+          5: [ // PETEK
+            { name: "Pleskavica v lepinji s kajmakom in pomfrijem", price: "€8.00", category: "Mesno" },
+            { name: "Prebranac s prekajenim mesom", price: "€7.00", category: "Mesno" }
           ]
         }
       }
     ];
 
-    // --- LOGIKA ZA DANAŠNJI DAN ---
+    // --- LOGIKA PRIKAZA ---
     const now = new Date();
-    // getDay(): 0 = Nedelja, 1 = Pon, 2 = Tor, 3 = Sre, 4 = Čet, 5 = Pet, 6 = Sob
     let currentDayNumber = now.getDay();
-    if (currentDayNumber === 0) currentDayNumber = 1; // Če je nedelja, prikaži ponedeljek
+    // Če je vikend (sobota/nedelja), privzeto prikažemo ponedeljek (1)
+    if (currentDayNumber === 0 || currentDayNumber === 6) currentDayNumber = 1;
 
     let selectedDay = currentDayNumber;
     let currentFilter = "all";
@@ -517,7 +738,6 @@
     function setupDateHeader() {
       const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
       const formatted = now.toLocaleDateString('sl-SI', options);
-      // Prikaz točnega datuma (npr. Sreda, 21. oktober 2026)
       document.getElementById('currentDateBadge').textContent = "📅 Danes: " + formatted.charAt(0).toUpperCase() + formatted.slice(1);
     }
 
@@ -537,8 +757,8 @@
       grid.innerHTML = "";
 
       const filtered = restaurantsData.filter(restaurant => {
-        // Vzame menije za točno ta dan (če za kak dan ni vnosa, vzame sredo)
-        const dailyItems = restaurant.weeklyMenu[selectedDay] || restaurant.weeklyMenu[3] || [];
+        // Vzamemo jedi izključno za izbran dan
+        const dailyItems = restaurant.weeklyMenu[selectedDay] || [];
 
         const matchesCategory = currentFilter === "all" || 
           dailyItems.some(dish => dish.category.toLowerCase() === currentFilter.toLowerCase());
@@ -553,13 +773,12 @@
       });
 
       if (filtered.length === 0) {
-        grid.innerHTML = `<div class="no-results">Ni najdenih jedi ali restavracij za izbrane kriterije.</div>`;
+        grid.innerHTML = `<div class="no-results">Za ta dan ali filter ni najdenih ujemajočih jedi.</div>`;
         return;
       }
 
       filtered.forEach(restaurant => {
-        const dailyItems = restaurant.weeklyMenu[selectedDay] || restaurant.weeklyMenu[3] || [];
-        
+        const dailyItems = restaurant.weeklyMenu[selectedDay] || [];
         const visibleDishes = currentFilter === "all" 
           ? dailyItems 
           : dailyItems.filter(dish => dish.category.toLowerCase() === currentFilter.toLowerCase());
@@ -575,7 +794,7 @@
         };
 
         card.innerHTML = `
-          <div>
+          <div class="card-top">
             <div class="card-header">
               <h2 class="restaurant-title">${restaurant.name}</h2>
               <span class="cuisine-tag">${restaurant.cuisine}</span>
@@ -584,16 +803,18 @@
               <span>🕒 ${restaurant.hours}</span>
               <span>📍 ${restaurant.address}</span>
             </div>
+          </div>
 
-            <div class="menu-header-box">
-              <span class="menu-title">Vse izbire za ta dan</span>
-              <span class="menu-count">${visibleDishes.length} ${visibleDishes.length === 1 ? 'jed' : 'jedi'}</span>
+          <div>
+            <div class="menu-header-bar">
+              <span class="menu-header-title">Dnevna ponudba</span>
+              <span class="dish-count">${visibleDishes.length} ${visibleDishes.length === 1 ? 'jed' : 'jedi'}</span>
             </div>
 
             <ul class="menu-list">
               ${visibleDishes.map(dish => `
                 <li class="menu-item">
-                  <div class="dish-info">
+                  <div>
                     <div class="dish-name">${dish.name}</div>
                     <span class="dish-tag ${getTagClass(dish.category)}">${dish.category}</span>
                   </div>
@@ -605,7 +826,7 @@
 
           <div class="card-footer">
             <a href="${restaurant.url}" target="_blank" rel="noopener noreferrer" class="restaurant-link">
-              Odpri uradni meni / spletno stran ↗
+              Odpri spletno stran / meni ↗
             </a>
           </div>
         `;
@@ -637,7 +858,7 @@
       });
     });
 
-    // Zagon
+    // Zagon ob nalaganju
     setupDateHeader();
     updateDayTabs();
     renderRestaurants();
