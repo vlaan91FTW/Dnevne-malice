@@ -1,0 +1,45 @@
+name: Avtomatska posodobitev menijev
+
+on:
+  schedule:
+    # Časi so v UTC (v Sloveniji po poletnem času velja +2 uri, pozimi +1 ura)
+    # Zagon ob 07:15 UTC (09:15 po našem času)
+    - cron: '15 7 * * 1-5'
+    # Zagon ob 08:15 UTC (10:15 po našem času)
+    - cron: '15 8 * * 1-5'
+    # Zagon ob 09:00 UTC (11:00 po našem času)
+    - cron: '0 9 * * 1-5'
+  workflow_dispatch: # Omogoča ročni zagon s klikom na gumb kadarkoli
+
+permissions:
+  contents: write # Dovoljenje za shranjevanje posodobljenega menus.json
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prenos repozitorija
+        uses: actions/checkout@v4
+
+      - name: Namestitev Pythona
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Namestitev potrebnih orodij
+        run: |
+          pip install google-generativeai requests beautifulsoup4
+
+      - name: Zagon AI robota za branje menijev
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python scraper.py
+
+      - name: Shrani nov menus.json nazaj v repozitorij
+        run: |
+          git config --global user.name "Malice Bot"
+          git config --global user.email "bot@malice.local"
+          git add menus.json
+          git commit -m "Avtomatska osvežitev menijev [skip ci]" || exit 0
+          git push
