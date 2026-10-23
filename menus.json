@@ -1,155 +1,177 @@
 [
   {
+    "id": 1,
+    "name": "Restavracija Magma X",
+    "url": "https://magma-x.com/restavracija-magma-x/",
+    "mapsUrl": "https://maps.google.com/?q=Restavracija+Magma+X+Nova+Gorica",
+    "phone": "+386 8 200 48 20",
+    "cuisine": "Pizzerija & Žar",
+    "hours": "11:00 - 15:00",
+    "address": "Industrijska cesta 11, Kromberk",
+    "bannerImage": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80",
+    "nearCenter": false,
+    "menu": [
+      {
+        "main": "Dnevna ponudba se nahaja na spletni strani",
+        "detail": "Kliknite spodnji gumb za neposreden ogled svežega menija",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Gostilna pri Hrastu",
+    "url": "https://prihrastu.si/dnevna-kosila",
+    "mapsUrl": "https://maps.google.com/?q=Gostilna+pri+Hrastu+Nova+Gorica",
+    "phone": "+386 5 302 72 10",
+    "cuisine": "Gourmet & Tradicionalna",
+    "hours": "11:00 - 22:00",
+    "address": "Kromberška cesta 2, Nova Gorica",
+    "bannerImage": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+    "nearCenter": true,
+    "menu": [
+      {
+        "main": "Dnevna ponudba se nahaja na spletni strani",
+        "detail": "Kliknite spodnji gumb za neposreden ogled svežega menija",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Restavracija Eda",
+    "url": "https://edarestavracija.si/kosila-malice",
+    "mapsUrl": "https://maps.google.com/?q=Eda+Center+Nova+Gorica",
+    "phone": "+386 51 352 492",
+    "cuisine": "Sodobna & Hitra kosila",
+    "hours": "10:00 - 14:00",
+    "address": "Delpinova ulica 18b (Eda Center)",
+    "bannerImage": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80",
+    "nearCenter": true,
+    "menu": [
+      {
+        "main": "Dnevna ponudba se nahaja na spletni strani",
+        "detail": "Kliknite spodnji gumb za neposreden ogled svežega menija",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
     "name": "Restavracija Interspar",
     "url": "https://www.spar.si/restavracija-interspar/tedenski-meni",
+    "mapsUrl": "https://maps.google.com/?q=Supernova+Interspar+Nova+Gorica",
+    "phone": "+386 5 330 84 00",
     "cuisine": "Samopostrežna & Kosila",
     "hours": "10:30 - 15:30",
     "address": "Supernova Qlandia, Nova Gorica",
+    "bannerImage": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80",
+    "nearCenter": true,
     "menu": [
       {
-        "name": "Dnevna pečenka z začinjenim krompirjem",
-        "price": "€7.80",
-        "category": "Mesno"
-      },
-      {
-        "name": "Piščančji zrezek po dunajsko s prilogo",
-        "price": "€7.90",
-        "category": "Mesno"
-      },
-      {
-        "name": "Zelenjavna enolončnica s testeninami",
-        "price": "€6.50",
-        "category": "Vegetarijansko"
-      },
-      {
-        "name": "Morski file na žaru z blitvo",
-        "price": "€8.40",
-        "category": "Ribe"
+        "main": "Dnevna ponudba se nahaja na spletni strani",
+        "detail": "Kliknite spodnji gumb za neposreden ogled svežega menija",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
       }
     ]
   },
   {
+    "id": 5,
     "name": "Restavracija Sabotin",
     "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
-    "cuisine": "Domača & Tradicionalna",
+    "mapsUrl": "https://maps.google.com/?q=Hotel+Sabotin+Solkan",
+    "phone": "+386 5 336 50 00",
+    "cuisine": "Tradicionalna gostilna",
     "hours": "10:00 - 15:00",
     "address": "Cesta IX. korpusa 35, Solkan",
+    "bannerImage": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80",
+    "nearCenter": false,
     "menu": [
       {
-        "name": "Dnevni golaž s polento",
-        "price": "€7.90",
-        "category": "Mesno"
-      },
-      {
-        "name": "Puranji zrezek v gobovi omaki",
-        "price": "€7.50",
-        "category": "Mesno"
-      },
-      {
-        "name": "Zelenjavni narastek s solato",
-        "price": "€7.00",
-        "category": "Vegetarijansko"
+        "main": "Dnevna ponudba se nahaja na spletni strani",
+        "detail": "Kliknite spodnji gumb za neposreden ogled svežega menija",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
       }
     ]
   },
   {
+    "id": 6,
     "name": "Gostilna Zvezda",
     "url": "https://www.gostilna-zvezda.si/",
-    "cuisine": "Pizzerija & Mediteranska",
+    "mapsUrl": "https://maps.google.com/?q=Gostilna+Zvezda+Solkan",
+    "phone": "+386 5 300 58 40",
+    "cuisine": "Mediteranska & Pizzerija",
     "hours": "10:30 - 15:00",
     "address": "Cesta IX. korpusa 65, Solkan",
+    "bannerImage": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=80",
+    "nearCenter": false,
     "menu": [
       {
-        "name": "Domači njoki s pršutom in jurčki",
-        "price": "€8.50",
-        "category": "Mesno"
-      },
-      {
-        "name": "Pizza dneva (margarita z rukolo in češnjevcem)",
-        "price": "€8.00",
-        "category": "Vegetarijansko"
-      },
-      {
-        "name": "Pleskavica s pečenim krompirjem in ajvarjem",
-        "price": "€8.20",
-        "category": "Mesno"
+        "main": "Dnevna ponudba se nahaja na spletni strani",
+        "detail": "Kliknite spodnji gumb za neposreden ogled svežega menija",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
       }
     ]
   },
   {
+    "id": 7,
     "name": "Restavracija Vrtnica",
     "url": "https://www.restavracija-vrtnica.si/",
-    "cuisine": "Kosila & Malice",
+    "mapsUrl": "https://maps.google.com/?q=Restavracija+Vrtnica+Nova+Gorica",
+    "phone": "+386 5 330 08 20",
+    "cuisine": "Domača kosila & Enolončnice",
     "hours": "10:00 - 15:00",
     "address": "Kidričeva ulica 11, Nova Gorica",
+    "bannerImage": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=80",
+    "nearCenter": true,
     "menu": [
       {
-        "name": "Dušena govedina z lovsko omako in cmokom",
-        "price": "€8.00",
-        "category": "Mesno"
-      },
-      {
-        "name": "Zelenjavna rižota s parmezanom",
-        "price": "€6.80",
-        "category": "Vegetarijansko"
-      },
-      {
-        "name": "Dnevna enolončnica s klobaso",
-        "price": "€6.50",
-        "category": "Mesno"
+        "main": "Dnevna ponudba se nahaja na spletni strani",
+        "detail": "Kliknite spodnji gumb za neposreden ogled svežega menija",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
       }
     ]
   },
   {
-    "name": "Restavracija Eda",
-    "url": "https://edarestavracija.si/kosila-malice",
-    "cuisine": "Sodobna kuhinja",
-    "hours": "10:30 - 14:30",
-    "address": "Delpinova ulica 18b, Nova Gorica",
-    "menu": [
-      {
-        "name": "Restavracija AureaRestavracija in vinoteka",
-        "price": "€8.50",
-        "category": "Mesno"
-      },
-      {
-        "name": "Kosila in malicePrijetno z okusnim",
-        "price": "€8.50",
-        "category": "Mesno"
-      },
-      {
-        "name": "Lounge BarDruženje z razlogom",
-        "price": "€8.50",
-        "category": "Mesno"
-      },
-      {
-        "name": "Za vaš dogodekPogostitev z občutkom",
-        "price": "€8.50",
-        "category": "Mesno"
-      }
-    ]
-  },
-  {
+    "id": 8,
     "name": "Restavracija Gurman",
     "url": "https://restavracija-gurman.si/sl#meals-section",
-    "cuisine": "Balkanska & Žar",
+    "mapsUrl": "https://maps.google.com/?q=Restavracija+Gurman+Nova+Gorica",
+    "phone": "+386 5 30 21 941",
+    "cuisine": "Balkanski žar & Domača",
     "hours": "10:00 - 16:00",
-    "address": "Ulica Gradnikove brigade 51, Nova Gorica",
+    "address": "Ulica Gradnikove brigade 51",
+    "bannerImage": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=700&q=80",
+    "nearCenter": true,
     "menu": [
       {
-        "name": "Čevapčiči v lepinji s kajmakom in pečenim krompirjem",
-        "price": "€8.00",
-        "category": "Mesno"
-      },
-      {
-        "name": "Prebranac s pečeno papriko",
-        "price": "€6.50",
-        "category": "Vegetarijansko"
-      },
-      {
-        "name": "Piščančji ražnjiči z djuveč rižem",
-        "price": "€8.20",
-        "category": "Mesno"
+        "main": "Dnevna ponudba se nahaja na spletni strani",
+        "detail": "Kliknite spodnji gumb za neposreden ogled svežega menija",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
       }
     ]
   }
