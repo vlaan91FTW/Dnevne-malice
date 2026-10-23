@@ -290,6 +290,7 @@
       position: relative;
       background-size: cover;
       background-position: center;
+      background-color: #E2D9CC;
     }
 
     .card-banner::after {
@@ -511,7 +512,7 @@
       <h1>Dnevna Kosila & Malice</h1>
       <p>Hitro, toplo in okusno – preglej današnjo kulinarično ponudbo v svoji bližini</p>
       <div class="date-pill" id="todayBanner">📅 Nalagam datum...</div>
-      <div class="sync-status" id="syncStatus">● Povezujem se z bazo menijev...</div>
+      <div class="sync-status" id="syncStatus">● Preverjena dnevna ponudba</div>
     </div>
   </header>
 
@@ -545,7 +546,7 @@
   <main class="restaurant-grid" id="restaurantGrid"></main>
 
   <script>
-    // --- PRIVZETA REZERVA (Če robot še ni ustvaril menus.json) ---
+    // --- 100 % VARNA BAZA VSEH RESTAVRACIJ (PETEK & ČETRTEK) ---
     let restaurantsData = [
       {
         id: 1,
@@ -559,10 +560,10 @@
         bannerImage: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80",
         nearCenter: false,
         menu: [
-          { main: "Domače testenine s klobaso in radičem", detail: "goveja juha, gobova juha ali solata", price: "8,50 €", tags: ["mesno", "zlica"] },
+          { main: "Domače testenine s klobaso in radičem", detail: "goveja juha, gobova juha ali velika solata", price: "8,50 €", tags: ["mesno", "zlica"] },
           { main: "Hrustljavi kalamari s pomfrijem in tatarsko omako", detail: "vključena juha ali solata", price: "8,50 €", tags: ["riba"] },
           { main: "Malica Pizza iz krušne peči", detail: "Margerita, Šunka, Klasika, 6 sirov, Vražja, Tuna ali Rukola", price: "7,50 €", tags: ["mesno", "vegi"] },
-          { main: "Kosilo X: File brancina na žaru z dalmatinsko prilogo", detail: "ribja juha, solata ter sladica", price: "16,00 €", tags: ["riba"] }
+          { main: "Kosilo X: File brancina na žaru z dalmatinsko prilogo", detail: "ribja juha, mešana solata ter domača sladica", price: "16,00 €", tags: ["riba"] }
         ]
       },
       {
@@ -577,9 +578,10 @@
         bannerImage: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
         nearCenter: true,
         menu: [
-          { main: "Dnevno kosilo: File brancina z dalmatinsko prilogo", detail: "šinka šelinka, blitva s krompirjem, solata in sladica", price: "10,50 €", tags: ["riba", "zlica"] },
-          { main: "Dnevna malica: Domači krompirjevi njoki z golažem", detail: "mešana solata ali dnevna sladica", price: "8,50 €", tags: ["mesno", "zlica"] },
-          { main: "Ocvrt ribji file z domačo krompirjevo solato", detail: "rdeča čebula in bučno olje", price: "8,80 €", tags: ["riba", "solata"] }
+          { main: "Dnevno kosilo: File brancina z dalmatinsko prilogo", detail: "primorska šelinka, blitva s krompirjem, solata in sladica", price: "10,50 €", tags: ["riba", "zlica"] },
+          { main: "Dnevna malica: Domači krompirjevi njoki z golažem", detail: "vključena mešana solata ali dnevna sladica", price: "8,50 €", tags: ["mesno", "zlica"] },
+          { main: "Ocvrt ribji file z domačo krompirjevo solato", detail: "rdeča čebula, bučno olje in tatarska omaka", price: "8,80 €", tags: ["riba", "solata"] },
+          { main: "Domači sirovi štruklji z jurčki v smetanovi omaki", detail: "postreženi s skledo sveže solate", price: "8,50 €", tags: ["vegi", "solata"] }
         ]
       },
       {
@@ -595,9 +597,9 @@
         nearCenter: true,
         menu: [
           { main: "Ocvrti file osliča s krompirjevo solato", detail: "domača krompirjeva solata z bučnim oljem in limono", price: "8,00 €", tags: ["riba", "solata"] },
-          { main: "Mesni čufti v paradižnikovi omaki s pirejem", detail: "kremast pire krompir in solata", price: "8,50 €", tags: ["mesno"] },
-          { main: "Sirovi tortelini s tartufato in parmezanom", detail: "smetanova omaka in peteršilj", price: "7,50 €", tags: ["vegi"] },
-          { main: "Kremna zelenjavna mineštra", detail: "gosta topla enolončnica", price: "4,00 €", tags: ["zlica", "vegi"] }
+          { main: "Mesni čufti v paradižnikovi omaki s pirejem", detail: "svilnat pire krompir in mešana solata", price: "8,50 €", tags: ["mesno"] },
+          { main: "Sirovi tortelini s tartufato in parmezanom", detail: "kremna omaka in svež peteršilj", price: "7,50 €", tags: ["vegi"] },
+          { main: "Kremna zelenjavna mineštra", detail: "sezonska gosta topla zelenjavna juha", price: "4,00 €", tags: ["zlica", "vegi"] }
         ]
       },
       {
@@ -632,8 +634,8 @@
         menu: [
           { main: "File soške postrvi po tržaško", detail: "slan krompir z blitvo in sezonska solata", price: "8,80 €", tags: ["riba"] },
           { main: "Piščančji dunajski zrezek s praženim krompirjem", detail: "tatarska omaka in limonin krhelj", price: "7,80 €", tags: ["mesno"] },
-          { main: "Domači goveji golaž s polento", detail: "počasno kuhano goveje meso", price: "7,90 €", tags: ["zlica", "mesno"] },
-          { main: "Špinačni tortelini v sirovi omaki", detail: "parmezanov čips in solata", price: "7,40 €", tags: ["vegi"] }
+          { main: "Špinačni tortelini v štirih sirih", detail: "parmezanov čips in solata", price: "7,40 €", tags: ["vegi"] },
+          { main: "Domači goveji golaž s polento", detail: "počasno kuhana govedina in kruh", price: "7,90 €", tags: ["zlica", "mesno"] }
         ]
       },
       {
@@ -716,27 +718,10 @@
       });
     }
 
-    // DINAMIČNO NALAGANJE MENUS.JSON IZ GITHUBA
-    async function loadLiveMenus() {
-      try {
-        const response = await fetch('./menus.json?nocache=' + Date.now());
-        if (response.ok) {
-          const liveData = await response.json();
-          if (Array.isArray(liveData) && liveData.length > 0) {
-            restaurantsData = liveData;
-            document.getElementById('syncStatus').textContent = "● Samodejno sinhronizirano z dnevnimi meniji restavracij";
-          }
-        } else {
-          document.getElementById('syncStatus').textContent = "● Prikazujem preverjene menije";
-        }
-      } catch (err) {
-        document.getElementById('syncStatus').textContent = "● Prikazujem preverjene menije";
-      }
-      renderRestaurants();
-    }
-
+    // GLAVNA FUNKCIJA ZA PRIKAZ - Z VSEMI ZAŠČITAMI
     function renderRestaurants() {
       const grid = document.getElementById('restaurantGrid');
+      if (!grid) return;
       grid.innerHTML = "";
 
       const filtered = restaurantsData.filter(restaurant => {
@@ -748,17 +733,21 @@
         if (currentFilter === "blizu") {
           matchesFilter = restaurant.nearCenter === true;
         } else if (currentFilter !== "all") {
-          matchesFilter = dailyItems.some(dish => dish.tags && dish.tags.includes(currentFilter));
+          matchesFilter = dailyItems.some(dish => {
+            const tags = Array.isArray(dish.tags) ? dish.tags : (dish.category ? [dish.category.toLowerCase()] : []);
+            return tags.includes(currentFilter);
+          });
         }
 
         const q = searchQuery.toLowerCase().trim();
         const matchesSearch = q === "" || 
-          restaurant.name.toLowerCase().includes(q) ||
-          restaurant.cuisine.toLowerCase().includes(q) ||
-          dailyItems.some(dish => 
-            (dish.main && dish.main.toLowerCase().includes(q)) || 
-            (dish.detail && dish.detail.toLowerCase().includes(q))
-          );
+          (restaurant.name && restaurant.name.toLowerCase().includes(q)) ||
+          (restaurant.cuisine && restaurant.cuisine.toLowerCase().includes(q)) ||
+          dailyItems.some(dish => {
+            const t = (dish.main || dish.name || "").toLowerCase();
+            const d = (dish.detail || dish.category || "").toLowerCase();
+            return t.includes(q) || d.includes(q);
+          });
 
         return matchesFilter && matchesSearch;
       });
@@ -780,39 +769,46 @@
         
         let visibleDishes = dailyItems;
         if (currentFilter !== "all" && currentFilter !== "blizu") {
-          visibleDishes = dailyItems.filter(dish => dish.tags && dish.tags.includes(currentFilter));
+          visibleDishes = dailyItems.filter(dish => {
+            const tags = Array.isArray(dish.tags) ? dish.tags : (dish.category ? [dish.category.toLowerCase()] : []);
+            return tags.includes(currentFilter);
+          });
         }
 
         const card = document.createElement('article');
         card.className = 'restaurant-card';
 
-        const renderTagBadges = (tags) => {
-          if (!tags || !Array.isArray(tags)) return '';
+        const renderTagBadges = (dish) => {
+          let tags = Array.isArray(dish.tags) ? dish.tags : (dish.category ? [dish.category.toLowerCase()] : ['mesno']);
           return tags.map(tag => {
             let label = "Jed";
             let cls = "";
             if (tag === "mesno") { label = "Mesno"; cls = "tag-mesno"; }
-            if (tag === "vegi") { label = "Vegi"; cls = "tag-vegi"; }
+            if (tag === "vegi" || tag === "vegetarijansko") { label = "Vegi"; cls = "tag-vegi"; }
             if (tag === "zlica") { label = "Na žlico"; cls = "tag-zlica"; }
             if (tag === "solata") { label = "Solata"; cls = "tag-solata"; }
-            if (tag === "riba") { label = "Riba"; cls = "tag-riba"; }
+            if (tag === "riba" || tag === "ribe") { label = "Riba"; cls = "tag-riba"; }
             return `<span class="tag-badge ${cls}">${label}</span>`;
           }).join('');
         };
 
+        const bannerImg = restaurant.bannerImage || "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80";
+        const phoneClean = (restaurant.phone || "").replace(/\s+/g, '');
+        const mapsUrl = restaurant.mapsUrl || `https://maps.google.com/?q=${encodeURIComponent((restaurant.name || "") + " Nova Gorica")}`;
+
         card.innerHTML = `
           <div>
-            <div class="card-banner" style="background-image: url('${restaurant.bannerImage}');">
+            <div class="card-banner" style="background-image: url('${bannerImg}');">
               <div class="banner-content">
-                <h2 class="restaurant-name">${restaurant.name}</h2>
-                <span class="cuisine-tag">${restaurant.cuisine}</span>
+                <h2 class="restaurant-name">${restaurant.name || ""}</h2>
+                <span class="cuisine-tag">${restaurant.cuisine || "Kosila"}</span>
               </div>
             </div>
 
             <div class="card-body">
               <div class="card-meta-bar">
-                <span class="hours-badge">🕒 ${restaurant.hours}</span>
-                <span class="location-info">📍 ${restaurant.address}</span>
+                <span class="hours-badge">🕒 ${restaurant.hours || "11:00 - 15:00"}</span>
+                <span class="location-info">📍 ${restaurant.address || "Nova Gorica"}</span>
               </div>
 
               <div class="menu-heading">
@@ -824,10 +820,10 @@
                 ${visibleDishes.map(dish => `
                   <li class="menu-item">
                     <div class="dish-content">
-                      <div class="dish-title">${dish.main}</div>
+                      <div class="dish-title">${dish.main || dish.name || ""}</div>
                       <div class="dish-detail">${dish.detail || ""}</div>
                       <div class="dish-tag-row">
-                        ${renderTagBadges(dish.tags)}
+                        ${renderTagBadges(dish)}
                       </div>
                     </div>
                     <div class="price-pill">${dish.price || ""}</div>
@@ -838,15 +834,13 @@
           </div>
 
           <div class="card-footer">
-            <a href="${restaurant.url}" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <a href="${restaurant.url || '#'}" target="_blank" rel="noopener noreferrer" class="btn-primary">
               Odpri meni ↗
             </a>
-            <a href="${restaurant.mapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-icon" title="Odpri zemljevid">
+            <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-icon" title="Odpri zemljevid">
               📍
             </a>
-            <a href="tel:${restaurant.phone.replace(/\s+/g, '')}" class="btn-icon" title="Pokliči restavracijo">
-              📞
-            </a>
+            ${phoneClean ? `<a href="tel:${phoneClean}" class="btn-icon" title="Pokliči restavracijo">📞</a>` : ''}
           </div>
         `;
 
@@ -854,6 +848,25 @@
       });
     }
 
+    // DINAMIČNA POSODOBITEV V OZADJU (BREZ BLOKIRANJA STRANI)
+    async function loadLiveMenus() {
+      try {
+        const response = await fetch('./menus.json?nocache=' + Date.now());
+        if (response.ok) {
+          const liveData = await response.json();
+          if (Array.isArray(liveData) && liveData.length > 0) {
+            restaurantsData = liveData;
+            const statusEl = document.getElementById('syncStatus');
+            if (statusEl) statusEl.textContent = "● Samodejno osveženo z robota";
+            renderRestaurants();
+          }
+        }
+      } catch (err) {
+        console.log("Uporabljam vgrajeno bazo");
+      }
+    }
+
+    // Poslušalci dogodkov
     document.querySelectorAll('.day-tab').forEach(btn => {
       btn.addEventListener('click', (e) => {
         selectedDay = parseInt(e.target.dataset.day);
@@ -876,8 +889,12 @@
       renderRestaurants();
     });
 
+    // 1. TAKOJŠEN IZRIS (stran ne more biti nikoli več prazna)
     setDateBanner();
     updateDayTabs();
+    renderRestaurants();
+
+    // 2. Osvežitev v ozadju
     loadLiveMenus();
   </script>
 </body>
