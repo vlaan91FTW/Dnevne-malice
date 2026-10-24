@@ -717,15 +717,16 @@
       
       <!-- Radio Bar -->
       <div class="radio-bar" id="radioBar">
-        <button class="radio-btn" data-src="https://stream.radiorobin.si/robin128.mp3">Robin</button>
-        <button class="radio-btn" data-src="https://live.radiocapris.si/capris">Capris</button>
-        <button class="radio-btn" data-src="https://stream.radioaktual.si/aktual128.mp3">Aktual</button>
-        <button class="radio-btn" data-src="https://stream.radio1.si/radio1.mp3">Radio 1</button>
-        <button class="radio-btn" data-src="https://stream.radiofrajer.si/frajer.mp3">Frajer</button>
-        <button class="radio-btn" data-src="https://stream.radiocenter.si/center128.mp3">Center</button>
+        <h3 style="width: 100%; text-align: center; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-charcoal);">Poslušaj radio:</h3>
+        <button class="radio-btn" data-src="https://www.radio-robin.si/predvajalnik/">Robin</button>
+        <button class="radio-btn" data-src="https://www.radiocapris.si/player">Capris</button>
+        <button class="radio-btn" data-src="https://www.radioaktual.si/predvajalnik">Aktual</button>
+        <button class="radio-btn" data-src="https://www.radio1.si/predvajalnik/">Radio 1</button>
+        <button class="radio-btn" data-src="https://radiofrajer.si/predvajalnik/">Frajer</button>
+        <button class="radio-btn" data-src="https://www.radiocenter.si/predvajalnik/">Center</button>
         
         <div class="radio-player-container" id="playerContainer">
-          <audio id="audioPlayer" controls class="radio-player"></audio>
+          <iframe id="radioIframe" src="" width="100%" height="150" frameborder="0" allow="autoplay"></iframe>
         </div>
       </div>
     </div>
@@ -1882,7 +1883,7 @@
     // Radio funkcionalnost
     document.querySelectorAll('.radio-btn').forEach(btn => {
       btn.addEventListener('click', function() {
-        const player = document.getElementById('audioPlayer');
+        const iframe = document.getElementById('radioIframe');
         const container = document.getElementById('playerContainer');
         
         // Odstrani aktivni razred z vseh
@@ -1891,8 +1892,7 @@
         this.classList.add('active');
         
         container.style.display = 'block';
-        player.src = this.dataset.src;
-        player.play();
+        iframe.src = this.dataset.src;
       });
     });
   </script>
