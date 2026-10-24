@@ -579,6 +579,8 @@
       <button class="day-tab" data-day="3">Sreda</button>
       <button class="day-tab" data-day="4">Četrtek</button>
       <button class="day-tab active" data-day="5">Petek •</button>
+      <button class="day-tab" data-day="6">Sobota</button>
+      <button class="day-tab" data-day="0">Nedelja</button>
     </div>
   </div>
 
@@ -1185,6 +1187,9 @@
             { main: "Malica Pizza iz krušne peči", detail: "Margerita, Šunka, Klasika, 6 sirov, Vražja, Tuna ali Rukola", price: "7,50 €", tags: ["mesno", "vegi"] },
             { main: "Kosilo X: File brancina na žaru z dalmatinsko prilogo", detail: "ribja juha, mešana solata ter domača sladica", price: "16,00 €", tags: ["riba"] },
             { main: "Dnevna juha: Domača goveja ali dišeča gobova juha", detail: "sveža zelišča in popečeni kruhki", price: "2,50 €", tags: ["zlica", "vegi"] }
+          ],
+          6: [
+            { main: "Sobotna malica: Testenine z jurčki", detail: "smetanova omaka in mešana solata", price: "8,50 €", tags: ["vegi"] }
           ]
         }
       },
@@ -1475,7 +1480,7 @@
 
     const now = new Date();
     let currentDayNumber = now.getDay();
-    if (currentDayNumber === 0 || currentDayNumber === 6) currentDayNumber = 5;
+    // Sunday is 0, keeping it as 0 for consistency
 
     let selectedDay = currentDayNumber;
     let currentFilter = "all";

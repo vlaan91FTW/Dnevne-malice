@@ -178,7 +178,7 @@ Restavracija: '{restaurant_name}'.
 Danes je: {today_str}.
 
 Tvoja naloga je, da iz podanega gradiva (besedila ali slike plakata) izluščiš jedilnik za DANAŠNJI DAN ({today_name}) 
-in po možnosti za ostale dni v tednu (1=Ponedeljek, 2=Torek, 3=Sreda, 4=Četrtek, 5=Petek).
+181: in po možnosti za ostale dni v tednu (1=Ponedeljek, 2=Torek, 3=Sreda, 4=Četrtek, 5=Petek, 6=Sobota, 0=Nedelja).
 
 Vrni izključno čist JSON (brez besedila ali markdown oznak ```json) v naslednji strukturi:
 {{
@@ -195,7 +195,8 @@ Vrni izključno čist JSON (brez besedila ali markdown oznak ```json) v naslednj
     "2": [ ... ],
     "3": [ ... ],
     "4": [ ... ],
-    "5": [ ... ]
+    "5": [ ... ],
+    "6": [ ... ]
   }}
 }}
 
