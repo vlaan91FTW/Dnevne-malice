@@ -616,17 +616,40 @@
       margin-top: 1.5rem;
       padding: 1rem;
       border-top: 1px solid var(--border-light);
-      background: var(--bg-surface);
+      background: #FFFBF8;
       border-radius: var(--radius-card);
       align-items: center;
+      flex-wrap: wrap;
     }
-    .radio-select {
-      padding: 0.5rem;
-      border-radius: var(--radius-sm);
+    .radio-btn {
+      background: var(--bg-surface);
       border: 1px solid var(--border-warm);
-      font-family: inherit;
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-charcoal);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .radio-btn:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+    }
+    .radio-btn.active {
+      background: var(--terracotta);
+      color: white;
+      border-color: var(--terracotta);
+    }
+    .radio-player-container {
+      margin-top: 0.5rem;
+      width: 100%;
+      text-align: center;
+      display: none;
     }
     .radio-player {
+      width: 100%;
+      max-width: 400px;
       height: 35px;
     }
     footer {
@@ -693,18 +716,18 @@
       </div>
       
       <!-- Radio Bar -->
-      <div class="radio-bar">
-        <select id="radioSelect" class="radio-select">
-          <option value="">📻 Izberi radio...</option>
-          <option value="https://stream.radiorobin.si/robin128.mp3">Radio Robin</option>
-          <option value="https://stream.radiocapris.si/capris128.mp3">Radio Capris</option>
-          <option value="https://stream.radiorock.si/rock128.mp3">Radio Rock</option>
-          <option value="https://stream.radio1.si/radio1.mp3">Radio 1</option>
-          <option value="https://stream.radiofrajer.si/frajer.mp3">Radio Frajer</option>
-          <option value="https://stream.radiocenter.si/center128.mp3">Radio Center</option>
-          <option value="https://stream.primorskival.si/val.mp3">Radio Primorski val</option>
-        </select>
-        <audio id="audioPlayer" controls class="radio-player"></audio>
+      <div class="radio-bar" id="radioBar">
+        <button class="radio-btn" data-src="https://stream.radiorobin.si/robin128.mp3">Robin</button>
+        <button class="radio-btn" data-src="https://stream.radiocapris.si/capris128.mp3">Capris</button>
+        <button class="radio-btn" data-src="https://stream.radiorock.si/rock128.mp3">Rock</button>
+        <button class="radio-btn" data-src="https://stream.radio1.si/radio1.mp3">Radio 1</button>
+        <button class="radio-btn" data-src="https://stream.radiofrajer.si/frajer.mp3">Frajer</button>
+        <button class="radio-btn" data-src="https://stream.radiocenter.si/center128.mp3">Center</button>
+        <button class="radio-btn" data-src="https://stream.primorskival.si/val.mp3">Primorski</button>
+        
+        <div class="radio-player-container" id="playerContainer">
+          <audio id="audioPlayer" controls class="radio-player"></audio>
+        </div>
       </div>
     </div>
   </header>
@@ -1858,14 +1881,20 @@
     updateDayTabs();
 
     // Radio funkcionalnost
-    document.getElementById('radioSelect').addEventListener('change', function() {
-      const player = document.getElementById('audioPlayer');
-      if (this.value) {
-        player.src = this.value;
+    document.querySelectorAll('.radio-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const player = document.getElementById('audioPlayer');
+        const container = document.getElementById('playerContainer');
+        
+        // Odstrani aktivni razred z vseh
+        document.querySelectorAll('.radio-btn').forEach(b => b.classList.remove('active'));
+        // Dodaj aktivni razred trenutnemu
+        this.classList.add('active');
+        
+        container.style.display = 'block';
+        player.src = this.dataset.src;
         player.play();
-      } else {
-        player.pause();
-      }
+      });
     });
   </script>
 </body>
