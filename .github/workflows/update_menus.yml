@@ -4,11 +4,11 @@ on:
   schedule:
     # Časi so v UTC (v Sloveniji po poletnem času velja +2 uri, pozimi +1 ura)
     # Zagon ob 07:15 UTC (09:15 po našem času)
-    - cron: '15 7 * * *'
+    - cron: '15 7 * * 1-5'
     # Zagon ob 08:15 UTC (10:15 po našem času)
-    - cron: '15 8 * * *'
+    - cron: '15 8 * * 1-5'
     # Zagon ob 09:00 UTC (11:00 po našem času)
-    - cron: '0 9 * * *'
+    - cron: '0 9 * * 1-5'
   workflow_dispatch: # Omogoča ročni zagon s klikom na gumb kadarkoli
 
 permissions:

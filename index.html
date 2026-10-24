@@ -683,8 +683,6 @@
       <button class="day-tab" data-day="3">Sreda</button>
       <button class="day-tab" data-day="4">Četrtek</button>
       <button class="day-tab active" data-day="5">Petek •</button>
-      <button class="day-tab" data-day="6">Sobota</button>
-      <button class="day-tab" data-day="0">Nedelja</button>
     </div>
   </div>
 
@@ -1584,7 +1582,7 @@
 
     const now = new Date();
     let currentDayNumber = now.getDay();
-    // Sunday is 0, keeping it as 0 for consistency
+    if (currentDayNumber === 0 || currentDayNumber === 6) currentDayNumber = 5;
 
     let selectedDay = currentDayNumber;
     let currentFilter = "all";
