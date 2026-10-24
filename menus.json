@@ -22,16 +22,7 @@
         ]
       }
     ],
-    "weeklyMenu": {
-      "6": [
-        {
-          "main": "Sobotna malica: Testenine z jurčki",
-          "detail": "smetanova omaka in mešana solata",
-          "price": "8,50 €",
-          "tags": ["vegi"]
-        }
-      ]
-    }
+    "weeklyMenu": {}
   },
   {
     "id": 2,
@@ -56,16 +47,7 @@
         ]
       }
     ],
-    "weeklyMenu": {
-      "6": [
-        {
-          "main": "Sobotna malica: Testenine z jurčki",
-          "detail": "smetanova omaka in mešana solata",
-          "price": "8,50 €",
-          "tags": ["vegi"]
-        }
-      ]
-    }
+    "weeklyMenu": {}
   },
   {
     "id": 3,
@@ -90,16 +72,7 @@
         ]
       }
     ],
-    "weeklyMenu": {
-      "6": [
-        {
-          "main": "Sobotna malica: Testenine z jurčki",
-          "detail": "smetanova omaka in mešana solata",
-          "price": "8,50 €",
-          "tags": ["vegi"]
-        }
-      ]
-    }
+    "weeklyMenu": {}
   },
   {
     "id": 4,
@@ -124,16 +97,7 @@
         ]
       }
     ],
-    "weeklyMenu": {
-      "6": [
-        {
-          "main": "Sobotna malica: Testenine z jurčki",
-          "detail": "smetanova omaka in mešana solata",
-          "price": "8,50 €",
-          "tags": ["vegi"]
-        }
-      ]
-    }
+    "weeklyMenu": {}
   },
   {
     "id": 5,
@@ -158,16 +122,7 @@
         ]
       }
     ],
-    "weeklyMenu": {
-      "6": [
-        {
-          "main": "Sobotna malica: Testenine z jurčki",
-          "detail": "smetanova omaka in mešana solata",
-          "price": "8,50 €",
-          "tags": ["vegi"]
-        }
-      ]
-    }
+    "weeklyMenu": {}
   },
   {
     "id": 6,
@@ -192,16 +147,7 @@
         ]
       }
     ],
-    "weeklyMenu": {
-      "6": [
-        {
-          "main": "Sobotna malica: Testenine z jurčki",
-          "detail": "smetanova omaka in mešana solata",
-          "price": "8,50 €",
-          "tags": ["vegi"]
-        }
-      ]
-    }
+    "weeklyMenu": {}
   },
   {
     "id": 7,
@@ -226,16 +172,7 @@
         ]
       }
     ],
-    "weeklyMenu": {
-      "6": [
-        {
-          "main": "Sobotna malica: Testenine z jurčki",
-          "detail": "smetanova omaka in mešana solata",
-          "price": "8,50 €",
-          "tags": ["vegi"]
-        }
-      ]
-    }
+    "weeklyMenu": {}
   },
   {
     "id": 8,
@@ -260,15 +197,6 @@
         ]
       }
     ],
-    "weeklyMenu": {
-      "6": [
-        {
-          "main": "Sobotna malica: Testenine z jurčki",
-          "detail": "smetanova omaka in mešana solata",
-          "price": "8,50 €",
-          "tags": ["vegi"]
-        }
-      ]
-    }
+    "weeklyMenu": {}
   }
 ]
