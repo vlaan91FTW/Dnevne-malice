@@ -609,7 +609,26 @@
       color: var(--text-muted);
     }
 
-    /* Avtorsko vznožje */
+    .radio-bar {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-top: 1px solid var(--border-light);
+      background: var(--bg-surface);
+      border-radius: var(--radius-card);
+      align-items: center;
+    }
+    .radio-select {
+      padding: 0.5rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-warm);
+      font-family: inherit;
+    }
+    .radio-player {
+      height: 35px;
+    }
     footer {
       max-width: 1240px;
       margin: 4rem auto 1rem;
@@ -671,6 +690,21 @@
 
         <div class="date-pill" id="todayBanner">📅 Danes: Petek, 23. oktober 2026</div>
         <div class="author-badge">✨ Made by: <strong>Vladan Ikonić</strong></div>
+      </div>
+      
+      <!-- Radio Bar -->
+      <div class="radio-bar">
+        <select id="radioSelect" class="radio-select">
+          <option value="">📻 Izberi radio...</option>
+          <option value="https://stream.radiorobin.si/robin128.mp3">Radio Robin</option>
+          <option value="https://stream.radiocapris.si/capris128.mp3">Radio Capris</option>
+          <option value="https://stream.radiorock.si/rock128.mp3">Radio Rock</option>
+          <option value="https://stream.radio1.si/radio1.mp3">Radio 1</option>
+          <option value="https://stream.radiofrajer.si/frajer.mp3">Radio Frajer</option>
+          <option value="https://stream.radiocenter.si/center128.mp3">Radio Center</option>
+          <option value="https://stream.primorskival.si/val.mp3">Radio Primorski val</option>
+        </select>
+        <audio id="audioPlayer" controls class="radio-player"></audio>
       </div>
     </div>
   </header>
@@ -1822,6 +1856,17 @@
 
     setDateBanner();
     updateDayTabs();
+
+    // Radio funkcionalnost
+    document.getElementById('radioSelect').addEventListener('change', function() {
+      const player = document.getElementById('audioPlayer');
+      if (this.value) {
+        player.src = this.value;
+        player.play();
+      } else {
+        player.pause();
+      }
+    });
   </script>
 </body>
 </html>
