@@ -2,10 +2,11 @@ import json
 import os
 import requests
 from bs4 import BeautifulSoup
-from google import genai
+import google.generativeai as genai
 
-# Modern initialization
-client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+# Correct setup for the installed library
+GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
+genai.configure(api_key=GEMINI_KEY)
 
 RESTAURANTS_CONFIG = [
     {"id": 1, "name": "Restavracija Magma X", "url": "https://magma-x.com/restavracija-magma-x/"},
@@ -29,14 +30,14 @@ def fetch_page_text(url):
         return ""
 
 def get_menu(restaurant_name, text):
+    # Using the standard model name compatible with google-generativeai
+    model = genai.GenerativeModel("gemini-1.5-flash")
     prompt = f"Si kulinarični asistent. Restavracija: '{restaurant_name}'. Izlušči dnevni meni iz tega besedila: {text}. Vrni strogo JSON: {{'menu': [{{'main': '...', 'detail': '...', 'price': '...'}}]}}"
     try:
-        response = client.models.generate_content(
-            model="gemini-2.0-flash",
-            contents=prompt
-        )
+        response = model.generate_content(prompt)
         return json.loads(response.text.replace("```json", "").replace("```", ""))
-    except:
+    except Exception as e:
+        print(f"Error for {restaurant_name}: {e}")
         return {"menu": [{"main": "Meni še ni na voljo", "detail": "Poskusite kasneje", "price": ""}]}
 
 def main():
