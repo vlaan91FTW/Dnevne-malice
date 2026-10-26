@@ -45,7 +45,7 @@ def fetch_page_content(url):
 
 def extract_with_gemini(restaurant_name, text):
     try:
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-1.5-flash-002")
         prompt = f"""
         Si pomočnik za slovenske kulinarične jedilnike. Restavracija: '{restaurant_name}'. Danes je: {today_str}.
         Izlušči jedilnik za DANAŠNJI DAN ({today_name}).
