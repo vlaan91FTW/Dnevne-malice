@@ -1,23 +1,11 @@
 import json
 import os
-import re
-from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
-import google.generativeai as genai
+from google import genai
 
-# Initialize client with API key from environment
-GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
-genai.configure(api_key=GEMINI_KEY)
-
-now = datetime.now()
-days_sl = ["Ponedeljek", "Torek", "Sreda", "Četrtek", "Petek", "Sobota", "Nedelja"]
-today_name = days_sl[now.weekday()]
-today_str = f"{today_name}, {now.strftime('%d. %m. %Y')}"
-
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-}
+# Modern initialization
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 RESTAURANTS_CONFIG = [
     {"id": 1, "name": "Restavracija Magma X", "url": "https://magma-x.com/restavracija-magma-x/"},
@@ -30,51 +18,34 @@ RESTAURANTS_CONFIG = [
     {"id": 8, "name": "Restavracija Gurman", "url": "https://restavracija-gurman.si/sl#meals-section"}
 ]
 
-def fetch_page_content(url):
+def fetch_page_text(url):
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=12)
-        resp.encoding = resp.apparent_encoding
-        if resp.status_code == 200:
-            soup = BeautifulSoup(resp.text, "html.parser")
-            for tag in soup(["script", "style", "nav", "footer", "header", "noscript"]):
-                tag.decompose()
-            return " ".join(soup.stripped_strings)[:6000]
-    except Exception as e:
-        print(f"Napaka pri prenosu {url}: {e}")
-    return ""
+        resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+        soup = BeautifulSoup(resp.text, "html.parser")
+        for tag in soup(["script", "style", "nav", "footer", "header"]):
+            tag.decompose()
+        return " ".join(soup.stripped_strings)[:5000]
+    except:
+        return ""
 
-def extract_with_gemini(restaurant_name, text):
+def get_menu(restaurant_name, text):
+    prompt = f"Si kulinarični asistent. Restavracija: '{restaurant_name}'. Izlušči dnevni meni iz tega besedila: {text}. Vrni strogo JSON: {{'menu': [{{'main': '...', 'detail': '...', 'price': '...'}}]}}"
     try:
-        model = genai.GenerativeModel("gemini-1.5-flash-002")
-        prompt = f"""
-        Si pomočnik za slovenske kulinarične jedilnike. Restavracija: '{restaurant_name}'. Danes je: {today_str}.
-        Izlušči jedilnik za DANAŠNJI DAN ({today_name}).
-        Vrni samo veljaven, čist JSON (brez besedila, brez oznak):
-        {{
-          "menu": [ {{"main": "Ime jedi", "detail": "priloga", "price": "cena", "tags": ["mesno"]}} ]
-        }}
-        Besedilo: {text}
-        """
-        response = model.generate_content(prompt)
-        raw = response.text.strip().replace("```json", "").replace("```", "")
-        return json.loads(raw)
-    except Exception as e:
-        print(f"Gemini napaka pri {restaurant_name}: {e}")
-    return None
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=prompt
+        )
+        return json.loads(response.text.replace("```json", "").replace("```", ""))
+    except:
+        return {"menu": [{"main": "Meni še ni na voljo", "detail": "Poskusite kasneje", "price": ""}]}
 
 def main():
     results = []
     for r in RESTAURANTS_CONFIG:
-        text = fetch_page_content(r["url"])
-        parsed = extract_with_gemini(r["name"], text)
-        
-        r_data = dict(r)
-        if parsed and "menu" in parsed:
-            r_data["menu"] = parsed["menu"]
-        else:
-            r_data["menu"] = [{"main": "Meni še ni na voljo", "detail": "Prosimo poskusite kasneje.", "price": "", "tags": []}]
-        results.append(r_data)
-        
+        text = fetch_page_text(r["url"])
+        data = get_menu(r["name"], text)
+        r.update(data)
+        results.append(r)
     with open("menus.json", "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
 
