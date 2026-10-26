@@ -170,7 +170,9 @@ def extract_with_gemini(restaurant_name, text, image_bytes=None):
     try:
         import google.generativeai as genai
         genai.configure(api_key=GEMINI_KEY)
-        model = genai.GenerativeModel("gemini-1.5-flash-001")
+        model_name = "gemini-1.5-flash"
+        print(f"DEBUG: Using model {model_name}")
+        model = genai.GenerativeModel(model_name)
 
         prompt = f"""
 Si pomočnik za slovenske kulinarične jedilnike.
