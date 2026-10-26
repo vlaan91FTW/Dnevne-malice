@@ -4,11 +4,11 @@ import re
 from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
-from google import genai
+from google.genai import Client
 from google.genai import types
 
 # Initialize client with API key from environment
-client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+client = Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 now = datetime.now()
 days_sl = ["Ponedeljek", "Torek", "Sreda", "Četrtek", "Petek", "Sobota", "Nedelja"]
