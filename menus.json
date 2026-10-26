@@ -3,7 +3,6 @@
     "id": 1,
     "name": "Restavracija Magma X",
     "url": "https://magma-x.com/restavracija-magma-x/",
-    "has_image_flyer": false,
     "menu": [
       {
         "main": "Meni še ni na voljo",
@@ -17,7 +16,6 @@
     "id": 2,
     "name": "Gostilna pri Hrastu",
     "url": "https://prihrastu.si/dnevna-kosila",
-    "has_image_flyer": false,
     "menu": [
       {
         "main": "Meni še ni na voljo",
@@ -31,7 +29,6 @@
     "id": 3,
     "name": "Gostilna in picerija Zvezda",
     "url": "https://www.gostilna-zvezda.si/",
-    "has_image_flyer": false,
     "menu": [
       {
         "main": "Meni še ni na voljo",
@@ -45,7 +42,6 @@
     "id": 4,
     "name": "Restavracija Eda",
     "url": "https://edarestavracija.si/kosila-malice",
-    "has_image_flyer": false,
     "menu": [
       {
         "main": "Meni še ni na voljo",
@@ -59,7 +55,6 @@
     "id": 5,
     "name": "Restavracija Špar",
     "url": "https://www.spar.si/restavracija-interspar/tedenski-meni",
-    "has_image_flyer": true,
     "menu": [
       {
         "main": "Meni še ni na voljo",
@@ -73,7 +68,6 @@
     "id": 6,
     "name": "Restavracija Sabotin",
     "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
-    "has_image_flyer": false,
     "menu": [
       {
         "main": "Meni še ni na voljo",
@@ -87,7 +81,6 @@
     "id": 7,
     "name": "Restavracija Vrtnica",
     "url": "https://www.restavracija-vrtnica.si/",
-    "has_image_flyer": false,
     "menu": [
       {
         "main": "Meni še ni na voljo",
@@ -101,7 +94,6 @@
     "id": 8,
     "name": "Restavracija Gurman",
     "url": "https://restavracija-gurman.si/sl#meals-section",
-    "has_image_flyer": false,
     "menu": [
       {
         "main": "Meni še ni na voljo",
