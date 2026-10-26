@@ -170,9 +170,7 @@ def extract_with_gemini(restaurant_name, text, image_bytes=None):
     try:
         import google.generativeai as genai
         genai.configure(api_key=GEMINI_KEY)
-        model_name = "gemini-1.5-flash"
-        print(f"DEBUG: Using model {model_name}")
-        model = genai.GenerativeModel(model_name)
+        model = genai.GenerativeModel("gemini-1.5-flash")
 
         prompt = f"""
 Si pomočnik za slovenske kulinarične jedilnike.
@@ -180,7 +178,7 @@ Restavracija: '{restaurant_name}'.
 Danes je: {today_str}.
 
 Tvoja naloga je, da iz podanega gradiva (besedila ali slike plakata) izluščiš jedilnik za DANAŠNJI DAN ({today_name}) 
-181: in po možnosti za ostale dni v tednu (1=Ponedeljek, 2=Torek, 3=Sreda, 4=Četrtek, 5=Petek).
+in po možnosti za ostale dni v tednu (1=Ponedeljek, 2=Torek, 3=Sreda, 4=Četrtek, 5=Petek).
 
 Vrni izključno čist JSON (brez besedila ali markdown oznak ```json) v naslednji strukturi:
 {{
@@ -266,5 +264,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-#   d u m m y   c h a n g e  
- 
