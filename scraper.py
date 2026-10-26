@@ -30,8 +30,8 @@ def fetch_page_text(url):
         return ""
 
 def get_menu(restaurant_name, text):
-    # Using 'gemini-pro' as a fallback to see if flash is the issue
-    model = genai.GenerativeModel("gemini-pro")
+    # Forced to a model that exists on all accounts
+    model = genai.GenerativeModel("gemini-1.5-flash")
     prompt = f"Si kulinarični asistent. Restavracija: '{restaurant_name}'. Izlušči dnevni meni iz tega besedila: {text}. Vrni strogo JSON: {{'menu': [{{'main': '...', 'detail': '...', 'price': '...'}}]}}"
     try:
         response = model.generate_content(prompt)
