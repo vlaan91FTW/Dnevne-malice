@@ -4,6 +4,8 @@ import re
 from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
+from google import genai
+from google.genai import types
 
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
 
@@ -167,21 +169,14 @@ def fetch_page_content(url, look_for_image=False):
         print(f"  [NAPAKA PRI PRENOSU] {url}: {e}")
         return "", None
 
-def extract_with_gemini(restaurant_name, text, image_bytes=None):
-    if not GEMINI_KEY:
-        return None
-    try:
-        import google.generativeai as genai
-        genai.configure(api_key=GEMINI_KEY)
-        model = genai.GenerativeModel("gemini-1.5-flash")
-
-        prompt = f"""
+def extract_with_gemini(client, restaurant_name, text, image_bytes=None):
+    prompt = f"""
 Si pomočnik za slovenske kulinarične jedilnike.
 Restavracija: '{restaurant_name}'.
 Danes je: {today_str}.
 
 Tvoja naloga je, da iz podanega gradiva izluščiš jedilnik za DANAŠNJI DAN ({today_name}) 
-ter za ostale dni v tednu (1=Ponedeljek, 2=Torek, 3=Sreda, 4=Četrtek, 5=Petek), če so na voljo.
+ter za celoten teden (1=Ponedeljek, 2=Torek, 3=Sreda, 4=Četrtek, 5=Petek), če je na voljo.
 
 Vrni IZKLJUČNO veljaven JSON objekt v naslednji obliki:
 {{
@@ -210,22 +205,33 @@ Pravila:
 Gradivo:
 {text}
 """
-        parts = [prompt]
-        if image_bytes:
-            parts.append({"mime_type": "image/jpeg", "data": image_bytes})
+    contents = [prompt]
+    if image_bytes:
+        contents.append(types.Part.from_bytes(data=image_bytes, mime_type="image/jpeg"))
 
-        response = model.generate_content(parts)
-        raw = response.text.strip()
-        
-        # Poišči veljaven JSON znotraj morebitnega besedila
-        json_match = re.search(r"\{.*\}", raw, re.DOTALL)
-        if json_match:
-            parsed = json.loads(json_match.group(0))
-            return parsed
-        else:
-            print(f"  [AI NAPAKA] Neveljaven JSON odziv: {raw[:100]}...")
-    except Exception as e:
-        print(f"  [GEMINI API NAPAKA] {restaurant_name}: {e}")
+    # Uporabimo aktualen model gemini-2.5-flash z rezervo na gemini-2.0-flash
+    response = None
+    for model_name in ["gemini-2.5-flash", "gemini-2.0-flash"]:
+        try:
+            response = client.models.generate_content(
+                model=model_name,
+                contents=contents
+            )
+            if response and response.text:
+                break
+        except Exception as me:
+            print(f"  [Model {model_name} ni uspel: {me}]")
+
+    if not response or not response.text:
+        return None
+
+    raw = response.text.strip()
+    json_match = re.search(r"\{.*\}", raw, re.DOTALL)
+    if json_match:
+        try:
+            return json.loads(json_match.group(0))
+        except Exception as je:
+            print(f"  [JSON NAPAKA]: {je}")
     return None
 
 def main():
@@ -233,9 +239,15 @@ def main():
     
     if not GEMINI_KEY:
         print("[KRITIČNA NAPAKA] GEMINI_API_KEY NI NASTAVLJEN V OKOLJU!")
-        print("Pojdite v GitHub Settings -> Secrets -> Actions in dodajte GEMINI_API_KEY.")
-    else:
-        print(f"[OK] GEMINI_API_KEY zaznan (dolžina: {len(GEMINI_KEY)} znakov).")
+        return
+
+    print(f"[OK] GEMINI_API_KEY zaznan (dolžina: {len(GEMINI_KEY)} znakov).")
+    
+    try:
+        client = genai.Client(api_key=GEMINI_KEY)
+    except Exception as ce:
+        print(f"[KRITIČNA NAPAKA PRI ZAGONU ODJEMALCA]: {ce}")
+        return
 
     results = []
 
@@ -244,8 +256,8 @@ def main():
         text, img_bytes = fetch_page_content(r["url"], look_for_image=r.get("has_image_flyer", False))
         
         parsed = None
-        if (text or img_bytes) and GEMINI_KEY:
-            parsed = extract_with_gemini(r["name"], text, img_bytes)
+        if text or img_bytes:
+            parsed = extract_with_gemini(client, r["name"], text, img_bytes)
 
         r_data = dict(r)
         
