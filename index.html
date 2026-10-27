@@ -814,10 +814,12 @@
       if (mHand) mHand.style.transform = `rotate(${minuteDeg}deg)`;
       if (hHand) hHand.style.transform = `rotate(${hourDeg}deg)`;
 
+      // Digitalni zapis s sekundami
       const hStr = hours < 10 ? '0' + hours : hours;
       const mStr = minutes < 10 ? '0' + minutes : minutes;
+      const sStr = d.getSeconds() < 10 ? '0' + d.getSeconds() : d.getSeconds();
       const digEl = document.getElementById('digitalTime');
-      if (digEl) digEl.textContent = `${hStr}:${mStr}`;
+      if (digEl) digEl.textContent = `${hStr}:${mStr}:${sStr}`;
 
       const timeVal = hours + minutes / 60;
       const statusEl = document.getElementById('lunchStatus');
