@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import time
 from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
@@ -209,20 +210,29 @@ Gradivo:
     if image_bytes:
         contents.append(types.Part.from_bytes(data=image_bytes, mime_type="image/jpeg"))
 
-    try:
-        response = client.models.generate_content(
-            model=target_model,
-            contents=contents
-        )
-        if response and response.text:
-            raw = response.text.strip()
-            raw = re.sub(r"^```(?:json)?", "", raw, flags=re.MULTILINE)
-            raw = re.sub(r"```$", "", raw, flags=re.MULTILINE).strip()
-            json_match = re.search(r"\{.*\}", raw, re.DOTALL)
-            if json_match:
-                return json.loads(json_match.group(0))
-    except Exception as e:
-        print(f"  [AI NAPAKA] {e}")
+    # Samodejni ponovni poskus z do 3 poskusi (če je strežnik obremenjen s kodo 503 ali 429)
+    for attempt in range(3):
+        try:
+            response = client.models.generate_content(
+                model=target_model,
+                contents=contents
+            )
+            if response and response.text:
+                raw = response.text.strip()
+                raw = re.sub(r"^```(?:json)?", "", raw, flags=re.MULTILINE)
+                raw = re.sub(r"```$", "", raw, flags=re.MULTILINE).strip()
+                json_match = re.search(r"\{.*\}", raw, re.DOTALL)
+                if json_match:
+                    return json.loads(json_match.group(0))
+        except Exception as e:
+            err_str = str(e)
+            if "503" in err_str or "429" in err_str or "high demand" in err_str:
+                wait_time = (attempt + 1) * 4
+                print(f"  [Model začasno zaseden (503/429) - poskus {attempt + 1}/3, čakam {wait_time}s...]")
+                time.sleep(wait_time)
+            else:
+                print(f"  [AI NAPAKA] {e}")
+                break
 
     return None
 
@@ -241,7 +251,7 @@ def main():
         print(f"[KRITIČNA NAPAKA PRI ZAGONU ODJEMALCA]: {ce}")
         return
 
-    # Ugotovimo kateri model je na voljo (privzeto gemini-3.8-flash, kot zahteva Google)
+    # Ugotovimo točen naziv modela (gemini-3.8-flash)
     chosen_model = "gemini-3.8-flash"
     try:
         available_models = [m.name for m in client.models.list()]
@@ -250,7 +260,7 @@ def main():
                 chosen_model = m
                 break
     except Exception as e:
-        print(f"  [Opomba: Uporabljam privzeti model {chosen_model}]")
+        print(f"  [Uporabljam privzeti model: {chosen_model}]")
 
     print(f"[MODEL] Uporabljam model: {chosen_model}")
 
@@ -283,6 +293,9 @@ def main():
             r_data["weeklyMenu"] = {}
 
         results.append(r_data)
+        
+        # Kratek 3-sekundni premor med restavracijami, da preprečimo preobremenitev Googlovega strežnika
+        time.sleep(3)
 
     with open("menus.json", "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
