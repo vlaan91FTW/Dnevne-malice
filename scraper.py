@@ -169,7 +169,7 @@ def fetch_page_content(url, look_for_image=False):
         print(f"  [NAPAKA PRI PRENOSU] {url}: {e}")
         return "", None
 
-def extract_with_gemini(client, restaurant_name, text, image_bytes=None):
+def extract_with_gemini(client, target_model, restaurant_name, text, image_bytes=None):
     prompt = f"""
 Si pomočnik za slovenske kulinarične jedilnike.
 Restavracija: '{restaurant_name}'.
@@ -209,32 +209,21 @@ Gradivo:
     if image_bytes:
         contents.append(types.Part.from_bytes(data=image_bytes, mime_type="image/jpeg"))
 
-    # Uporabimo točen uradni model gemini-3.8-flash
-    response = None
-    for model_name in ["gemini-3.8-flash", "models/gemini-3.8-flash"]:
-        try:
-            response = client.models.generate_content(
-                model=model_name,
-                contents=contents
-            )
-            if response and response.text:
-                break
-        except Exception as me:
-            print(f"  [Poskus {model_name} ni uspel: {me}]")
+    try:
+        response = client.models.generate_content(
+            model=target_model,
+            contents=contents
+        )
+        if response and response.text:
+            raw = response.text.strip()
+            raw = re.sub(r"^```(?:json)?", "", raw, flags=re.MULTILINE)
+            raw = re.sub(r"```$", "", raw, flags=re.MULTILINE).strip()
+            json_match = re.search(r"\{.*\}", raw, re.DOTALL)
+            if json_match:
+                return json.loads(json_match.group(0))
+    except Exception as e:
+        print(f"  [AI NAPAKA] {e}")
 
-    if not response or not response.text:
-        return None
-
-    raw = response.text.strip()
-    raw = re.sub(r"^```(?:json)?", "", raw, flags=re.MULTILINE)
-    raw = re.sub(r"```$", "", raw, flags=re.MULTILINE).strip()
-
-    json_match = re.search(r"\{.*\}", raw, re.DOTALL)
-    if json_match:
-        try:
-            return json.loads(json_match.group(0))
-        except Exception as je:
-            print(f"  [JSON NAPAKA]: {je}")
     return None
 
 def main():
@@ -252,6 +241,19 @@ def main():
         print(f"[KRITIČNA NAPAKA PRI ZAGONU ODJEMALCA]: {ce}")
         return
 
+    # Ugotovimo kateri model je na voljo (privzeto gemini-3.8-flash, kot zahteva Google)
+    chosen_model = "gemini-3.8-flash"
+    try:
+        available_models = [m.name for m in client.models.list()]
+        for m in available_models:
+            if "3.8-flash" in m:
+                chosen_model = m
+                break
+    except Exception as e:
+        print(f"  [Opomba: Uporabljam privzeti model {chosen_model}]")
+
+    print(f"[MODEL] Uporabljam model: {chosen_model}")
+
     results = []
 
     for r in RESTAURANTS_CONFIG:
@@ -260,7 +262,7 @@ def main():
         
         parsed = None
         if text or img_bytes:
-            parsed = extract_with_gemini(client, r["name"], text, img_bytes)
+            parsed = extract_with_gemini(client, chosen_model, r["name"], text, img_bytes)
 
         r_data = dict(r)
         
