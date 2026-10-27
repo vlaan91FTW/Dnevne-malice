@@ -1305,33 +1305,12 @@
   </footer>
 
   <script>
-    // --- BAZA ZA DINAMIČNO PREKLAPLJANJE MED DNEVI (Pon - Pet) ---
-    const restaurantsData = [
-      {
-        id: 1,
-        name: "Restavracija Magma X",
-        aliases: "magmax magma-x restavracija magma kromberk",
-        url: "https://magma-x.com/restavracija-magma-x/",
-        mapsUrl: "https://maps.google.com/?q=Restavracija+Magma+X+Nova+Gorica",
-        phone: "+386 8 200 48 20",
-        cuisine: "Pizzerija & Žar",
-        hours: "11:00 - 15:00",
-        address: "Industrijska cesta 11, Kromberk",
-        bannerImage: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80",
-        nearCenter: true,
-        weeklyMenu: {
-          1: [
-            { main: "Pleskavica na žaru s pečenim krompirjem", detail: "peperonata + goveja ali cvetačna juha", price: "8,50 €", tags: ["mesno", "zlica"] },
-            { main: "Zelenjavni narastek z gorgonzolino omako", detail: "dnevna juha ali solata", price: "8,50 €", tags: ["vegi"] },
-            { main: "Malica pizza iz krušne peči po izbiri", detail: "Margerita, Šunka, Klasika, 6 sirov ali Tuna", price: "7,50 €", tags: ["mesno", "vegi"] }
-          ],
-          2: [
-            { main: "Mesna lazanja iz krušne peči", detail: "goveja juha ali prežganka ali mešana solata", price: "8,50 €", tags: ["mesno", "zlica"] },
-            { main: "Ocvrt file osliča z dalmatinsko prilogo", detail: "blitva s krompirjem in tatarska omaka", price: "8,50 €", tags: ["riba"] },
-            { main: "Malica pizza iz krušne peči", detail: "Margerita, Šunka, Klasika, 6 sirov ali Rukola", price: "7,50 €", tags: ["mesno", "vegi"] }
-          ],
-          3: [
-            { main: "Njoki z govejim golažem", detail: "goveja ali zelenjavna juha ali solata", price: "8,00 €", tags: ["mesno", "zlica"] },
+    // --- BAZA JE SEDAJ ZUNANJA (menus.json) ---
+    // Hardcoded podatki so bili odstranjeni za stabilnost.
+    // Scripta sedaj avtomatsko naloži podatke iz menus.json.
+  </script>
+</body>
+</html>
             { main: "Gof na žaru in maslen krompir z rukolo", detail: "vključena juha ali solata", price: "8,00 €", tags: ["riba"] },
             { main: "Kosilo X: File brancina na žaru z dalmatinsko prilogo", detail: "juha, solatni bife in sladica", price: "15,00 €", tags: ["riba"] }
           ],
