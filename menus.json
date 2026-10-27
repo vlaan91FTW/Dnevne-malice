@@ -14,15 +14,195 @@
     "has_image_flyer": false,
     "menu": [
       {
-        "main": "Meni za danes še ni objavljen na spletni strani",
-        "detail": "Restavracija menije običajno posodobi med 10.00 in 11.00 uro. Kliknite spodnji gumb za ogled uradne strani.",
-        "price": "",
+        "main": "Svinjska pečenka",
+        "detail": "pražen krompir, cvetača na maslu, dnevna juha (goveja ali česnova) ali solata",
+        "price": "8,50 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Ješpren z zelenjavnim ragujem in korenčkovo kremo",
+        "detail": "dnevna juha (goveja ali česnova) ali solata",
+        "price": "8,50 €",
+        "tags": [
+          "vegi"
+        ]
+      },
+      {
+        "main": "Malica Pizza",
+        "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
+        "price": "7,50 €",
         "tags": [
           "mesno"
         ]
       }
     ],
-    "weeklyMenu": {}
+    "weeklyMenu": {
+      "1": [
+        {
+          "main": "Piščančja bedra na žaru",
+          "detail": "ocvrt krompir s fižoleti, dnevna juha (goveja ali ješprenka) ali solata",
+          "price": "8,50 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Vitaminsko krožnik in sir na žaru",
+          "detail": "dnevna juha (goveja ali ješprenka) ali solata",
+          "price": "8,50 €",
+          "tags": [
+            "vegi",
+            "solata"
+          ]
+        },
+        {
+          "main": "Malica Pizza",
+          "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
+          "price": "7,50 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Paella z morskimi sadeži (Kosilo X)",
+          "detail": "juha, solata, sladica",
+          "price": "16,00 €",
+          "tags": [
+            "riba"
+          ]
+        }
+      ],
+      "2": [
+        {
+          "main": "Svinjska pečenka",
+          "detail": "pražen krompir, cvetača na maslu, dnevna juha (goveja ali česnova) ali solata",
+          "price": "8,50 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Ješpren z zelenjavnim ragujem in korenčkovo kremo",
+          "detail": "dnevna juha (goveja ali česnova) ali solata",
+          "price": "8,50 €",
+          "tags": [
+            "vegi"
+          ]
+        },
+        {
+          "main": "Malica Pizza",
+          "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
+          "price": "7,50 €",
+          "tags": [
+            "mesno"
+          ]
+        }
+      ],
+      "3": [
+        {
+          "main": "Pečenice",
+          "detail": "krompir z ocvirki, dušeno zelje, dnevna juha (goveja ali šelinka) ali solata",
+          "price": "8,50 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Škarpena v pečici",
+          "detail": "maslen krompir z rukolo, dnevna juha (goveja ali šelinka) ali solata",
+          "price": "8,50 €",
+          "tags": [
+            "riba"
+          ]
+        },
+        {
+          "main": "Malica Pizza",
+          "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
+          "price": "7,50 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Paella z morskimi sadeži (Kosilo X)",
+          "detail": "juha, solata, sladica",
+          "price": "16,00 €",
+          "tags": [
+            "riba"
+          ]
+        }
+      ],
+      "4": [
+        {
+          "main": "Tortilija s piščancem",
+          "detail": "pico de gallo, dnevna juha (goveja ali špinačna) ali solata",
+          "price": "8,50 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Njoki z gorgonzolo",
+          "detail": "dnevna juha (goveja ali špinačna) ali solata",
+          "price": "8,50 €",
+          "tags": [
+            "vegi"
+          ]
+        },
+        {
+          "main": "Malica Pizza",
+          "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
+          "price": "7,50 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Paella z morskimi sadeži (Kosilo X)",
+          "detail": "juha, solata, sladica",
+          "price": "16,00 €",
+          "tags": [
+            "riba"
+          ]
+        }
+      ],
+      "5": [
+        {
+          "main": "Testenine arrabbiata",
+          "detail": "dnevna juha (goveja ali lečina) ali solata",
+          "price": "8,50 €",
+          "tags": [
+            "vegi"
+          ]
+        },
+        {
+          "main": "Kalamari in pomfri",
+          "detail": "dnevna juha (goveja ali lečina) ali solata",
+          "price": "8,50 €",
+          "tags": [
+            "riba"
+          ]
+        },
+        {
+          "main": "Malica Pizza",
+          "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
+          "price": "7,50 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Paella z morskimi sadeži (Kosilo X)",
+          "detail": "juha, solata, sladica",
+          "price": "16,00 €",
+          "tags": [
+            "riba"
+          ]
+        }
+      ]
+    }
   },
   {
     "id": 2,
@@ -164,15 +344,301 @@
     "has_image_flyer": false,
     "menu": [
       {
-        "main": "Meni za danes še ni objavljen na spletni strani",
-        "detail": "Restavracija menije običajno posodobi med 10.00 in 11.00 uro. Kliknite spodnji gumb za ogled uradne strani.",
-        "price": "",
+        "main": "File tune z žara",
+        "detail": "jurčkov pire, šampinjoni z žara, česnovo olje",
+        "price": "13,00 €",
+        "tags": [
+          "riba"
+        ]
+      },
+      {
+        "main": "Jurčki z žara na rukoli",
+        "detail": "natrgan parmezan, balzamična glazura, pečena bela polenta s tartufom",
+        "price": "7,90 €",
+        "tags": [
+          "vegi"
+        ]
+      },
+      {
+        "main": "Mesni polpeti, paradižnikova omaka, pire",
+        "detail": "goveja juha ali čebulna juha z ocvrto čebulo, solata",
+        "price": "9,40 €",
         "tags": [
           "mesno"
         ]
+      },
+      {
+        "main": "Zelenjavni krožnik",
+        "detail": "pire krompir, blitva, rumen stročji fižol po tržaško",
+        "price": "5,90 €",
+        "tags": [
+          "vegi"
+        ]
+      },
+      {
+        "main": "Marinirana svinjska rebra v medu in gorčici iz pečice",
+        "detail": "priloga po izbiri",
+        "price": "8,50 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "File purana z žara",
+        "detail": "kuhan ječmen na maslu",
+        "price": "7,90 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Pasulj s klobaso ali hrenovko",
+        "detail": "",
+        "price": "6,50 €",
+        "tags": [
+          "mesno",
+          "zlica"
+        ]
       }
     ],
-    "weeklyMenu": {}
+    "weeklyMenu": {
+      "1": [],
+      "2": [
+        {
+          "main": "File tune z žara",
+          "detail": "jurčkov pire, šampinjoni z žara, česnovo olje",
+          "price": "13,00 €",
+          "tags": [
+            "riba"
+          ]
+        },
+        {
+          "main": "Jurčki z žara na rukoli",
+          "detail": "natrgan parmezan, balzamična glazura, pečena bela polenta s tartufom",
+          "price": "7,90 €",
+          "tags": [
+            "vegi"
+          ]
+        },
+        {
+          "main": "Mesni polpeti, paradižnikova omaka, pire",
+          "detail": "goveja juha ali čebulna juha z ocvrto čebulo, solata",
+          "price": "9,40 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Zelenjavni krožnik",
+          "detail": "pire krompir, blitva, rumen stročji fižol po tržaško",
+          "price": "5,90 €",
+          "tags": [
+            "vegi"
+          ]
+        },
+        {
+          "main": "Marinirana svinjska rebra v medu in gorčici iz pečice",
+          "detail": "priloga po izbiri",
+          "price": "8,50 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "File purana z žara",
+          "detail": "kuhan ječmen na maslu",
+          "price": "7,90 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Pasulj s klobaso ali hrenovko",
+          "detail": "",
+          "price": "6,50 €",
+          "tags": [
+            "mesno",
+            "zlica"
+          ]
+        }
+      ],
+      "3": [
+        {
+          "main": "Lososov zavitek s štorovkami",
+          "detail": "jogurtova omaka s koprom in dehidriranim česnom, solata iz radiča, jajca in fižola",
+          "price": "8,20 €",
+          "tags": [
+            "riba"
+          ]
+        },
+        {
+          "main": "Pečeno svinjsko pleče v omaki svežih šampinjonov",
+          "detail": "krompir iz pečice s svežo čebulo in dimljeno papriko, goveja juha ali šampinjonova juha, solata",
+          "price": "9,40 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Zelenjavni krožnik",
+          "detail": "krompir iz pečice s čebulo in dimljeno papriko, brokolijev narastek, dušen ohrovt",
+          "price": "5,90 €",
+          "tags": [
+            "vegi"
+          ]
+        },
+        {
+          "main": "Ocvrto piščančje bedro brez kosti s sezamom",
+          "detail": "sladko-pekoča omaka, ruska solata",
+          "price": "8,20 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Mesna lazanja z bolonjsko omako",
+          "detail": "",
+          "price": "8,20 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Vampi po tržaško z rumeno polento",
+          "detail": "",
+          "price": "6,50 €",
+          "tags": [
+            "mesno",
+            "zlica"
+          ]
+        },
+        {
+          "main": "Nadevana paprika z basmati rižem, tofujem, zelenjavo in jajcem",
+          "detail": "kremna polenta z rikoto",
+          "price": "7,50 €",
+          "tags": [
+            "vegi"
+          ]
+        }
+      ],
+      "4": [
+        {
+          "main": "Pečen telečji vrat v omaki gob šitake",
+          "detail": "domači njoki na maslu",
+          "price": "9,90 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Divjačinski golaž z jurčki",
+          "detail": "kruhova rolada",
+          "price": "8,90 €",
+          "tags": [
+            "mesno",
+            "zlica"
+          ]
+        },
+        {
+          "main": "File piščanca v masleni česnovi omaki",
+          "detail": "riž, goveja juha ali kremna juha iz zelene z arašidi, solata",
+          "price": "9,40 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Zelenjavni krožnik",
+          "detail": "riž, dušen grah na rdeče, ocvrt brstični ohrovt",
+          "price": "5,90 €",
+          "tags": [
+            "vegi"
+          ]
+        },
+        {
+          "main": "Odojkova rolada v naravni omaki",
+          "detail": "priloga po izbiri",
+          "price": "9,90 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Ocvrte sveže sardele",
+          "detail": "okisan krompir z rukolo in češnjevcem",
+          "price": "7,90 €",
+          "tags": [
+            "riba"
+          ]
+        },
+        {
+          "main": "Vegetarijanski žlikrofi z maslom in žajbljem",
+          "detail": "krema sira brie, pražen kostanj",
+          "price": "8,20 €",
+          "tags": [
+            "vegi"
+          ]
+        }
+      ],
+      "5": [
+        {
+          "main": "Ribeye z žara",
+          "detail": "šampinjonov sufle, jurčki z žara",
+          "price": "13,00 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Gobova lazanja",
+          "detail": "mascarponejeva omaka z limono",
+          "price": "8,20 €",
+          "tags": [
+            "vegi"
+          ]
+        },
+        {
+          "main": "Svinjski kare z žara",
+          "detail": "jogurtova omaka s čilijem, gratiniran krompir, goveja juha ali kremna juha iz sladkega krompirja, solata",
+          "price": "9,40 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Zelenjavni krožnik",
+          "detail": "gratiniran krompir, kremna špinača, zeljni zavitek",
+          "price": "5,90 €",
+          "tags": [
+            "vegi"
+          ]
+        },
+        {
+          "main": "Pečena puranja prsa v omaki zelenega popra",
+          "detail": "ajdova kaša z olivnim oljem",
+          "price": "8,50 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Piščančji curry",
+          "detail": "basmati riž",
+          "price": "8,50 €",
+          "tags": [
+            "mesno"
+          ]
+        },
+        {
+          "main": "Ocvrti lignji",
+          "detail": "mediteranski krompir",
+          "price": "9,90 €",
+          "tags": [
+            "riba"
+          ]
+        }
+      ]
+    }
   },
   {
     "id": 8,
