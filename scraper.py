@@ -137,4 +137,155 @@ RESTAURANTS_CONFIG = [
 
 def fetch_page_content(url, look_for_image=False):
     try:
-        resp =
+        resp = requests.get(url, headers=HEADERS, timeout=15)
+        if resp.status_code != 200:
+            print(f"  [OPOZORILO] Status koda {resp.status_code} za {url}")
+            return "", None
+        
+        soup = BeautifulSoup(resp.text, "html.parser")
+        
+        image_data = None
+        if look_for_image:
+            for img in soup.find_all("img"):
+                src = img.get("src", "")
+                if re.search(r"jedilnik|meni|malic|kosil", src, re.I):
+                    if not src.startswith("http"):
+                        src = requests.compat.urljoin(url, src)
+                    try:
+                        img_resp = requests.get(src, headers=HEADERS, timeout=12)
+                        if img_resp.status_code == 200 and len(img_resp.content) > 5000:
+                            image_data = img_resp.content
+                            print(f"  [SLIKA] Najdena slika menija ({len(image_data)} bajtov)")
+                            break
+                    except Exception as ie:
+                        print(f"  [SLIKA NAPAKA] {ie}")
+
+        for tag in soup(["script", "style", "nav", "footer", "header", "noscript"]):
+            tag.decompose()
+        
+        text = " ".join(soup.stripped_strings)
+        return text[:8000], image_data
+    except Exception as e:
+        print(f"  [NAPAKA PRI PRENOSU] {url}: {e}")
+        return "", None
+
+def extract_with_gemini(client, restaurant_name, text, image_bytes=None):
+    prompt = f"""
+Si pomočnik za slovenske kulinarične jedilnike.
+Restavracija: '{restaurant_name}'.
+Danes je: {today_str}.
+
+Tvoja naloga je, da iz podanega gradiva izluščiš jedilnik za DANAŠNJI DAN ({today_name}) 
+ter za celoten teden (1=Ponedeljek, 2=Torek, 3=Sreda, 4=Četrtek, 5=Petek), če je na voljo.
+
+Vrni IZKLJUČNO veljaven JSON objekt v naslednji obliki:
+{{
+  "menu": [
+    {{
+      "main": "Ime glavne jedi",
+      "detail": "priloga, solata, juha ali opis",
+      "price": "npr. 8,50 €",
+      "tags": ["mesno"]
+    }}
+  ],
+  "weeklyMenu": {{
+    "1": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": []
+  }}
+}}
+
+Pravila:
+- Dovoljeni tagi: "mesno", "vegi", "riba", "zlica", "solata".
+- Polje "menu" mora vsebovati točno današnje jedi za {today_name}.
+- Če za danes ni objavljenih jedi, naj bo "menu" prazen seznam: [].
+
+Gradivo:
+{text}
+"""
+    contents = [prompt]
+    if image_bytes:
+        contents.append(types.Part.from_bytes(data=image_bytes, mime_type="image/jpeg"))
+
+    # Uporabimo točen uradni model gemini-3.8-flash
+    response = None
+    for model_name in ["gemini-3.8-flash", "models/gemini-3.8-flash"]:
+        try:
+            response = client.models.generate_content(
+                model=model_name,
+                contents=contents
+            )
+            if response and response.text:
+                break
+        except Exception as me:
+            print(f"  [Poskus {model_name} ni uspel: {me}]")
+
+    if not response or not response.text:
+        return None
+
+    raw = response.text.strip()
+    raw = re.sub(r"^```(?:json)?", "", raw, flags=re.MULTILINE)
+    raw = re.sub(r"```$", "", raw, flags=re.MULTILINE).strip()
+
+    json_match = re.search(r"\{.*\}", raw, re.DOTALL)
+    if json_match:
+        try:
+            return json.loads(json_match.group(0))
+        except Exception as je:
+            print(f"  [JSON NAPAKA]: {je}")
+    return None
+
+def main():
+    print(f"=== ZAGON ROBOTA ({today_str}) ===")
+    
+    if not GEMINI_KEY:
+        print("[KRITIČNA NAPAKA] GEMINI_API_KEY NI NASTAVLJEN V OKOLJU!")
+        return
+
+    print(f"[OK] GEMINI_API_KEY zaznan (dolžina: {len(GEMINI_KEY)} znakov).")
+    
+    try:
+        client = genai.Client(api_key=GEMINI_KEY)
+    except Exception as ce:
+        print(f"[KRITIČNA NAPAKA PRI ZAGONU ODJEMALCA]: {ce}")
+        return
+
+    results = []
+
+    for r in RESTAURANTS_CONFIG:
+        print(f"\nObdelujem: {r['name']}...")
+        text, img_bytes = fetch_page_content(r["url"], look_for_image=r.get("has_image_flyer", False))
+        
+        parsed = None
+        if text or img_bytes:
+            parsed = extract_with_gemini(client, r["name"], text, img_bytes)
+
+        r_data = dict(r)
+        
+        if parsed and isinstance(parsed, dict) and parsed.get("menu"):
+            r_data["menu"] = parsed.get("menu", [])
+            r_data["weeklyMenu"] = parsed.get("weeklyMenu", {})
+            print(f"  -> Uspešno najdenih {len(r_data['menu'])} jedi za danes.")
+        else:
+            print(f"  -> Ni najdenih jedi za danes. Uporabljam obvestilo.")
+            r_data["menu"] = [
+                {
+                    "main": "Meni za danes še ni objavljen na spletni strani",
+                    "detail": "Restavracija menije običajno posodobi med 10.00 in 11.00 uro. Kliknite spodnji gumb za ogled uradne strani.",
+                    "price": "",
+                    "tags": ["mesno"]
+                }
+            ]
+            r_data["weeklyMenu"] = {}
+
+        results.append(r_data)
+
+    with open("menus.json", "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
+
+    print("\n=== ZAKLJUČENO: menus.json je posodobljen! ===")
+
+if __name__ == "__main__":
+    main()
