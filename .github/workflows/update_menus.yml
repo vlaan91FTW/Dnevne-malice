@@ -2,12 +2,8 @@ name: Avtomatska posodobitev menijev
 
 on:
   schedule:
-    # 07:15 UTC (08:15 po zimskem času v SLO)
-    - cron: '15 7 * * 1-5'
-    # 08:30 UTC (09:30 po zimskem času v SLO)
-    - cron: '30 8 * * 1-5'
-    # 09:30 UTC (10:30 po zimskem času v SLO - ko vsi objavijo)
-    - cron: '30 9 * * 1-5'
+    # Zagon samo enkrat dnevno ob 08:00 UTC (10:00 po lokalnem času)
+    - cron: '0 8 * * 1-5'
   workflow_dispatch: # Ročni zagon na klik
 
 permissions:
@@ -23,11 +19,11 @@ jobs:
       - name: Namestitev Pythona
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12'
 
       - name: Namestitev orodij
         run: |
-          pip install google-genai requests beautifulsoup4 Pillow
+          pip install google-generativeai requests beautifulsoup4
 
       - name: Zagon AI robota za branje menijev
         env:
