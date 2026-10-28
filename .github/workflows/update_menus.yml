@@ -13,19 +13,29 @@ jobs:
   scrape-and-update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Prenos repozitorija
+        uses: actions/checkout@v4
+
+      - name: Namestitev Pythona
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
-      - run: pip install google-generativeai requests beautifulsoup4
+          python-version: '3.12'
+
+      - name: Namestitev orodij
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-genai requests beautifulsoup4
+
       - name: Zagon AI robota
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scraper.py
+        run: |
+          python scraper.py
+
       - name: Shrani nov menus.json
         run: |
           git config --global user.name "Malice Bot"
           git config --global user.email "bot@malice.local"
           git add menus.json
-          git commit -m "Posodobitev menijev [skip ci]" || exit 0
+          git commit -m "Avtomatska osvežitev menijev (Batch mode, SDK v2) [skip ci]" || exit 0
           git push
