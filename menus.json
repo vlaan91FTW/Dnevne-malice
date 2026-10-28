@@ -2,667 +2,105 @@
   {
     "id": 1,
     "name": "Restavracija Magma X",
-    "aliases": "magmax magma-x restavracija magma kromberk",
     "url": "https://magma-x.com/restavracija-magma-x/",
-    "mapsUrl": "https://maps.google.com/?q=Restavracija+Magma+X+Nova+Gorica",
-    "phone": "+386 8 200 48 20",
-    "cuisine": "Pizzerija & Žar",
-    "hours": "11:00 - 15:00",
-    "address": "Industrijska cesta 11, Kromberk",
-    "bannerImage": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80",
-    "nearCenter": true,
-    "has_image_flyer": false,
     "menu": [
       {
-        "main": "Svinjska pečenka",
-        "detail": "pražen krompir, cvetača na maslu, dnevna juha (goveja ali česnova) ali solata",
-        "price": "8,50 €",
-        "tags": [
-          "mesno"
-        ]
-      },
-      {
-        "main": "Ješpren z zelenjavnim ragujem in korenčkovo kremo",
-        "detail": "dnevna juha (goveja ali česnova) ali solata",
-        "price": "8,50 €",
-        "tags": [
-          "vegi"
-        ]
-      },
-      {
-        "main": "Malica Pizza",
-        "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
-        "price": "7,50 €",
-        "tags": [
-          "mesno"
-        ]
+        "main": "Meni trenutno ni na voljo",
+        "detail": "Google kvota presežena ali napaka.",
+        "price": "",
+        "tags": []
       }
-    ],
-    "weeklyMenu": {
-      "1": [
-        {
-          "main": "Piščančja bedra na žaru",
-          "detail": "ocvrt krompir s fižoleti, dnevna juha (goveja ali ješprenka) ali solata",
-          "price": "8,50 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Vitaminsko krožnik in sir na žaru",
-          "detail": "dnevna juha (goveja ali ješprenka) ali solata",
-          "price": "8,50 €",
-          "tags": [
-            "vegi",
-            "solata"
-          ]
-        },
-        {
-          "main": "Malica Pizza",
-          "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
-          "price": "7,50 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Paella z morskimi sadeži (Kosilo X)",
-          "detail": "juha, solata, sladica",
-          "price": "16,00 €",
-          "tags": [
-            "riba"
-          ]
-        }
-      ],
-      "2": [
-        {
-          "main": "Svinjska pečenka",
-          "detail": "pražen krompir, cvetača na maslu, dnevna juha (goveja ali česnova) ali solata",
-          "price": "8,50 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Ješpren z zelenjavnim ragujem in korenčkovo kremo",
-          "detail": "dnevna juha (goveja ali česnova) ali solata",
-          "price": "8,50 €",
-          "tags": [
-            "vegi"
-          ]
-        },
-        {
-          "main": "Malica Pizza",
-          "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
-          "price": "7,50 €",
-          "tags": [
-            "mesno"
-          ]
-        }
-      ],
-      "3": [
-        {
-          "main": "Pečenice",
-          "detail": "krompir z ocvirki, dušeno zelje, dnevna juha (goveja ali šelinka) ali solata",
-          "price": "8,50 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Škarpena v pečici",
-          "detail": "maslen krompir z rukolo, dnevna juha (goveja ali šelinka) ali solata",
-          "price": "8,50 €",
-          "tags": [
-            "riba"
-          ]
-        },
-        {
-          "main": "Malica Pizza",
-          "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
-          "price": "7,50 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Paella z morskimi sadeži (Kosilo X)",
-          "detail": "juha, solata, sladica",
-          "price": "16,00 €",
-          "tags": [
-            "riba"
-          ]
-        }
-      ],
-      "4": [
-        {
-          "main": "Tortilija s piščancem",
-          "detail": "pico de gallo, dnevna juha (goveja ali špinačna) ali solata",
-          "price": "8,50 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Njoki z gorgonzolo",
-          "detail": "dnevna juha (goveja ali špinačna) ali solata",
-          "price": "8,50 €",
-          "tags": [
-            "vegi"
-          ]
-        },
-        {
-          "main": "Malica Pizza",
-          "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
-          "price": "7,50 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Paella z morskimi sadeži (Kosilo X)",
-          "detail": "juha, solata, sladica",
-          "price": "16,00 €",
-          "tags": [
-            "riba"
-          ]
-        }
-      ],
-      "5": [
-        {
-          "main": "Testenine arrabbiata",
-          "detail": "dnevna juha (goveja ali lečina) ali solata",
-          "price": "8,50 €",
-          "tags": [
-            "vegi"
-          ]
-        },
-        {
-          "main": "Kalamari in pomfri",
-          "detail": "dnevna juha (goveja ali lečina) ali solata",
-          "price": "8,50 €",
-          "tags": [
-            "riba"
-          ]
-        },
-        {
-          "main": "Malica Pizza",
-          "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
-          "price": "7,50 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Paella z morskimi sadeži (Kosilo X)",
-          "detail": "juha, solata, sladica",
-          "price": "16,00 €",
-          "tags": [
-            "riba"
-          ]
-        }
-      ]
-    }
+    ]
   },
   {
     "id": 2,
-    "name": "Gostilna pri Hrastu (Restavracija Hrast)",
-    "aliases": "pri hrastu hrast restavracija hrast kromberk",
+    "name": "Gostilna pri Hrastu",
     "url": "https://prihrastu.si/dnevna-kosila",
-    "mapsUrl": "https://maps.google.com/?q=Gostilna+pri+Hrastu+Nova+Gorica",
-    "phone": "+386 5 302 72 10",
-    "cuisine": "Gourmet & Tradicionalna",
-    "hours": "11:00 - 22:00",
-    "address": "Kromberška cesta 2, Nova Gorica",
-    "bannerImage": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
-    "nearCenter": true,
-    "has_image_flyer": false,
     "menu": [
       {
-        "main": "Meni za danes še ni objavljen na spletni strani",
-        "detail": "Restavracija menije običajno posodobi med 10.00 in 11.00 uro. Kliknite spodnji gumb za ogled uradne strani.",
+        "main": "Meni trenutno ni na voljo",
+        "detail": "Google kvota presežena ali napaka.",
         "price": "",
-        "tags": [
-          "mesno"
-        ]
+        "tags": []
       }
-    ],
-    "weeklyMenu": {}
+    ]
   },
   {
     "id": 3,
     "name": "Gostilna in picerija Zvezda",
-    "aliases": "zvezda solkan pizzerija zvezda",
     "url": "https://www.gostilna-zvezda.si/",
-    "mapsUrl": "https://maps.google.com/?q=Gostilna+Zvezda+Solkan",
-    "phone": "+386 5 996 53 97",
-    "cuisine": "Mediteranska & Pizzerija",
-    "hours": "10:30 - 15:00",
-    "address": "Cesta IX. korpusa 65, Solkan",
-    "bannerImage": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=80",
-    "nearCenter": false,
-    "has_image_flyer": false,
     "menu": [
       {
-        "main": "Meni za danes še ni objavljen na spletni strani",
-        "detail": "Restavracija menije običajno posodobi med 10.00 in 11.00 uro. Kliknite spodnji gumb za ogled uradne strani.",
+        "main": "Meni trenutno ni na voljo",
+        "detail": "Google kvota presežena ali napaka.",
         "price": "",
-        "tags": [
-          "mesno"
-        ]
+        "tags": []
       }
-    ],
-    "weeklyMenu": {}
+    ]
   },
   {
     "id": 4,
     "name": "Restavracija Eda",
-    "aliases": "eda center eda restavracija",
     "url": "https://edarestavracija.si/kosila-malice",
-    "mapsUrl": "https://maps.google.com/?q=Eda+Center+Nova+Gorica",
-    "phone": "+386 51 352 492",
-    "cuisine": "Sodobna & Hitra kosila",
-    "hours": "10:00 - 14:00",
-    "address": "Delpinova ulica 18b (Eda Center)",
-    "bannerImage": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80",
-    "nearCenter": true,
-    "has_image_flyer": false,
     "menu": [
       {
-        "main": "Meni za danes še ni objavljen na spletni strani",
-        "detail": "Restavracija menije običajno posodobi med 10.00 in 11.00 uro. Kliknite spodnji gumb za ogled uradne strani.",
+        "main": "Meni trenutno ni na voljo",
+        "detail": "Google kvota presežena ali napaka.",
         "price": "",
-        "tags": [
-          "mesno"
-        ]
+        "tags": []
       }
-    ],
-    "weeklyMenu": {}
+    ]
   },
   {
     "id": 5,
     "name": "Restavracija Špar",
-    "aliases": "spar špar restavracija spar restavracija špar interspar supernova qlandia",
     "url": "https://www.spar.si/restavracija-interspar/tedenski-meni",
-    "mapsUrl": "https://maps.google.com/?q=Supernova+Interspar+Nova+Gorica",
-    "phone": "+386 5 330 84 00",
-    "cuisine": "Samopostrežna & Kosila",
-    "hours": "10:30 - 15:30",
-    "address": "Supernova Qlandia, Nova Gorica",
-    "bannerImage": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80",
-    "nearCenter": true,
-    "has_image_flyer": true,
     "menu": [
       {
-        "main": "Meni za danes še ni objavljen na spletni strani",
-        "detail": "Restavracija menije običajno posodobi med 10.00 in 11.00 uro. Kliknite spodnji gumb za ogled uradne strani.",
+        "main": "Meni trenutno ni na voljo",
+        "detail": "Google kvota presežena ali napaka.",
         "price": "",
-        "tags": [
-          "mesno"
-        ]
+        "tags": []
       }
-    ],
-    "weeklyMenu": {}
+    ]
   },
   {
     "id": 6,
     "name": "Restavracija Sabotin",
-    "aliases": "sabotin hotel solkan hit",
     "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
-    "mapsUrl": "https://maps.google.com/?q=Hotel+Sabotin+Solkan",
-    "phone": "+386 5 336 50 00",
-    "cuisine": "Tradicionalna gostilna",
-    "hours": "10:00 - 15:00",
-    "address": "Cesta IX. korpusa 35, Solkan",
-    "bannerImage": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80",
-    "nearCenter": false,
-    "has_image_flyer": false,
     "menu": [
       {
-        "main": "Meni za danes še ni objavljen na spletni strani",
-        "detail": "Restavracija menije običajno posodobi med 10.00 in 11.00 uro. Kliknite spodnji gumb za ogled uradne strani.",
+        "main": "Meni trenutno ni na voljo",
+        "detail": "Google kvota presežena ali napaka.",
         "price": "",
-        "tags": [
-          "mesno"
-        ]
+        "tags": []
       }
-    ],
-    "weeklyMenu": {}
+    ]
   },
   {
     "id": 7,
     "name": "Restavracija Vrtnica",
-    "aliases": "vrtnica nova gorica restavracija vrtnica",
     "url": "https://www.restavracija-vrtnica.si/",
-    "mapsUrl": "https://maps.google.com/?q=Restavracija+Vrtnica+Nova+Gorica",
-    "phone": "+386 5 330 08 20",
-    "cuisine": "Domača kosila & Enolončnice",
-    "hours": "10:00 - 15:00",
-    "address": "Kidričeva ulica 11, Nova Gorica",
-    "bannerImage": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=80",
-    "nearCenter": true,
-    "has_image_flyer": false,
     "menu": [
       {
-        "main": "File tune z žara",
-        "detail": "jurčkov pire, šampinjoni z žara, česnovo olje",
-        "price": "13,00 €",
-        "tags": [
-          "riba"
-        ]
-      },
-      {
-        "main": "Jurčki z žara na rukoli",
-        "detail": "natrgan parmezan, balzamična glazura, pečena bela polenta s tartufom",
-        "price": "7,90 €",
-        "tags": [
-          "vegi"
-        ]
-      },
-      {
-        "main": "Mesni polpeti, paradižnikova omaka, pire",
-        "detail": "goveja juha ali čebulna juha z ocvrto čebulo, solata",
-        "price": "9,40 €",
-        "tags": [
-          "mesno"
-        ]
-      },
-      {
-        "main": "Zelenjavni krožnik",
-        "detail": "pire krompir, blitva, rumen stročji fižol po tržaško",
-        "price": "5,90 €",
-        "tags": [
-          "vegi"
-        ]
-      },
-      {
-        "main": "Marinirana svinjska rebra v medu in gorčici iz pečice",
-        "detail": "priloga po izbiri",
-        "price": "8,50 €",
-        "tags": [
-          "mesno"
-        ]
-      },
-      {
-        "main": "File purana z žara",
-        "detail": "kuhan ječmen na maslu",
-        "price": "7,90 €",
-        "tags": [
-          "mesno"
-        ]
-      },
-      {
-        "main": "Pasulj s klobaso ali hrenovko",
-        "detail": "",
-        "price": "6,50 €",
-        "tags": [
-          "mesno",
-          "zlica"
-        ]
+        "main": "Meni trenutno ni na voljo",
+        "detail": "Google kvota presežena ali napaka.",
+        "price": "",
+        "tags": []
       }
-    ],
-    "weeklyMenu": {
-      "1": [],
-      "2": [
-        {
-          "main": "File tune z žara",
-          "detail": "jurčkov pire, šampinjoni z žara, česnovo olje",
-          "price": "13,00 €",
-          "tags": [
-            "riba"
-          ]
-        },
-        {
-          "main": "Jurčki z žara na rukoli",
-          "detail": "natrgan parmezan, balzamična glazura, pečena bela polenta s tartufom",
-          "price": "7,90 €",
-          "tags": [
-            "vegi"
-          ]
-        },
-        {
-          "main": "Mesni polpeti, paradižnikova omaka, pire",
-          "detail": "goveja juha ali čebulna juha z ocvrto čebulo, solata",
-          "price": "9,40 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Zelenjavni krožnik",
-          "detail": "pire krompir, blitva, rumen stročji fižol po tržaško",
-          "price": "5,90 €",
-          "tags": [
-            "vegi"
-          ]
-        },
-        {
-          "main": "Marinirana svinjska rebra v medu in gorčici iz pečice",
-          "detail": "priloga po izbiri",
-          "price": "8,50 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "File purana z žara",
-          "detail": "kuhan ječmen na maslu",
-          "price": "7,90 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Pasulj s klobaso ali hrenovko",
-          "detail": "",
-          "price": "6,50 €",
-          "tags": [
-            "mesno",
-            "zlica"
-          ]
-        }
-      ],
-      "3": [
-        {
-          "main": "Lososov zavitek s štorovkami",
-          "detail": "jogurtova omaka s koprom in dehidriranim česnom, solata iz radiča, jajca in fižola",
-          "price": "8,20 €",
-          "tags": [
-            "riba"
-          ]
-        },
-        {
-          "main": "Pečeno svinjsko pleče v omaki svežih šampinjonov",
-          "detail": "krompir iz pečice s svežo čebulo in dimljeno papriko, goveja juha ali šampinjonova juha, solata",
-          "price": "9,40 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Zelenjavni krožnik",
-          "detail": "krompir iz pečice s čebulo in dimljeno papriko, brokolijev narastek, dušen ohrovt",
-          "price": "5,90 €",
-          "tags": [
-            "vegi"
-          ]
-        },
-        {
-          "main": "Ocvrto piščančje bedro brez kosti s sezamom",
-          "detail": "sladko-pekoča omaka, ruska solata",
-          "price": "8,20 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Mesna lazanja z bolonjsko omako",
-          "detail": "",
-          "price": "8,20 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Vampi po tržaško z rumeno polento",
-          "detail": "",
-          "price": "6,50 €",
-          "tags": [
-            "mesno",
-            "zlica"
-          ]
-        },
-        {
-          "main": "Nadevana paprika z basmati rižem, tofujem, zelenjavo in jajcem",
-          "detail": "kremna polenta z rikoto",
-          "price": "7,50 €",
-          "tags": [
-            "vegi"
-          ]
-        }
-      ],
-      "4": [
-        {
-          "main": "Pečen telečji vrat v omaki gob šitake",
-          "detail": "domači njoki na maslu",
-          "price": "9,90 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Divjačinski golaž z jurčki",
-          "detail": "kruhova rolada",
-          "price": "8,90 €",
-          "tags": [
-            "mesno",
-            "zlica"
-          ]
-        },
-        {
-          "main": "File piščanca v masleni česnovi omaki",
-          "detail": "riž, goveja juha ali kremna juha iz zelene z arašidi, solata",
-          "price": "9,40 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Zelenjavni krožnik",
-          "detail": "riž, dušen grah na rdeče, ocvrt brstični ohrovt",
-          "price": "5,90 €",
-          "tags": [
-            "vegi"
-          ]
-        },
-        {
-          "main": "Odojkova rolada v naravni omaki",
-          "detail": "priloga po izbiri",
-          "price": "9,90 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Ocvrte sveže sardele",
-          "detail": "okisan krompir z rukolo in češnjevcem",
-          "price": "7,90 €",
-          "tags": [
-            "riba"
-          ]
-        },
-        {
-          "main": "Vegetarijanski žlikrofi z maslom in žajbljem",
-          "detail": "krema sira brie, pražen kostanj",
-          "price": "8,20 €",
-          "tags": [
-            "vegi"
-          ]
-        }
-      ],
-      "5": [
-        {
-          "main": "Ribeye z žara",
-          "detail": "šampinjonov sufle, jurčki z žara",
-          "price": "13,00 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Gobova lazanja",
-          "detail": "mascarponejeva omaka z limono",
-          "price": "8,20 €",
-          "tags": [
-            "vegi"
-          ]
-        },
-        {
-          "main": "Svinjski kare z žara",
-          "detail": "jogurtova omaka s čilijem, gratiniran krompir, goveja juha ali kremna juha iz sladkega krompirja, solata",
-          "price": "9,40 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Zelenjavni krožnik",
-          "detail": "gratiniran krompir, kremna špinača, zeljni zavitek",
-          "price": "5,90 €",
-          "tags": [
-            "vegi"
-          ]
-        },
-        {
-          "main": "Pečena puranja prsa v omaki zelenega popra",
-          "detail": "ajdova kaša z olivnim oljem",
-          "price": "8,50 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Piščančji curry",
-          "detail": "basmati riž",
-          "price": "8,50 €",
-          "tags": [
-            "mesno"
-          ]
-        },
-        {
-          "main": "Ocvrti lignji",
-          "detail": "mediteranski krompir",
-          "price": "9,90 €",
-          "tags": [
-            "riba"
-          ]
-        }
-      ]
-    }
+    ]
   },
   {
     "id": 8,
     "name": "Restavracija Gurman",
-    "aliases": "gurman catering zar pleskavica restavracija gurman",
     "url": "https://restavracija-gurman.si/sl#meals-section",
-    "mapsUrl": "https://maps.google.com/?q=Restavracija+Gurman+Nova+Gorica",
-    "phone": "+386 5 30 21 941",
-    "cuisine": "Balkanski žar & Domača",
-    "hours": "10:00 - 16:00",
-    "address": "Ulica Gradnikove brigade 51",
-    "bannerImage": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=700&q=80",
-    "nearCenter": true,
-    "has_image_flyer": false,
     "menu": [
       {
-        "main": "Meni za danes še ni objavljen na spletni strani",
-        "detail": "Restavracija menije običajno posodobi med 10.00 in 11.00 uro. Kliknite spodnji gumb za ogled uradne strani.",
+        "main": "Meni trenutno ni na voljo",
+        "detail": "Google kvota presežena ali napaka.",
         "price": "",
-        "tags": [
-          "mesno"
-        ]
+        "tags": []
       }
-    ],
-    "weeklyMenu": {}
+    ]
   }
 ]
