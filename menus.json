@@ -5,79 +5,36 @@
     "url": "https://magma-x.com/restavracija-magma-x/",
     "menu": [
       {
-        "main": "Piščančja bedra na žaru in ocvrt krompir z fižoleti",
-        "detail": "Ponedeljek: Malica 1 (juha: goveja ali ješprenka)",
-        "price": "8,50 €"
+        "main": "Pečenice",
+        "detail": "krompir z ocvirki, dušeno zelje, dnevna juha ali solata",
+        "price": "8,50 €",
+        "tags": [
+          "mesno"
+        ]
       },
       {
-        "main": "Vitaminski krožnik in sir na žaru",
-        "detail": "Ponedeljek: Malica 2 (juha: goveja ali ješprenka)",
-        "price": "8,50 €"
-      },
-      {
-        "main": "Paella z morskimi sadeži",
-        "detail": "Ponedeljek: Kosilo X (juha: goveja ali ješprenka + solata + sladica)",
-        "price": "16,00 €"
-      },
-      {
-        "main": "Svinjska pečenka z praženim krompirjem in cvetačo na maslo",
-        "detail": "Torek: Malica 1 (juha: goveja ali česnova)",
-        "price": "8,50 €"
-      },
-      {
-        "main": "Ješpren z zelenjavnim ragujem in korenčkovo kremo",
-        "detail": "Torek: Malica 2 (juha: goveja ali česnova)",
-        "price": "8,50 €"
-      },
-      {
-        "main": "Pečenice in krompir z ocvirki dušenim zeljem",
-        "detail": "Sreda: Malica 1 (juha: goveja ali šelinka)",
-        "price": "8,50 €"
-      },
-      {
-        "main": "Škarpena v pečici in maslen krompir z rukolo",
-        "detail": "Sreda: Malica 2 (juha: goveja ali šelinka)",
-        "price": "8,50 €"
-      },
-      {
-        "main": "Paella z morskimi sadeži",
-        "detail": "Sreda: Kosilo X (juha: goveja ali šelinka + solata + sladica)",
-        "price": "16,00 €"
-      },
-      {
-        "main": "Tortilija s piščancem in pico de gallo",
-        "detail": "Četrtek: Malica 1 (juha: goveja ali špinačna juha)",
-        "price": "8,50 €"
-      },
-      {
-        "main": "Njoki z gorgonzolo",
-        "detail": "Četrtek: Malica 2 (juha: goveja ali špinačna juha)",
-        "price": "8,50 €"
-      },
-      {
-        "main": "Paella z morskimi sadeži",
-        "detail": "Četrtek: Kosilo X (juha: goveja ali špinačna juha + solata + sladica)",
-        "price": "16,00 €"
-      },
-      {
-        "main": "Testenine arrabbiata",
-        "detail": "Petek: Malica 1 (juha: goveja juha ali lečina juha)",
-        "price": "8,50 €"
-      },
-      {
-        "main": "Kalamari in pomfri",
-        "detail": "Petek: Malica 2 (juha: goveja juha ali lečina juha)",
-        "price": "8,50 €"
-      },
-      {
-        "main": "Paella z morskimi sadeži",
-        "detail": "Petek: Kosilo X (juha: goveja juha ali lečina juha + solata + sladica)",
-        "price": "16,00 €"
+        "main": "Škarpena v pečici",
+        "detail": "maslen krompir z rukolo, dnevna juha ali solata",
+        "price": "8,50 €",
+        "tags": [
+          "ribje"
+        ]
       },
       {
         "main": "Malica Pizza",
-        "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo, Rukola (pon–pet)",
-        "price": "7,50 €"
+        "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
+        "price": "7,50 €",
+        "tags": [
+          "pizza"
+        ]
+      },
+      {
+        "main": "Paella z morskimi sadeži (Kosilo X)",
+        "detail": "juha + solata + sladica",
+        "price": "16,00 €",
+        "tags": [
+          "morski sadeži"
+        ]
       }
     ]
   },
@@ -87,54 +44,20 @@
     "url": "https://prihrastu.si/dnevna-kosila",
     "menu": [
       {
-        "main": "Puranji file po Tolminsko z rizibizi (Kosilo - Ponedeljek, 26.10.)",
-        "detail": "Jurčkova kremna juha, solata in sladica",
-        "price": ""
+        "main": "Ombol po kraško",
+        "detail": "skutni štruklji, zelenjavna juha, solata in sladica",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
       },
       {
-        "main": "Njoki z jurčki (Malica - Ponedeljek, 26.10.)",
-        "detail": "Solata ali sladica",
-        "price": ""
-      },
-      {
-        "main": "Mešano meso na žaru z zelenjavo in krompirjem na žaru (Kosilo - Torek, 27.10.)",
-        "detail": "Ješprenova mineštra, solata in sladica",
-        "price": ""
-      },
-      {
-        "main": "Ravioli z gamberi in bučkami (Malica - Torek, 27.10.)",
-        "detail": "Solata ali sladica",
-        "price": ""
-      },
-      {
-        "main": "Ombol po kraško s skutnimi štruklji (Kosilo - Sreda, 28.10.)",
-        "detail": "Zelenjavna juha, solata in sladica",
-        "price": ""
-      },
-      {
-        "main": "Rižota z bučo, panceto in parmezanom (Malica - Sreda, 28.10.)",
-        "detail": "Solata ali sladica",
-        "price": ""
-      },
-      {
-        "main": "Piščančji file v gorčični omaki z kremno polento (Kosilo - Četrtek, 29.10.)",
-        "detail": "Jota, solata in sladica",
-        "price": ""
-      },
-      {
-        "main": "Jota s klobaso (Malica - Četrtek, 29.10.)",
-        "detail": "Solata ali sladica",
-        "price": ""
-      },
-      {
-        "main": "Dunajski zrezek z praženim krompirjem (Kosilo - Petek, 30.10.)",
-        "detail": "Fižolova mineštra, solata in sladica",
-        "price": ""
-      },
-      {
-        "main": "Solatni krožnik z kalamari, olivami in krompirjem (Malica - Petek, 30.10.)",
-        "detail": "Sladica",
-        "price": ""
+        "main": "Rižota z bučo, panceto in parmezanom",
+        "detail": "solata ali sladica",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
       }
     ]
   },
@@ -144,9 +67,45 @@
     "url": "https://www.gostilna-zvezda.si/",
     "menu": [
       {
-        "main": "Meni še ni na voljo",
-        "detail": "Poskusite kasneje",
-        "price": ""
+        "main": "Sv. vrat v gobovi omaki (Kosilo)",
+        "detail": "kiflčki, grah, zelenjavna juha, solata in sladica",
+        "price": "10,00 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Sv. vrat v gobovi omaki (Glavna)",
+        "detail": "kiflčki, grah, solata ali sladica",
+        "price": "8,00 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Peresniki z bolonjsko omako",
+        "detail": "solata ali sladica",
+        "price": "8,00 €",
+        "tags": [
+          "mesno",
+          "testenine"
+        ]
+      },
+      {
+        "main": "Ocvrt kaneloni (šunka, sir)",
+        "detail": "hladna pašta, solata ali sladica",
+        "price": "8,00 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Stroganof golaž",
+        "detail": "solata ali sladica",
+        "price": "8,00 €",
+        "tags": [
+          "mesno"
+        ]
       }
     ]
   },
@@ -156,9 +115,55 @@
     "url": "https://edarestavracija.si/kosila-malice",
     "menu": [
       {
-        "main": "Meni še ni na voljo",
-        "detail": "Poskusite kasneje",
-        "price": ""
+        "main": "Goveja juha",
+        "detail": "",
+        "price": "2,00 €",
+        "tags": [
+          "mesno",
+          "juha"
+        ]
+      },
+      {
+        "main": "Zelenjavni polpeti",
+        "detail": "črna rižota z zelenjavo",
+        "price": "7,50 €",
+        "tags": [
+          "vegetarijansko"
+        ]
+      },
+      {
+        "main": "Puranja pečenka",
+        "detail": "pire krompir, zelenjava",
+        "price": "8,50 €",
+        "tags": [
+          "mesno",
+          "perutnina"
+        ]
+      },
+      {
+        "main": "File orade v škartocu",
+        "detail": "zelenjava in krompir",
+        "price": "10,00 €",
+        "tags": [
+          "ribje"
+        ]
+      },
+      {
+        "main": "Fit krožnik",
+        "detail": "puran na žaru, riž, zelenjava",
+        "price": "8,50 €",
+        "tags": [
+          "mesno",
+          "perutnina"
+        ]
+      },
+      {
+        "main": "Dnevna sladica",
+        "detail": "",
+        "price": "2,50 €",
+        "tags": [
+          "sladica"
+        ]
       }
     ]
   },
@@ -168,9 +173,10 @@
     "url": "https://www.spar.si/restavracija-interspar/tedenski-meni",
     "menu": [
       {
-        "main": "Meni še ni na voljo",
-        "detail": "Poskusite kasneje",
-        "price": ""
+        "main": "Meni za danes še ni objavljen",
+        "detail": "Preverite kasneje",
+        "price": "",
+        "tags": []
       }
     ]
   },
@@ -180,9 +186,29 @@
     "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
     "menu": [
       {
-        "main": "Meni še ni na voljo",
-        "detail": "Poskusite kasneje",
-        "price": ""
+        "main": "Nadevana pleskavica z pečenim fižolom (Kosilo)",
+        "detail": "ješprenjka, solata",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Ješprenjka s hrenovkami (Malica)",
+        "detail": "sladica",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Ravioli z žajbljem, oreščki in dimljeno skuto (Vege malica)",
+        "detail": "solata",
+        "price": "",
+        "tags": [
+          "vegetarijansko",
+          "testenine"
+        ]
       }
     ]
   },
@@ -192,21 +218,62 @@
     "url": "https://www.restavracija-vrtnica.si/",
     "menu": [
       {
-        "main": "Meni še ni na voljo",
-        "detail": "Poskusite kasneje",
-        "price": ""
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "name": "Restavracija Gurman",
-    "url": "https://restavracija-gurman.si/sl#meals-section",
-    "menu": [
+        "main": "Lososov zavitek s štorovkami",
+        "detail": "jogurtova omaka s koprom in dehidriranim česnom, solata iz radiča, jajca in fižola",
+        "price": "8,20 €",
+        "tags": [
+          "ribje"
+        ]
+      },
       {
-        "main": "Meni še ni na voljo",
-        "detail": "Poskusite kasneje",
-        "price": ""
+        "main": "Pečeno svinjsko pleče v omaki svežih šampinjonov (Kosilo)",
+        "detail": "krompir iz pečice s svežo čebulo in dimljeno papriko, goveja ali šampinjonova juha, solata",
+        "price": "9,40 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Zelenjavni krožnik",
+        "detail": "krompir iz pečice s čebulo in dimljeno papriko, brokolijev narastek, dušen ohrovt",
+        "price": "5,90 €",
+        "tags": [
+          "vegetarijansko"
+        ]
+      },
+      {
+        "main": "Ocvrto piščančje bedro brez kosti",
+        "detail": "sladko-pekoča omaka, ruska solata",
+        "price": "8,20 €",
+        "tags": [
+          "mesno",
+          "perutnina"
+        ]
+      },
+      {
+        "main": "Mesna lazanja z bolonjsko omako",
+        "detail": "",
+        "price": "8,20 €",
+        "tags": [
+          "mesno",
+          "testenine"
+        ]
+      },
+      {
+        "main": "Vampi po tržaško z rumeno polento",
+        "detail": "rumena polenta",
+        "price": "6,50 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Nadevana paprika z basmati rižem, tofujem, mešano zelenjavo in jajcem",
+        "detail": "kremna polenta z rikoto",
+        "price": "7,50 €",
+        "tags": [
+          "vegetarijansko"
+        ]
       }
     ]
   }
