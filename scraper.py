@@ -15,13 +15,13 @@ RESTAURANTS_CONFIG = [
     {"id": 4, "name": "Restavracija Eda", "url": "https://edarestavracija.si/kosila-malice"},
     {"id": 5, "name": "Restavracija Špar", "url": "https://www.spar.si/restavracija-interspar/tedenski-meni"},
     {"id": 6, "name": "Restavracija Sabotin", "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/"},
-    {"id": 7, "name": "Restavracija Vrtnica", "url": "https://www.restavracija-vrtnica.si/"}
+    {"id": 7, "name": "Restavracija Vrtnica", "url": "https://www.restavracija-vrtnica.si/"},
+    {"id": 8, "name": "Restavracija Gurman", "url": "https://restavracija-gurman.si/sl#meals-section"}
 ]
 
 def fetch_page_text(url):
     try:
-        resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}, timeout=20)
-        resp.encoding = resp.apparent_encoding
+        resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
         soup = BeautifulSoup(resp.text, "html.parser")
         for tag in soup(["script", "style", "nav", "footer", "header"]):
             tag.decompose()
@@ -30,9 +30,8 @@ def fetch_page_text(url):
         return ""
 
 def get_menu(restaurant_name, text):
-    # Uporaba modela, ki ga zahteva API
-    model = genai.GenerativeModel("gemini-3.8-flash")
-    prompt = f"Si kulinarični asistent. Restavracija: '{restaurant_name}'. Izlušči dnevni meni iz tega besedila: {text}. Vrni strogo JSON: {{'menu': [{{'main': '...', 'detail': '...', 'price': '...'}}]}}"
+    model = genai.GenerativeModel("gemini-1.5-flash")
+    prompt = f"Si kulinarični asistent. Restavracija: '{restaurant_name}'. Izlušči dnevni meni: {text}. Vrni strogo JSON: {{'menu': [{{'main': '...', 'detail': '...', 'price': '...'}}]}}"
     try:
         response = model.generate_content(prompt)
         return json.loads(response.text.replace("```json", "").replace("```", ""))
@@ -43,7 +42,6 @@ def get_menu(restaurant_name, text):
 def main():
     results = []
     for r in RESTAURANTS_CONFIG:
-        print(f"Berem: {r['name']}...")
         text = fetch_page_text(r["url"])
         data = get_menu(r["name"], text)
         r.update(data)
