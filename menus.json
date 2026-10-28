@@ -5,10 +5,36 @@
     "url": "https://magma-x.com/restavracija-magma-x/",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}",
-        "price": "",
-        "tags": []
+        "main": "Pečenice",
+        "detail": "Krompir z ocvirki, dušeno zelje, goveja juha ali šelinka",
+        "price": "8,50 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Škarpena v pečici",
+        "detail": "Maslen krompir z rukolo, goveja juha ali šelinka",
+        "price": "8,50 €",
+        "tags": [
+          "riba"
+        ]
+      },
+      {
+        "main": "Malica Pizza",
+        "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
+        "price": "7,50 €",
+        "tags": [
+          "pizza"
+        ]
+      },
+      {
+        "main": "Kosilo X: Paella z morskimi sadeži",
+        "detail": "Juha, solata, sladica",
+        "price": "16,00 €",
+        "tags": [
+          "morski sadeži"
+        ]
       }
     ]
   },
@@ -18,10 +44,20 @@
     "url": "https://prihrastu.si/dnevna-kosila",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}",
+        "main": "Ombol po kraško",
+        "detail": "Skutni štruklji, zelenjavna juha, solata in sladica",
         "price": "",
-        "tags": []
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Rižota z bučo, panceto in parmezanom",
+        "detail": "Solata ali sladica",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
       }
     ]
   },
@@ -31,10 +67,45 @@
     "url": "https://www.gostilna-zvezda.si/",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}",
-        "price": "",
-        "tags": []
+        "main": "Svinjski vrat v gobovi omaki",
+        "detail": "Kiflčki, grah, zelenjavna juha, solata in sladica",
+        "price": "10,00 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Svinjski vrat v gobovi omaki",
+        "detail": "Kiflčki, grah, solata ali sladica",
+        "price": "8,00 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Peresniki z bolonjsko omako",
+        "detail": "Solata ali sladica",
+        "price": "8,00 €",
+        "tags": [
+          "mesno",
+          "testenine"
+        ]
+      },
+      {
+        "main": "Ocvrt kanelon (šunka, sir)",
+        "detail": "Hladna pašta, solata ali sladica",
+        "price": "8,00 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Stroganof golaž",
+        "detail": "Solata ali sladica",
+        "price": "8,00 €",
+        "tags": [
+          "mesno"
+        ]
       }
     ]
   },
@@ -44,10 +115,55 @@
     "url": "https://edarestavracija.si/kosila-malice",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}",
-        "price": "",
-        "tags": []
+        "main": "Goveja juha",
+        "detail": "",
+        "price": "2,00 €",
+        "tags": [
+          "juha",
+          "mesno"
+        ]
+      },
+      {
+        "main": "Zelenjavni polpeti",
+        "detail": "Črna rižota z zelenjavo",
+        "price": "7,50 €",
+        "tags": [
+          "vegetarijansko"
+        ]
+      },
+      {
+        "main": "Puranja pečenka",
+        "detail": "Pire krompir, zelenjava",
+        "price": "8,50 €",
+        "tags": [
+          "mesno",
+          "perutnina"
+        ]
+      },
+      {
+        "main": "File orade v škartocu",
+        "detail": "Zelenjava in krompir",
+        "price": "10,00 €",
+        "tags": [
+          "riba"
+        ]
+      },
+      {
+        "main": "Fit krožnik",
+        "detail": "Puran na žaru, riž, zelenjava",
+        "price": "8,50 €",
+        "tags": [
+          "mesno",
+          "perutnina"
+        ]
+      },
+      {
+        "main": "Dnevna sladica",
+        "detail": "",
+        "price": "2,50 €",
+        "tags": [
+          "sladica"
+        ]
       }
     ]
   },
@@ -57,8 +173,8 @@
     "url": "https://www.spar.si/restavracija-interspar/tedenski-meni",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}",
+        "main": "Meni za danes še ni objavljen",
+        "detail": "Preverite kasneje",
         "price": "",
         "tags": []
       }
@@ -70,10 +186,29 @@
     "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}",
+        "main": "Nadevana pleskavica",
+        "detail": "Pečen fižol, ješprenjka, solata",
         "price": "",
-        "tags": []
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Ješprenjka s hrenovkami",
+        "detail": "Sladica",
+        "price": "",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Ravioli z žajbljem, oreščki in dimljeno skuto",
+        "detail": "Solata",
+        "price": "",
+        "tags": [
+          "vegetarijansko",
+          "testenine"
+        ]
       }
     ]
   },
@@ -83,10 +218,62 @@
     "url": "https://www.restavracija-vrtnica.si/",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}",
-        "price": "",
-        "tags": []
+        "main": "Lososov zavitek s štorovkami",
+        "detail": "Jogurtova omaka s koprom in dehidriranim česnom, solata iz radiča, jajca in fižola",
+        "price": "8,20 €",
+        "tags": [
+          "riba"
+        ]
+      },
+      {
+        "main": "Pečeno svinjsko pleče v omaki svežih šampinjonov",
+        "detail": "Krompir iz pečice s svežo čebulo in dimljeno papriko, goveja juha ali šampinjonova juha, solata",
+        "price": "9,40 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Zelenjavni krožnik",
+        "detail": "Krompir iz pečice s čebulo in dimljeno papriko, brokolijev narastek, dušen ohrovt",
+        "price": "5,90 €",
+        "tags": [
+          "vegetarijansko"
+        ]
+      },
+      {
+        "main": "Ocvrto piščančje bedro brez kosti",
+        "detail": "Sladko-pekoča omaka, ruska solata",
+        "price": "8,20 €",
+        "tags": [
+          "mesno",
+          "perutnina"
+        ]
+      },
+      {
+        "main": "Mesna lazanja z bolonjsko omako",
+        "detail": "",
+        "price": "8,20 €",
+        "tags": [
+          "mesno",
+          "testenine"
+        ]
+      },
+      {
+        "main": "Vampi po tržaško",
+        "detail": "Rumena polenta",
+        "price": "6,50 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Nadevana paprika z basmati rižem, tofujem, mešano zelenjavo in jajcem",
+        "detail": "Kremna polenta z rikoto",
+        "price": "7,50 €",
+        "tags": [
+          "vegetarijansko"
+        ]
       }
     ]
   },
@@ -96,8 +283,8 @@
     "url": "https://restavracija-gurman.si/sl#meals-section",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}",
+        "main": "Meni za danes še ni objavljen",
+        "detail": "Preverite kasneje",
         "price": "",
         "tags": []
       }
