@@ -2,9 +2,11 @@ name: Avtomatska posodobitev menijev
 
 on:
   schedule:
-    # Zagon samo enkrat dnevno ob 08:00 UTC (10:00 po lokalnem času)
-    - cron: '0 8 * * 1-5'
-  workflow_dispatch: # Ročni zagon na klik
+    # 06:15 UTC (07:15 po našem času)
+    - cron: '15 6 * * 1-5'
+    # 08:30 UTC (09:30 po našem času)
+    - cron: '30 8 * * 1-5'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -25,16 +27,16 @@ jobs:
         run: |
           pip install google-generativeai requests beautifulsoup4
 
-      - name: Zagon AI robota za branje menijev
+      - name: Zagon AI robota
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python scraper.py
 
-      - name: Shrani nov menus.json nazaj v repozitorij
+      - name: Shrani nov menus.json
         run: |
           git config --global user.name "Malice Bot"
           git config --global user.email "bot@malice.local"
           git add menus.json
-          git commit -m "Avtomatska osvežitev menijev [skip ci]" || exit 0
+          git commit -m "Avtomatska osvežitev menijev (Batch mode) [skip ci]" || exit 0
           git push
