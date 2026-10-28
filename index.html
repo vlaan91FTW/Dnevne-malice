@@ -718,8 +718,15 @@
         justify-content: space-between; 
         align-items: center; 
     }
-    .fixed-menu-card summary::after { content: '➜'; font-size: 1.2rem; }
-    .fixed-menu-card[open] summary::after { content: '⌄'; }
+    .fixed-menu-card summary::after { 
+        content: 'Klikni za menu ➜'; 
+        font-size: 0.85rem; 
+        background: rgba(255,255,255,0.6); 
+        padding: 4px 10px; 
+        border-radius: 20px; 
+        font-weight: 500;
+    }
+    .fixed-menu-card[open] summary::after { content: 'Skrij menu ⌄'; }
     
     /* Tematski stil */
     .card-smutko { border-color: #F4D03F; background: linear-gradient(90deg, #FFF9C4 0%, #E8F5E9 100%); color: #D35400; }
