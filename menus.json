@@ -82,5 +82,17 @@
         "price": ""
       }
     ]
+  },
+  {
+    "id": 8,
+    "name": "Restavracija Gurman",
+    "url": "https://restavracija-gurman.si/sl#meals-section",
+    "menu": [
+      {
+        "main": "Meni še ni na voljo",
+        "detail": "Poskusite kasneje",
+        "price": ""
+      }
+    ]
   }
 ]
