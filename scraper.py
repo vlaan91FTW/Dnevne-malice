@@ -20,7 +20,6 @@ RESTAURANTS_CONFIG = [
 
 def fetch_page_text(url):
     try:
-        # Malo daljši timeout za Špar
         resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}, timeout=20)
         resp.encoding = resp.apparent_encoding
         soup = BeautifulSoup(resp.text, "html.parser")
@@ -31,7 +30,8 @@ def fetch_page_text(url):
         return ""
 
 def get_menu(restaurant_name, text):
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    # Uporaba modela, ki ga zahteva API
+    model = genai.GenerativeModel("gemini-3.8-flash")
     prompt = f"Si kulinarični asistent. Restavracija: '{restaurant_name}'. Izlušči dnevni meni iz tega besedila: {text}. Vrni strogo JSON: {{'menu': [{{'main': '...', 'detail': '...', 'price': '...'}}]}}"
     try:
         response = model.generate_content(prompt)
