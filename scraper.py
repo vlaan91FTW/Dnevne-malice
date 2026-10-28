@@ -2,12 +2,11 @@ import json
 import os
 import requests
 from bs4 import BeautifulSoup
-import google.generativeai as genai
+from google import genai
 from datetime import datetime
 
-# Setup
-GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
-genai.configure(api_key=GEMINI_KEY)
+# Setup - Uporaba novega google-genai SDK
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 now = datetime.now()
 days_sl = ["Ponedeljek", "Torek", "Sreda", "Četrtek", "Petek", "Sobota", "Nedelja"]
@@ -37,44 +36,40 @@ def fetch_page_text(url):
         return "Ni mogoče naložiti strani."
 
 def main():
-    print(f"=== ZAGON OPTIMIZIRANEGA BATCH ROBOTA ({today_str}) ===")
+    print(f"=== ZAGON NOVEGA SDK ROBOTA ({today_str}) ===")
     
-    # 1. Zberi vsebino vseh strani
     all_data_context = ""
     for r in RESTAURANTS_CONFIG:
         print(f"Berem: {r['name']}...")
         page_text = fetch_page_text(r['url'])
         all_data_context += f"\n--- RESTAVRACIJA: {r['name']} (ID: {r['id']}) ---\n{page_text}\n"
 
-    # 2. Pošlji en sam skupni prompt
-    model = genai.GenerativeModel("gemini-1.5-flash")
     prompt = f"""
     Si kulinarični asistent. Danes je {today_str}.
     Iz spodnjih besedil izlušči DANAŠNJE menije za vse restavracije.
-    
     Vrni izključno JSON seznam objektov v tem formatu:
     [
       {{
         "id": 1,
         "menu": [ {{"main": "Ime jedi", "detail": "priloga", "price": "cena", "tags": ["mesno"]}} ]
-      }},
-      ...
+      }}
     ]
-    
-    Če za katero restavracijo ne najdeš menija za danes, za to restavracijo vrni:
-    "menu": [{{"main": "Meni za danes še ni objavljen", "detail": "Preverite kasneje", "price": "", "tags": []}}]
+    Če menija ne najdeš, vrni: "menu": [{{"main": "Meni za danes še ni objavljen", "detail": "Preverite kasneje", "price": "", "tags": []}}]
 
-    Besedila strani:
+    Viri:
     {all_data_context}
     """
 
     results = []
     try:
-        response = model.generate_content(prompt)
+        # Uporaba najnovejšega gemini-2.0-flash modela
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=prompt
+        )
+        
         raw_json = response.text.strip().replace("```json", "").replace("```", "")
         extracted_menus = json.loads(raw_json)
-        
-        # Mapiraj rezultate nazaj na konfiguracijo
         menu_lookup = {item['id']: item['menu'] for item in extracted_menus}
         
         for r in RESTAURANTS_CONFIG:
@@ -84,17 +79,15 @@ def main():
             
     except Exception as e:
         print(f"Kritična napaka pri AI obdelavi: {e}")
-        # V primeru napake vrni prazne menije
         for r in RESTAURANTS_CONFIG:
             r_data = dict(r)
-            r_data['menu'] = [{"main": "Meni trenutno ni na voljo", "detail": "Google kvota presežena ali napaka.", "price": "", "tags": []}]
+            r_data['menu'] = [{"main": "Meni trenutno ni na voljo", "detail": str(e), "price": "", "tags": []}]
             results.append(r_data)
 
-    # 3. Shrani
     with open("menus.json", "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     
-    print("=== KONČANO: menus.json posodobljen z enim klicem! ===")
+    print("=== KONČANO: menus.json posodobljen! ===")
 
 if __name__ == "__main__":
     main()

@@ -25,7 +25,7 @@ jobs:
 
       - name: Namestitev orodij
         run: |
-          pip install google-generativeai requests beautifulsoup4
+          pip install google-genai requests beautifulsoup4
 
       - name: Zagon AI robota
         env:
