@@ -6,7 +6,7 @@
     "menu": [
       {
         "main": "Pečenice",
-        "detail": "Krompir z ocvirki, dušeno zelje, goveja juha ali šelinka",
+        "detail": "Krompir z ocvirki, dušeno zelje, goveja juha ali šelinka ali solata",
         "price": "8,50 €",
         "tags": [
           "mesno"
@@ -14,10 +14,10 @@
       },
       {
         "main": "Škarpena v pečici",
-        "detail": "Maslen krompir z rukolo, goveja juha ali šelinka",
+        "detail": "Maslen krompir z rukolo, goveja juha ali šelinka ali solata",
         "price": "8,50 €",
         "tags": [
-          "riba"
+          "ribje"
         ]
       },
       {
@@ -29,10 +29,11 @@
         ]
       },
       {
-        "main": "Kosilo X: Paella z morskimi sadeži",
-        "detail": "Juha, solata, sladica",
+        "main": "Paella z morskimi sadeži (Kosilo X)",
+        "detail": "Juha + solata + sladica",
         "price": "16,00 €",
         "tags": [
+          "ribje",
           "morski sadeži"
         ]
       }
@@ -44,7 +45,7 @@
     "url": "https://prihrastu.si/dnevna-kosila",
     "menu": [
       {
-        "main": "Ombol po kraško",
+        "main": "Ombolo po kraško",
         "detail": "Skutni štruklji, zelenjavna juha, solata in sladica",
         "price": "",
         "tags": [
@@ -67,16 +68,16 @@
     "url": "https://www.gostilna-zvezda.si/",
     "menu": [
       {
-        "main": "Svinjski vrat v gobovi omaki",
-        "detail": "Kiflčki, grah, zelenjavna juha, solata in sladica",
+        "main": "Svinjski vrat v gobovi omaki s kiflčki in grahom (Kosilo)",
+        "detail": "Zelenjavna juha, solata in sladica",
         "price": "10,00 €",
         "tags": [
           "mesno"
         ]
       },
       {
-        "main": "Svinjski vrat v gobovi omaki",
-        "detail": "Kiflčki, grah, solata ali sladica",
+        "main": "Svinjski vrat v gobovi omaki s kiflčki in grahom",
+        "detail": "Solata ali sladica",
         "price": "8,00 €",
         "tags": [
           "mesno"
@@ -136,8 +137,8 @@
         "detail": "Pire krompir, zelenjava",
         "price": "8,50 €",
         "tags": [
-          "mesno",
-          "perutnina"
+          "perutnina",
+          "mesno"
         ]
       },
       {
@@ -145,7 +146,7 @@
         "detail": "Zelenjava in krompir",
         "price": "10,00 €",
         "tags": [
-          "riba"
+          "ribje"
         ]
       },
       {
@@ -153,8 +154,8 @@
         "detail": "Puran na žaru, riž, zelenjava",
         "price": "8,50 €",
         "tags": [
-          "mesno",
-          "perutnina"
+          "perutnina",
+          "mesno"
         ]
       },
       {
@@ -186,15 +187,15 @@
     "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
     "menu": [
       {
-        "main": "Nadevana pleskavica",
-        "detail": "Pečen fižol, ješprenjka, solata",
+        "main": "Nadevana pleskavica s pečenim fižolom (Kosilo)",
+        "detail": "Ješprenjka, solata",
         "price": "",
         "tags": [
           "mesno"
         ]
       },
       {
-        "main": "Ješprenjka s hrenovkami",
+        "main": "Ješprenjka s hrenovkami (Malica)",
         "detail": "Sladica",
         "price": "",
         "tags": [
@@ -202,7 +203,7 @@
         ]
       },
       {
-        "main": "Ravioli z žajbljem, oreščki in dimljeno skuto",
+        "main": "Ravioli z žajbljem, oreščki in dimljeno skuto (Vege malica)",
         "detail": "Solata",
         "price": "",
         "tags": [
@@ -222,12 +223,12 @@
         "detail": "Jogurtova omaka s koprom in dehidriranim česnom, solata iz radiča, jajca in fižola",
         "price": "8,20 €",
         "tags": [
-          "riba"
+          "ribje"
         ]
       },
       {
-        "main": "Pečeno svinjsko pleče v omaki svežih šampinjonov",
-        "detail": "Krompir iz pečice s svežo čebulo in dimljeno papriko, goveja juha ali šampinjonova juha, solata",
+        "main": "Pečeno svinjsko pleče v omaki svežih šampinjonov (Kosilo)",
+        "detail": "Goveja juha ali šampinjonova juha s krompirjem, krompir iz pečice s svežo čebulo in dimljeno papriko, solata",
         "price": "9,40 €",
         "tags": [
           "mesno"
@@ -246,8 +247,8 @@
         "detail": "Sladko-pekoča omaka, ruska solata",
         "price": "8,20 €",
         "tags": [
-          "mesno",
-          "perutnina"
+          "perutnina",
+          "mesno"
         ]
       },
       {
