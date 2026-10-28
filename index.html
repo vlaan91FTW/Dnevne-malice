@@ -698,12 +698,34 @@
     }
 
     .footer-author-box strong { color: var(--terracotta); }
-    .fixed-menus { max-width: 1240px; margin: 3rem auto; padding: 0 1.5rem; }
-    .fixed-menu-card { background: var(--bg-surface); border: 1px solid var(--border-warm); border-radius: var(--radius-card); padding: 1.5rem; margin-bottom: 1rem; box-shadow: var(--shadow-warm); }
-    .fixed-menu-card summary { font-weight: 800; font-size: 1.1rem; color: var(--terracotta); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-    .fixed-menu-card summary::after { content: '�'; font-size: 0.8rem; }
-    .fixed-menu-card[open] summary::after { content: '^'; }
-    .fixed-menu-content { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light); font-size: 0.9rem; }
+    .fixed-menus { max-width: 880px; margin: 2rem auto; padding: 0 1.5rem; }
+    .fixed-menu-card { 
+        background: white; 
+        border: 2px solid; 
+        border-radius: 50px; 
+        padding: 1rem 2rem; 
+        margin-bottom: 1rem; 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+    }
+    .fixed-menu-card:hover { transform: scale(1.01); }
+    .fixed-menu-card summary { 
+        font-weight: 800; 
+        font-size: 1.3rem; 
+        cursor: pointer; 
+        list-style: none; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+    }
+    .fixed-menu-card summary::after { content: '➜'; font-size: 1.2rem; }
+    .fixed-menu-card[open] summary::after { content: '⌄'; }
+    
+    /* Tematski stil */
+    .card-smutko { border-color: #F4D03F; background: linear-gradient(90deg, #FFF9C4 0%, #E8F5E9 100%); color: #D35400; }
+    .card-kitajska { border-color: #C0392B; background: linear-gradient(90deg, #FADBD8 0%, #F5B7B1 100%); color: #7B241C; }
+    
+    .fixed-menu-content { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.1); }
   </style>
 </head>
 <body>
@@ -751,12 +773,12 @@
     </div>
   </header>
 
-    <section class="fixed-menus" style="max-width: 880px; margin: 2rem auto; padding: 0 1.5rem;">
+    <section class="fixed-menus">
       <!-- Smutko Bar -->
-      <details class="fixed-menu-card" style="margin-bottom: 1rem;">
-        <summary>Smutko Bar</summary>
+      <details class="fixed-menu-card card-smutko">
+        <summary>Smutko Bar 🍹</summary>
         <div class="fixed-menu-content">
-            <div style="display:flex; justify-content:space-between; margin-bottom:1rem; padding: 0.5rem; background: var(--bg-cream); border-radius: var(--radius-sm); font-size: 0.9rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:1rem; padding: 0.5rem; background: rgba(255,255,255,0.5); border-radius: 15px; font-size: 0.9rem;">
               <span>📍 Hrastovlje 22</span>
               <span>⏰ 07:00 - 22:00</span>
             </div>
@@ -766,10 +788,10 @@
       </details>
 
       <!-- Kitajska restavracija -->
-      <details class="fixed-menu-card">
-        <summary>Kitajska restavracija</summary>
+      <details class="fixed-menu-card card-kitajska">
+        <summary>Kitajska restavracija 🥢</summary>
         <div class="fixed-menu-content">
-          <div style="border-left: 4px solid var(--terracotta); padding: 0.5rem 1rem; margin-bottom:1rem; background: var(--bg-cream); border-radius: var(--radius-sm);">
+          <div style="padding: 0.5rem 1rem; margin-bottom:1rem; background: rgba(255,255,255,0.4); border-radius: 15px;">
             <p style="font-weight: 500; font-size: 0.95rem;">Tradicionalni kitajski okusi v centru mesta.</p>
           </div>
           <img src="kitajskarestavracija.jpeg" alt="Jedilnik Kitajska restavracija" style="width: 100%; height: auto; border-radius: var(--radius-sm);">
