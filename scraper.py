@@ -3,11 +3,11 @@ import os
 import requests
 import time
 from bs4 import BeautifulSoup
-from google import genai
+import google.generativeai as genai
 
 # Setup
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
-client = genai.Client(api_key=GEMINI_KEY)
+genai.configure(api_key=GEMINI_KEY)
 
 RESTAURANTS_CONFIG = [
     {"id": 1, "name": "Restavracija Magma X", "url": "https://magma-x.com/restavracija-magma-x/"},
@@ -21,62 +21,40 @@ RESTAURANTS_CONFIG = [
 
 def fetch_page_text(url):
     try:
-        resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=12)
-        resp.encoding = resp.apparent_encoding
+        resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
         soup = BeautifulSoup(resp.text, "html.parser")
         for tag in soup(["script", "style", "nav", "footer", "header", "noscript"]):
             tag.decompose()
-        return " ".join(soup.stripped_strings)[:3000]
+        return " ".join(soup.stripped_strings)[:5000]
     except:
         return "Ni mogoče naložiti strani."
 
+def get_menu_with_retry(restaurant_name, text, retries=3):
+    model = genai.GenerativeModel("gemini-1.5-flash")
+    prompt = f"Si kulinarični asistent. Restavracija: '{restaurant_name}'. Izlušči dnevni meni: {text}. Vrni JSON: {{'menu': [{{'main': '...', 'detail': '...', 'price': '...'}}]}}"
+    
+    for i in range(retries):
+        try:
+            response = model.generate_content(prompt)
+            return json.loads(response.text.replace("```json", "").replace("```", ""))
+        except Exception as e:
+            print(f"Poskus {i+1} neuspešen za {restaurant_name}: {e}")
+            time.sleep(30) # Počakaj 30s pred ponovnim poskusom
+    return {"menu": [{"main": "Meni trenutno ni na voljo", "detail": "Preverite kasneje", "price": ""}]}
+
 def main():
-    print(f"=== ZAGON BATCH ROBOTA ===")
-    
-    # 1. Zberi vsebino vseh strani
-    all_data_context = []
+    results = []
     for r in RESTAURANTS_CONFIG:
-        print(f"Berem: {r['name']}...")
-        text = fetch_page_text(r['url'])
-        all_data_context.append({"id": r["id"], "name": r["name"], "content": text})
-
-    # 2. Pošlji en sam skupni prompt
-    prompt = f"""
-    Si kulinarični asistent. Izlušči DANAŠNJE menije za vse naštete restavracije iz spodnjih podatkov.
-    Za vsako restavracijo vrni JSON objekt s poljem 'id' in 'menu'.
-    Vrni izključno JSON seznam objektov v tem formatu:
-    [
-      {{"id": 1, "menu": [ {{"main": "Ime jedi", "detail": "priloga", "price": "cena", "tags": ["mesno"]}} ]}},
-      ...
-    ]
-    Če menija ne najdeš, vrni: "menu": [{{"main": "Meni za danes še ni objavljen", "detail": "Preverite kasneje", "price": "", "tags": []}}]
-    
-    Podatki restavracij: {json.dumps(all_data_context)}
-    """
-
-    try:
-        response = client.models.generate_content(
-            model="gemini-1.5-flash",
-            contents=prompt
-        )
-        raw_json = response.text.strip().replace("```json", "").replace("```", "")
-        extracted_menus = json.loads(raw_json)
+        print(f"Obdelujem: {r['name']}...")
+        text = fetch_page_text(r["url"])
+        data = get_menu_with_retry(r["name"], text)
+        r.update(data)
+        results.append(r)
+        time.sleep(10) # Varnostna pavza med restavracijami
         
-        # Mapiraj rezultate
-        menu_lookup = {item['id']: item['menu'] for item in extracted_menus}
-        
-        results = []
-        for r in RESTAURANTS_CONFIG:
-            r_data = dict(r)
-            r_data['menu'] = menu_lookup.get(r['id'], [{"main": "Napaka pri branju", "detail": "", "price": "", "tags": []}])
-            results.append(r_data)
-            
-        with open("menus.json", "w", encoding="utf-8") as f:
-            json.dump(results, f, ensure_ascii=False, indent=2)
-        print("=== KONČANO: menus.json posodobljen! ===")
-
-    except Exception as e:
-        print(f"Kritična napaka pri AI obdelavi: {e}")
+    with open("menus.json", "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
+    print("=== KONČANO ===")
 
 if __name__ == "__main__":
     main()
