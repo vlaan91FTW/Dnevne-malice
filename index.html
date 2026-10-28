@@ -698,6 +698,12 @@
     }
 
     .footer-author-box strong { color: var(--terracotta); }
+    .fixed-menus { max-width: 1240px; margin: 3rem auto; padding: 0 1.5rem; }
+    .fixed-menu-card { background: var(--bg-surface); border: 1px solid var(--border-warm); border-radius: var(--radius-card); padding: 1.5rem; margin-bottom: 1rem; box-shadow: var(--shadow-warm); }
+    .fixed-menu-card summary { font-weight: 800; font-size: 1.1rem; color: var(--terracotta); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .fixed-menu-card summary::after { content: '�'; font-size: 0.8rem; }
+    .fixed-menu-card[open] summary::after { content: '^'; }
+    .fixed-menu-content { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light); font-size: 0.9rem; }
   </style>
 </head>
 <body>
@@ -779,6 +785,50 @@
       <h3>Nalagam menije... 🍽️</h3>
     </div>
   </main>
+    <!-- STALNI MENIJI -->
+    <section class="fixed-menus">
+      <details class="fixed-menu-card">
+        <summary>Smutko Bar: Pašte in burgerji</summary>
+        <div class="fixed-menu-content">
+          <h4>Pašte z omakami</h4>
+          <ul>
+            <li>Golaž naše none (nastragana govedina, čebula, domača paradižnikova omaka) - 8,00 €</li>
+            <li>Kremna paradižnikova omaka s klobaso, gobami in sirom - 8,00 €</li>
+            <li>Carbonara (slanina, jajčni rumenjak, smetana) - 8,00 €</li>
+            <li>Pad Thai (piščanec, zelenjava, riževi rezanci, kikiriki) - 8,00 €</li>
+            <li>Amatriciana (guanciale, paradižnikova omaka, bazilika) - 8,00 €</li>
+            <li>Z jurčki (rezine jurčkov, česen, čebula, smetana) - 8,00 €</li>
+          </ul>
+          <h4>Smash Burgerji</h4>
+          <ul>
+            <li>Smash Klasika (120g govedina, kečap, majoneza, čebula, kumarice, sir, pomfri) - 8,00 €</li>
+            <li>Smash Bacon (120g govedina, slanina, kečap, majoneza, čebula, kumarice, sir, pomfri) - 8,00 €</li>
+            <li>Double Smash (240g govedina, sir, pomfri) - 12,00 €</li>
+            <li>Double Smash Bacon - 12,00 €</li>
+            <li>Chicken Burger (piščančji zrezek, tatarska omaka, solata, pomfri) - 8,00 €</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="fixed-menu-card">
+        <summary>Kitajska restavracija: Stalna ponudba</summary>
+        <div class="fixed-menu-content">
+          <h4>Juhe in predjedi</h4>
+          <ul>
+            <li>Kislo pekoča juha - 11</li>
+            <li>Juha z bambusom in gobami - 12</li>
+            <li>Pomladanski zavitki - 1</li>
+          </ul>
+          <h4>Glavne jedi (Piščanec, Raca, Riba)</h4>
+          <ul>
+            <li>Piščanec z bambusom in gobami (21)</li>
+            <li>Sladko kisli piščanec (25)</li>
+            <li>Raca na sicuanski način (52)</li>
+            <li>Riba z mešano zelenjavo (75)</li>
+          </ul>
+        </div>
+      </details>
+    </section>
 
   <footer>
     <div class="footer-inner">
