@@ -1,5 +1,6 @@
 import json
 import os
+import time
 import requests
 from bs4 import BeautifulSoup
 from google import genai
@@ -50,28 +51,47 @@ def main():
     Podatki: {json.dumps(all_data_context)}
     """
 
-    try:
-        response = client.models.generate_content(
-            model="gemini-3.8-flash",
-            contents=prompt
-        )
-        raw_json = response.text.strip().replace("```json", "").replace("```", "")
-        extracted_menus = json.loads(raw_json)
-        
-        menu_lookup = {item['id']: item['menu'] for item in extracted_menus}
-        
-        results = []
-        for r in RESTAURANTS_CONFIG:
-            r_data = dict(r)
-            r_data['menu'] = menu_lookup.get(r['id'], [{"main": "Napaka pri branju", "detail": "", "price": "", "tags": []}])
-            results.append(r_data)
-            
-        with open("menus.json", "w", encoding="utf-8") as f:
-            json.dump(results, f, ensure_ascii=False, indent=2)
-        print("=== KONČANO: menus.json posodobljen! ===")
+    max_retries = 3
+    retry_delay = 15
+    success = False
 
-    except Exception as e:
-        print(f"Kritična napaka pri AI obdelavi: {e}")
+    for attempt in range(max_retries):
+        try:
+            print(f"Poskušam z AI obdelavo (poskus {attempt + 1}/{max_retries})...")
+            response = client.models.generate_content(
+                model="gemini-3.8-flash",
+                contents=prompt
+            )
+            raw_json = response.text.strip().replace("```json", "").replace("```", "")
+            extracted_menus = json.loads(raw_json)
+            
+            menu_lookup = {item['id']: item['menu'] for item in extracted_menus}
+            
+            results = []
+            for r in RESTAURANTS_CONFIG:
+                r_data = dict(r)
+                r_data['menu'] = menu_lookup.get(r['id'], [{"main": "Napaka pri branju", "detail": "", "price": "", "tags": []}])
+                results.append(r_data)
+                
+            with open("menus.json", "w", encoding="utf-8") as f:
+                json.dump(results, f, ensure_ascii=False, indent=2)
+            print("=== KONČANO: menus.json posodobljen! ===")
+            success = True
+            break
+            
+        except Exception as e:
+            error_str = str(e)
+            print(f"Napaka pri AI obdelavi (poskus {attempt + 1}): {error_str}")
+            if "503" in error_str or "UNAVAILABLE" in error_str or "429" in error_str:
+                if attempt < max_retries - 1:
+                    print(f"Čakam {retry_delay} sekund pred ponovnim poskusom...")
+                    time.sleep(retry_delay)
+                    retry_delay += 15
+            else:
+                break
+
+    if not success:
+        print("=== NAPAKA: AI obdelava ni uspela po vseh poskusih. menus.json ni bil posodobljen. ===")
 
 if __name__ == "__main__":
     main()
