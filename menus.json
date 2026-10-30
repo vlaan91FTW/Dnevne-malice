@@ -10,7 +10,7 @@
         "price": "8,50 €",
         "tags": [
           "testenine",
-          "vegetarijansko"
+          "brezmesno"
         ]
       },
       {
@@ -18,25 +18,24 @@
         "detail": "Goveja juha ali lečina juha, solata",
         "price": "8,50 €",
         "tags": [
-          "morski sadeži",
-          "ocvrto"
+          "morsko"
         ]
       },
       {
-        "main": "Paella z morskimi sadeži",
+        "main": "Kosilo X: Paella z morskimi sadeži",
         "detail": "Juha, solata, sladica",
         "price": "16,00 €",
         "tags": [
-          "morski sadeži",
-          "riž"
+          "morsko",
+          "kosilo"
         ]
       },
       {
-        "main": "Pizza (Margerita, Šunka, Klasika, 6 sirov, Vražja, Tuna s čebulo, Rukola)",
-        "detail": "Pica iz krušne peči",
+        "main": "Pica malica",
+        "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo ali Rukola",
         "price": "7,50 €",
         "tags": [
-          "pizza"
+          "pica"
         ]
       }
     ]
@@ -47,20 +46,20 @@
     "url": "https://prihrastu.si/dnevna-kosila",
     "menu": [
       {
-        "main": "Dunajski zrezek s praženim krompirjem",
+        "main": "Dunajski zrezek z praženim krompirjem",
         "detail": "Fižolova mineštra, solata in sladica",
         "price": "",
         "tags": [
           "mesno",
-          "ocvrto"
+          "kosilo"
         ]
       },
       {
-        "main": "Solatni krožnik s kalamari, olivami in krompirjem",
+        "main": "Solatni krožnik z kalamari, olivami in krompirjem",
         "detail": "Sladica",
         "price": "",
         "tags": [
-          "morski sadeži",
+          "morsko",
           "solata"
         ]
       }
@@ -76,8 +75,8 @@
         "detail": "Ribja juha, solata in sladica",
         "price": "10,00 €",
         "tags": [
-          "ribe",
-          "ocvrto"
+          "morsko",
+          "kosilo"
         ]
       },
       {
@@ -85,8 +84,7 @@
         "detail": "Solata ali sladica",
         "price": "8,00 €",
         "tags": [
-          "ribe",
-          "ocvrto"
+          "morsko"
         ]
       },
       {
@@ -103,8 +101,8 @@
         "detail": "Solata ali sladica",
         "price": "8,00 €",
         "tags": [
-          "perutnina",
-          "žar"
+          "mesno",
+          "perutnina"
         ]
       },
       {
@@ -125,7 +123,7 @@
     "menu": [
       {
         "main": "Zelenjavna mineštra",
-        "detail": "Dnevna juha",
+        "detail": "",
         "price": "4,00 €",
         "tags": [
           "juha",
@@ -137,8 +135,7 @@
         "detail": "Francoska solata",
         "price": "7,50 €",
         "tags": [
-          "vegetarijansko",
-          "ocvrto"
+          "vegetarijansko"
         ]
       },
       {
@@ -151,10 +148,10 @@
       },
       {
         "main": "Rižota z lososom, maskarponejem in limonino lupinico",
-        "detail": "Topla jed",
+        "detail": "",
         "price": "10,00 €",
         "tags": [
-          "ribe",
+          "morsko",
           "rižota"
         ]
       },
@@ -163,8 +160,9 @@
         "detail": "Puran na žaru, riž, zelenjava",
         "price": "8,50 €",
         "tags": [
-          "perutnina",
-          "zdravo"
+          "mesno",
+          "fit",
+          "perutnina"
         ]
       }
     ]
@@ -192,17 +190,17 @@
         "detail": "Krompirjeva juha, solata",
         "price": "",
         "tags": [
-          "ribe",
-          "žar"
+          "morsko",
+          "kosilo"
         ]
       },
       {
-        "main": "Radičeva solata z jajcem in panceto, fokača",
-        "detail": "Sladica",
+        "main": "Radičeva solata z jajcem in panceto",
+        "detail": "Fokača, sladica",
         "price": "",
         "tags": [
-          "mesno",
-          "solata"
+          "solata",
+          "mesno"
         ]
       },
       {
@@ -226,8 +224,7 @@
         "price": "13,00 €",
         "tags": [
           "mesno",
-          "govedina",
-          "žar"
+          "govedina"
         ]
       },
       {
@@ -241,12 +238,12 @@
       },
       {
         "main": "Svinjski kare z žara",
-        "detail": "Goveja juha ali kremna juha iz sladkega krompirja s kislo smetano, jogurtova omaka s čilijem, gratiniran krompir, solata",
+        "detail": "Jogurtova omaka s čilijem, gratiniran krompir, goveja juha ali kremna juha iz sladkega krompirja, solata",
         "price": "9,40 €",
         "tags": [
           "mesno",
           "svinjina",
-          "žar"
+          "kosilo"
         ]
       },
       {
@@ -262,6 +259,7 @@
         "detail": "Ajdova kaša z olivnim oljem",
         "price": "8,50 €",
         "tags": [
+          "mesno",
           "perutnina"
         ]
       },
@@ -270,6 +268,7 @@
         "detail": "Basmati riž",
         "price": "8,50 €",
         "tags": [
+          "mesno",
           "perutnina"
         ]
       },
@@ -278,8 +277,7 @@
         "detail": "Mediteranski krompir",
         "price": "9,90 €",
         "tags": [
-          "morski sadeži",
-          "ocvrto"
+          "morsko"
         ]
       }
     ]
