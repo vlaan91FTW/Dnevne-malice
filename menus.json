@@ -17,6 +17,7 @@
         "detail": "dnevna juha (goveja ali šelinka) ali solata",
         "price": "8,50 €",
         "tags": [
+          "ribje",
           "morski sadeži"
         ]
       },
@@ -25,15 +26,16 @@
         "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo, Rukola",
         "price": "7,50 €",
         "tags": [
-          "pizza"
+          "pica"
         ]
       },
       {
-        "main": "Kosilo X: Jelenov ribeye na žaru",
+        "main": "Jelenov ribeye na žaru (Kosilo X)",
         "detail": "ocvrt krompir, juha, solata, sladica",
         "price": "16,00 €",
         "tags": [
-          "mesno"
+          "mesno",
+          "divjačina"
         ]
       }
     ]
@@ -44,7 +46,7 @@
     "url": "https://prihrastu.si/dnevna-kosila",
     "menu": [
       {
-        "main": "Piščančji zrezek v naravni omaki",
+        "main": "Piščančji zrezek v naravni omaki (Kosilo)",
         "detail": "zelnata juha, pire krompir in špinača, solata in sladica",
         "price": "",
         "tags": [
@@ -53,10 +55,11 @@
         ]
       },
       {
-        "main": "Rižota z morskimi dobrotami",
+        "main": "Rižota z morskimi dobrotami (Malica)",
         "detail": "solata ali sladica",
         "price": "",
         "tags": [
+          "ribje",
           "morski sadeži"
         ]
       }
@@ -77,7 +80,7 @@
         ]
       },
       {
-        "main": "Piščančja taljata na rukoli s krompirjem (Glavna jed)",
+        "main": "Piščančja taljata na rukoli s krompirjem (Glavna)",
         "detail": "solata ali sladica",
         "price": "8,00 €",
         "tags": [
@@ -86,15 +89,16 @@
         ]
       },
       {
-        "main": "Testenine po lovsko",
+        "main": "Testenine po lovsko (Malica 1)",
         "detail": "solata ali sladica",
         "price": "8,00 €",
         "tags": [
-          "mesno"
+          "mesno",
+          "testenine"
         ]
       },
       {
-        "main": "Ocvrt sir s pomfrijem",
+        "main": "Ocvrt sir s pomfrijem (Malica 2)",
         "detail": "solata ali sladica",
         "price": "8,00 €",
         "tags": [
@@ -102,11 +106,12 @@
         ]
       },
       {
-        "main": "Pasulj s klobaso",
+        "main": "Pasulj s klobaso (Malica 3)",
         "detail": "solata ali sladica",
         "price": "8,00 €",
         "tags": [
-          "mesno"
+          "mesno",
+          "enolončnica"
         ]
       }
     ]
@@ -121,8 +126,8 @@
         "detail": "",
         "price": "4,00 €",
         "tags": [
-          "vegetarijansko",
-          "juha"
+          "juha",
+          "vegetarijansko"
         ]
       },
       {
@@ -131,7 +136,8 @@
         "price": "7,50 €",
         "tags": [
           "mesno",
-          "perutnina"
+          "perutnina",
+          "testenine"
         ]
       },
       {
@@ -151,8 +157,8 @@
         ]
       },
       {
-        "main": "Fit krožnik (Puran na žaru)",
-        "detail": "riž, zelenjava",
+        "main": "Fit krožnik",
+        "detail": "puran na žaru, riž, zelenjava",
         "price": "8,50 €",
         "tags": [
           "mesno",
@@ -184,7 +190,7 @@
         ]
       },
       {
-        "main": "Pečena svinjska rebra barbacue",
+        "main": "Pečena svinjska rebra barbecue",
         "detail": "pečen krompir steakhouse",
         "price": "8,76 €",
         "tags": [
@@ -196,7 +202,8 @@
         "detail": "120 g kruha",
         "price": "8,76 €",
         "tags": [
-          "mesno"
+          "mesno",
+          "enolončnica"
         ]
       },
       {
@@ -238,7 +245,8 @@
         "detail": "400 g",
         "price": "8,76 €",
         "tags": [
-          "riba"
+          "ribje",
+          "solata"
         ]
       },
       {
@@ -255,7 +263,7 @@
         "detail": "zelenjava z žara",
         "price": "8,76 €",
         "tags": [
-          "riba"
+          "ribje"
         ]
       }
     ]
@@ -278,7 +286,8 @@
         "detail": "solata",
         "price": "",
         "tags": [
-          "mesno"
+          "mesno",
+          "solata"
         ]
       },
       {
@@ -286,7 +295,8 @@
         "detail": "solata",
         "price": "",
         "tags": [
-          "vegetarijansko"
+          "vegetarijansko",
+          "testenine"
         ]
       }
     ]
@@ -301,7 +311,7 @@
         "detail": "bučni pire, žafranova omaka",
         "price": "13,00 €",
         "tags": [
-          "riba"
+          "ribje"
         ]
       },
       {
@@ -338,8 +348,8 @@
         ]
       },
       {
-        "main": "Gurmanska pleskavica s prebrancem",
-        "detail": "čebula in ajvar",
+        "main": "Gurmanska pleskavica",
+        "detail": "prebranec, čebula, ajvar",
         "price": "8,20 €",
         "tags": [
           "mesno"
