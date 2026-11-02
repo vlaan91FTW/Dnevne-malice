@@ -14,7 +14,7 @@ RESTAURANTS_CONFIG = [
     {"id": 2, "name": "Gostilna pri Hrastu", "url": "https://prihrastu.si/dnevna-kosila"},
     {"id": 3, "name": "Gostilna in picerija Zvezda", "url": "https://www.gostilna-zvezda.si/"},
     {"id": 4, "name": "Restavracija Eda", "url": "https://edarestavracija.si/kosila-malice"},
-    {"id": 5, "name": "Restavracija Špar", "url": "https://www.spar.si/restavracija-interspar/tedenski-meni"},
+    {"id": 5, "name": "Restavracija Špar", "url": "https://pojedina.com/r/nova-gorica-interspar/"},
     {"id": 6, "name": "Restavracija Sabotin", "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/"},
     {"id": 7, "name": "Restavracija Vrtnica", "url": "https://www.restavracija-vrtnica.si/"}
 ]
