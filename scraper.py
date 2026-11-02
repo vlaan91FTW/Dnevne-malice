@@ -51,9 +51,10 @@ def main():
     Podatki: {json.dumps(all_data_context)}
     """
 
-    max_retries = 3
+    max_retries = 5
     retry_delay = 15
     success = False
+    last_error = None
 
     for attempt in range(max_retries):
         try:
@@ -81,17 +82,19 @@ def main():
             
         except Exception as e:
             error_str = str(e)
+            last_error = error_str
             print(f"Napaka pri AI obdelavi (poskus {attempt + 1}): {error_str}")
-            if "503" in error_str or "UNAVAILABLE" in error_str or "429" in error_str:
-                if attempt < max_retries - 1:
-                    print(f"Čakam {retry_delay} sekund pred ponovnim poskusom...")
-                    time.sleep(retry_delay)
-                    retry_delay += 15
+            retryable = any(k in error_str for k in ["503", "UNAVAILABLE", "RESOURCE_EXHAUSTED", "429", "overloaded", "high demand", "disconnected", "timeout", "deadline"])
+            if retryable and attempt < max_retries - 1:
+                delay = retry_delay
+                retry_delay = min(retry_delay * 2, 120)
+                print(f"PREOBREMENJENI ZAHTEV (retryable). Čakam {delay} sekund pred ponovnim poskusom...")
+                time.sleep(delay)
             else:
                 break
 
     if not success:
-        print("=== NAPAKA: AI obdelava ni uspela po vseh poskusih. menus.json ni bil posodobljen. ===")
+        print(f"=== NAPAKA: AI obdelava ni uspela po vseh poskusih. Zadnja napaka: {last_error} ===")
 
 if __name__ == "__main__":
     main()
