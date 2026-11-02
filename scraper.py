@@ -39,14 +39,21 @@ def main():
         text = fetch_page_text(r['url'])
         all_data_context.append({"id": r["id"], "name": r["name"], "content": text})
 
+    now = datetime.now()
+    dan = "petek"
+    if now.weekday() < 5:  # ponedeljek(0) - petek(4)
+        dan = ["ponedeljek", "torek", "sreda", "četrtek", "petek"][now.weekday()]
+    else:
+        dan = "petek"  # sobota/nedelja -> petek (sklon v index.html)
+
     prompt = f"""
-    Si kulinarični asistent. Izlušči DANAŠNJE menije za vse naštete restavracije iz spodnjih podatkov.
+    Si kulinarični asistent. Izlušči MENI za dan {dan} za vse naštete restavracije iz spodnjih podatkov. Vsako restavracijo orientiraj le na dan '{dan}' (objavljeni tedenski meniji veljajo za ta dan).
     Vrni izključno JSON seznam objektov v formatu:
     [
       {{"id": 1, "menu": [ {{"main": "Ime jedi", "detail": "priloga", "price": "cena", "tags": ["mesno"]}} ]}},
       ...
     ]
-    Če menija ne najdeš, vrni: "menu": [{{"main": "Meni za danes še ni objavljen", "detail": "Preverite kasneje", "price": "", "tags": []}}]
+    Če menija ne najdeš za ta dan, vrni: "menu": [{{"main": "Meni za dan {dan} ni objavljen", "detail": "Preverite kasneje", "price": "", "tags": []}}]
     
     Podatki: {json.dumps(all_data_context)}
     """
