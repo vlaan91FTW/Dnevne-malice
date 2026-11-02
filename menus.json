@@ -6,7 +6,7 @@
     "menu": [
       {
         "main": "Svinjski vrat na žaru",
-        "detail": "pečen krompir in dušen grah, dnevna juha ali solata",
+        "detail": "Dnevna juha (goveja ali šelinka), pečen krompir in dušen grah, solata",
         "price": "8,50 €",
         "tags": [
           "mesno"
@@ -14,23 +14,24 @@
       },
       {
         "main": "Rižota z morskimi sadeži",
-        "detail": "dnevna juha ali solata",
+        "detail": "Dnevna juha (goveja ali šelinka) ali solata",
         "price": "8,50 €",
         "tags": [
-          "morsko"
+          "morsko",
+          "riba"
         ]
       },
       {
-        "main": "Malica Pizza (Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo, Rukola)",
-        "detail": "",
+        "main": "Malica Pizza",
+        "detail": "Margerita, Šunka, Klasika, 6 Sirov, Vražja, Tuna s čebulo, Rukola",
         "price": "7,50 €",
         "tags": [
-          "pica"
+          "pizza"
         ]
       },
       {
-        "main": "Kosilo X: Jelenov ribeye na žaru",
-        "detail": "ocvrt krompir, juha, solata, sladica",
+        "main": "Jelenov ribeye na žaru",
+        "detail": "Juha, ocvrt krompir, solata, sladica",
         "price": "16,00 €",
         "tags": [
           "mesno"
@@ -45,7 +46,7 @@
     "menu": [
       {
         "main": "Piščančji zrezek v naravni omaki",
-        "detail": "zelnata juha, pire krompir, špinača, solata in sladica",
+        "detail": "Zelnata juha, pire krompir in špinača, solata in sladica",
         "price": "",
         "tags": [
           "mesno",
@@ -54,10 +55,11 @@
       },
       {
         "main": "Rižota z morskimi dobrotami",
-        "detail": "solata ali sladica",
+        "detail": "Solata ali sladica",
         "price": "",
         "tags": [
-          "morsko"
+          "morsko",
+          "riba"
         ]
       }
     ]
@@ -68,8 +70,8 @@
     "url": "https://www.gostilna-zvezda.si/",
     "menu": [
       {
-        "main": "Kosilo: Piščančja taljata na rukoli s krompirjem",
-        "detail": "bučkina juha, solata in sladica",
+        "main": "Piščančja taljata na rukoli s krompirjem",
+        "detail": "Bučkina juha, solata in sladica",
         "price": "10,00 €",
         "tags": [
           "mesno",
@@ -78,7 +80,7 @@
       },
       {
         "main": "Piščančja taljata na rukoli s krompirjem",
-        "detail": "solata ali sladica",
+        "detail": "Solata ali sladica",
         "price": "8,00 €",
         "tags": [
           "mesno",
@@ -87,23 +89,25 @@
       },
       {
         "main": "Testenine po lovsko",
-        "detail": "solata ali sladica",
+        "detail": "Solata ali sladica",
         "price": "8,00 €",
         "tags": [
-          "mesno"
+          "mesno",
+          "testenine"
         ]
       },
       {
         "main": "Ocvrt sir s pomfrijem",
-        "detail": "solata ali sladica",
+        "detail": "Solata ali sladica",
         "price": "8,00 €",
         "tags": [
+          "brezmesno",
           "vegetarijansko"
         ]
       },
       {
         "main": "Pasulj s klobaso",
-        "detail": "solata ali sladica",
+        "detail": "Solata ali sladica",
         "price": "8,00 €",
         "tags": [
           "mesno"
@@ -121,8 +125,8 @@
         "detail": "",
         "price": "4,00 €",
         "tags": [
-          "vegetarijansko",
-          "juha"
+          "juha",
+          "vegetarijansko"
         ]
       },
       {
@@ -131,7 +135,8 @@
         "price": "7,50 €",
         "tags": [
           "mesno",
-          "perutnina"
+          "perutnina",
+          "testenine"
         ]
       },
       {
@@ -139,20 +144,21 @@
         "detail": "",
         "price": "8,00 €",
         "tags": [
+          "brezmesno",
           "vegetarijansko"
         ]
       },
       {
         "main": "Svinjski medaljoni v naravni omaki",
-        "detail": "pire krompir, zelenjava",
+        "detail": "Pire krompir, zelenjava",
         "price": "8,00 €",
         "tags": [
           "mesno"
         ]
       },
       {
-        "main": "Fit krožnik: Puran na žaru",
-        "detail": "riž, zelenjava",
+        "main": "Fit krožnik (Puran na žaru)",
+        "detail": "Riž, zelenjava",
         "price": "8,50 €",
         "tags": [
           "mesno",
@@ -172,13 +178,96 @@
   {
     "id": 5,
     "name": "Restavracija Špar",
-    "url": "https://www.spar.si/restavracija-interspar/tedenski-meni",
+    "url": "https://pojedina.com/r/nova-gorica-interspar/",
     "menu": [
       {
-        "main": "Meni za danes še ni objavljen",
-        "detail": "Preverite kasneje",
-        "price": "",
-        "tags": []
+        "main": "Puranja rižota z zelenjavo",
+        "detail": "",
+        "price": "8,76 €",
+        "tags": [
+          "mesno",
+          "perutnina"
+        ]
+      },
+      {
+        "main": "Pečena svinjska rebra barbacue",
+        "detail": "Pečen krompir “steakhouse”",
+        "price": "8,76 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Pašta fižol s klobaso",
+        "detail": "120 g kruha",
+        "price": "8,76 €",
+        "tags": [
+          "mesno"
+        ]
+      },
+      {
+        "main": "Krompirjevi njoki",
+        "detail": "Smetanova omaka z mlado špinačo in pomarančnim poprom",
+        "price": "8,76 €",
+        "tags": [
+          "brezmesno",
+          "vegetarijansko"
+        ]
+      },
+      {
+        "main": "Piščančji medaljoni",
+        "detail": "Priloga",
+        "price": "8,76 €",
+        "tags": [
+          "mesno",
+          "perutnina"
+        ]
+      },
+      {
+        "main": "Ocvrt sir",
+        "detail": "Dollar chips, tatarska omaka",
+        "price": "8,76 €",
+        "tags": [
+          "brezmesno",
+          "vegetarijansko"
+        ]
+      },
+      {
+        "main": "Puranji zrezek na žaru",
+        "detail": "Priloga",
+        "price": "8,76 €",
+        "tags": [
+          "mesno",
+          "perutnina"
+        ]
+      },
+      {
+        "main": "Solata iz solatnega bara (tunina)",
+        "detail": "400 g",
+        "price": "8,76 €",
+        "tags": [
+          "morsko",
+          "solata",
+          "riba"
+        ]
+      },
+      {
+        "main": "Dunajski zrezek (piščančji)",
+        "detail": "Pomfrit",
+        "price": "8,76 €",
+        "tags": [
+          "mesno",
+          "perutnina"
+        ]
+      },
+      {
+        "main": "Postrv file",
+        "detail": "Zelenjava z žara",
+        "price": "8,76 €",
+        "tags": [
+          "riba",
+          "morsko"
+        ]
       }
     ]
   },
@@ -189,7 +278,7 @@
     "menu": [
       {
         "main": "Mešano meso s pomfrijem",
-        "detail": "grahova juha, solata",
+        "detail": "Grahova juha, solata",
         "price": "",
         "tags": [
           "mesno"
@@ -197,7 +286,7 @@
       },
       {
         "main": "Solata z govejimi trakci, sirom in fokačo",
-        "detail": "solata",
+        "detail": "Solata",
         "price": "",
         "tags": [
           "mesno"
@@ -205,9 +294,10 @@
       },
       {
         "main": "Špageti s paradižnikom in bufalo",
-        "detail": "solata",
+        "detail": "Solata",
         "price": "",
         "tags": [
+          "brezmesno",
           "vegetarijansko"
         ]
       }
@@ -220,23 +310,24 @@
     "menu": [
       {
         "main": "File orade z žara",
-        "detail": "bučni pire, žafranova omaka",
+        "detail": "Bučni pire, žafranova omaka",
         "price": "13,00 €",
         "tags": [
-          "ribje"
+          "riba",
+          "morsko"
         ]
       },
       {
         "main": "Bučni njoki",
-        "detail": "maslena omaka z žajbljem, kraški pršut",
+        "detail": "Maslena omaka z žajbljem, kraški pršut",
         "price": "8,20 €",
         "tags": [
           "mesno"
         ]
       },
       {
-        "main": "Kosilo: Piščančje bedro BBQ",
-        "detail": "ameriška solata, goveja ali grahova kremna juha, solata",
+        "main": "Piščančje bedro BBQ",
+        "detail": "Goveja juha ali cvetačna kremna juha s krompirjem in muškatnim oreščkom, ameriška solata, solata",
         "price": "9,40 €",
         "tags": [
           "mesno",
@@ -245,15 +336,16 @@
       },
       {
         "main": "Zelenjavni krožnik",
-        "detail": "krompirjevi krhlji, peperonata, korenčkov narastek",
+        "detail": "Krompirjevi krhlji, peperonata, korenčkov narastek",
         "price": "5,90 €",
         "tags": [
+          "brezmesno",
           "vegetarijansko"
         ]
       },
       {
         "main": "Ljubljanski zrezek",
-        "detail": "ocvrti krompirjevi krhlji",
+        "detail": "Ocvrti krompirjevi krhlji",
         "price": "8,50 €",
         "tags": [
           "mesno"
@@ -261,7 +353,7 @@
       },
       {
         "main": "Gurmanska pleskavica",
-        "detail": "s prebrancem, čebulo in ajvarjem",
+        "detail": "Prebranec, čebula in ajvar",
         "price": "8,20 €",
         "tags": [
           "mesno"
@@ -269,9 +361,10 @@
       },
       {
         "main": "Čičerikina enolončnica z zelenjavo in mlado špinačo",
-        "detail": "palačinka z marmelado",
+        "detail": "Palačinka z marmelado",
         "price": "7,50 €",
         "tags": [
+          "brezmesno",
           "vegetarijansko"
         ]
       }
