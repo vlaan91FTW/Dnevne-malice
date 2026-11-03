@@ -64,7 +64,7 @@ def main():
     last_error = None
     last_model = None
 
-    for model_name in ["gemini-3.8-flash", "gemini-2.5-flash"]:
+    for model_name in ["gemini-3.8-flash", "gemini-flash-latest"]:
         if success:
             break
         for attempt in range(max_retries):
