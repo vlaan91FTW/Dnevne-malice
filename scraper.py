@@ -30,14 +30,61 @@ def fetch_page_text(url):
     except:
         return "Ni mogoče naložiti strani."
 
+def scrape_magma_x_menu():
+    try:
+        resp = requests.get(RESTAURANTS_CONFIG[0]["url"], headers={"User-Agent": "Mozilla/5.0"}, timeout=12)
+        resp.encoding = resp.apparent_encoding
+        soup = BeautifulSoup(resp.text, "html.parser")
+        container = soup.find("div", class_="wpr-price-list")
+        items = []
+        if container:
+            for item in container.find_all("div", class_="wpr-price-list-item"):
+                title_el = item.find("span", class_="wpr-price-list-title")
+                price_el = item.find("span", class_="wpr-price-list-price")
+                desc_el = item.find("div", class_="wpr-price-list-description")
+                main = title_el.get_text(strip=True) if title_el else ""
+                if not main:
+                    continue
+                items.append({
+                    "main": main,
+                    "detail": desc_el.get_text(strip=True) if desc_el else "",
+                    "price": price_el.get_text(strip=True) if price_el else "",
+                    "tags": []
+                })
+        return items
+    except Exception as e:
+        print(f"Napaka pri dejanskem branju Magma X: {e}")
+        return None
+
 def main():
     print(f"=== ZAGON BATCH ROBOTA ({datetime.now().strftime('%d.%m.%Y')}) ===")
     
     all_data_context = []
+    deterministic_menus = {}
     for r in RESTAURANTS_CONFIG:
         print(f"Berem: {r['name']}...")
+        if r["id"] == 1:
+            menu_items = scrape_magma_x_menu()
+            if menu_items:
+                deterministic_menus[r["id"]] = menu_items
+                all_data_context.append({"id": r["id"], "name": r["name"], "content": json.dumps(menu_items, ensure_ascii=False)})
+                continue
         text = fetch_page_text(r['url'])
         all_data_context.append({"id": r["id"], "name": r["name"], "content": text})
+
+    if deterministic_menus:
+        results = []
+        for r in RESTAURANTS_CONFIG:
+            r_data = dict(r)
+            if r["id"] in deterministic_menus:
+                r_data['menu'] = deterministic_menus[r["id"]]
+            else:
+                r_data['menu'] = [{"main": "Napaka pri branju", "detail": "", "price": "", "tags": []}]
+            results.append(r_data)
+        with open("menus.json", "w", encoding="utf-8") as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
+        print("=== KONČANO: menus.json posodobljen! (deterministično, brez AI) ===")
+        return
 
     now = datetime.now()
     dan = "petek"
@@ -82,7 +129,10 @@ def main():
                 results = []
                 for r in RESTAURANTS_CONFIG:
                     r_data = dict(r)
-                    r_data['menu'] = menu_lookup.get(r['id'], [{"main": "Napaka pri branju", "detail": "", "price": "", "tags": []}])
+                    if r["id"] in deterministic_menus:
+                        r_data['menu'] = deterministic_menus[r["id"]]
+                    else:
+                        r_data['menu'] = menu_lookup.get(r['id'], [{"main": "Napaka pri branju", "detail": "", "price": "", "tags": []}])
                     results.append(r_data)
                 
                 with open("menus.json", "w", encoding="utf-8") as f:
