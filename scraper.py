@@ -107,6 +107,25 @@ def main():
         
     if not success:
         print(f"=== NAPAKA: AI obdelava ni uspela. Zadnja napaka: {last_error} (model: {last_model}) ===")
+        # Na koncu naprej zapnimo lokalni fallback, da stran ostane delovala
+        fallback_results = []
+        for r in RESTAURANTS_CONFIG:
+            fallback_results.append({
+                "id": r["id"],
+                "name": r["name"],
+                "url": r["url"],
+                "menu": [
+                    {
+                        "main": "Meni trenutno ni na voljo",
+                        "detail": "Preverite kasneje",
+                        "price": "",
+                        "tags": []
+                    }
+                ]
+            })
+        with open("menus.json", "w", encoding="utf-8") as f:
+            json.dump(fallback_results, f, ensure_ascii=False, indent=2)
+        print("=== ZAUSADEK: menus.json posodobljen z lokalnim fallback-om ===")
 
 if __name__ == "__main__":
     main()
