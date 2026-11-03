@@ -44,7 +44,7 @@ def main():
     if now.weekday() < 5:  # ponedeljek(0) - petek(4)
         dan = ["ponedeljek", "torek", "sreda", "četrtek", "petek"][now.weekday()]
     else:
-        dan = "petek"  # sobota/nedelja -> petek (sklon v index.html)
+        dan = "petek"  # sobota/nedelja -> petek
 
     prompt = f"""
     Si kulinarični asistent. Izlušči MENI za dan {dan} za vse naštete restavracije iz spodnjih podatkov. Vsako restavracijo orientiraj le na dan '{dan}' (objavljeni tedenski meniji veljajo za ta dan).
@@ -62,46 +62,51 @@ def main():
     retry_delay = 15
     success = False
     last_error = None
+    last_model = None
 
-    for attempt in range(max_retries):
-        try:
-            print(f"Poskušam z AI obdelavo (poskus {attempt + 1}/{max_retries})...")
-            response = client.models.generate_content(
-                model="gemini-3.8-flash",
-                contents=prompt
-            )
-            raw_json = response.text.strip().replace("```json", "").replace("```", "")
-            extracted_menus = json.loads(raw_json)
-            
-            menu_lookup = {item['id']: item['menu'] for item in extracted_menus}
-            
-            results = []
-            for r in RESTAURANTS_CONFIG:
-                r_data = dict(r)
-                r_data['menu'] = menu_lookup.get(r['id'], [{"main": "Napaka pri branju", "detail": "", "price": "", "tags": []}])
-                results.append(r_data)
-                
-            with open("menus.json", "w", encoding="utf-8") as f:
-                json.dump(results, f, ensure_ascii=False, indent=2)
-            print("=== KONČANO: menus.json posodobljen! ===")
-            success = True
+    for model_name in ["gemini-3.8-flash", "gemini-2.5-flash"]:
+        if success:
             break
-            
-        except Exception as e:
-            error_str = str(e)
-            last_error = error_str
-            print(f"Napaka pri AI obdelavi (poskus {attempt + 1}): {error_str}")
-            retryable = any(k in error_str for k in ["503", "UNAVAILABLE", "RESOURCE_EXHAUSTED", "429", "overloaded", "high demand", "disconnected", "timeout", "deadline"])
-            if retryable and attempt < max_retries - 1:
-                delay = retry_delay
-                retry_delay = min(retry_delay * 2, 120)
-                print(f"PREOBREMENJENI ZAHTEV (retryable). Čakam {delay} sekund pred ponovnim poskusom...")
-                time.sleep(delay)
-            else:
+        for attempt in range(max_retries):
+            try:
+                print(f"Poskušam z AI obdelavo ({model_name}) (poskus {attempt + 1}/{max_retries})...")
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt
+                )
+                raw_json = response.text.strip().replace("```json", "").replace("```", "")
+                extracted_menus = json.loads(raw_json)
+                
+                menu_lookup = {item['id']: item['menu'] for item in extracted_menus}
+                
+                results = []
+                for r in RESTAURANTS_CONFIG:
+                    r_data = dict(r)
+                    r_data['menu'] = menu_lookup.get(r['id'], [{"main": "Napaka pri branju", "detail": "", "price": "", "tags": []}])
+                    results.append(r_data)
+                
+                with open("menus.json", "w", encoding="utf-8") as f:
+                    json.dump(results, f, ensure_ascii=False, indent=2)
+                print("=== KONČANO: menus.json posodobljen! ===")
+                success = True
                 break
-
+                
+            except Exception as e:
+                error_str = str(e)
+                last_error = error_str
+                last_model = model_name
+                print(f"Napaka pri AI obdelavi ({model_name}) (poskus {attempt + 1}): {error_str}")
+                retryable = any(k in error_str for k in ["503", "UNAVAILABLE", "RESOURCE_EXHAUSTED", "429", "overloaded", "high demand", "disconnected", "timeout", "deadline"])
+                if retryable and attempt < max_retries - 1:
+                    delay = retry_delay
+                    retry_delay = min(retry_delay * 2, 120)
+                    print(f"PREOBREMENJENI ZAHTEV (retryable). Čakam {delay} sekund pred ponovnim poskusom...")
+                    time.sleep(delay)
+                else:
+                    break
+        
     if not success:
-        print(f"=== NAPAKA: AI obdelava ni uspela po vseh poskusih. Zadnja napaka: {last_error} ===")
+        print(f"=== NAPAKA: AI obdelava ni uspela. Zadnja napaka: {last_error} (model: {last_model}) ===")
 
 if __name__ == "__main__":
     main()
