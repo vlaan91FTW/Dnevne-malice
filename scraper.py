@@ -53,38 +53,69 @@ def scrape_magma_x_menu():
                 })
         return items
     except Exception as e:
-        print(f"Napaka pri dejanskem branju Magma X: {e}")
+        print(f"Napaka pri dejanskem branju Restavracije Magma X: {e}")
         return None
+
+def scrape_prijhrastu_menu(dan_name):
+    try:
+        resp = requests.get(RESTAURANTS_CONFIG[1]["url"], headers={"User-Agent": "Mozilla/5.0"}, timeout=12)
+        resp.encoding = resp.apparent_encoding
+        soup = BeautifulSoup(resp.text, "html.parser")
+        rows = soup.select("div.views-row")
+        wanted = dan_name.lower()
+        selected_row = None
+        for row in rows:
+            time_el = row.select_one("div.views-field-field-dan time")
+            if not time_el:
+                continue
+            day_label = time_el.get_text(strip=True)
+            day_name = day_label.split(",")[0].strip().lower()
+            if day_name == wanted or (wanted == "petek" and day_name == "petek"):
+                selected_row = row
+                break
+        if not selected_row:
+            print(f"Za dan '{dan_name}' ni bilo na voljo vseh stvari... (Gostilna pri Hrastu)")
+            return None
+        items = []
+        meals = selected_row.select("div.paragraph.paragraph--type--obrok")
+        if not meals:
+            meals = selected_row.select("div.field--name-field-ime-obroka")
+        for meal in meals:
+            course_el = meal.select_one("div.field--name-field-ime-obroka")
+            course = course_el.get_text(strip=True) if course_el else "Jedlo"
+            detail_parts = []
+            desc_el = meal.select_one("div.field--name-field-podnudba")
+            if desc_el:
+                for p in desc_el.select("p"):
+                    t = p.get_text(strip=True)
+                    if t:
+                        detail_parts.append(t)
+            main = course.strip()
+            detail = " / ".join(detail_parts) if detail_parts else ""
+            items.append({
+                "main": main,
+                "detail": detail,
+                "price": "",
+                "tags": []
+            })
+        return items
+    except Exception as e:
+        print(f"Napaka pri dejanskem branju Gostilne pri Hrastu: {e}")
+        return None
+
+DETERMINISTIC_SCRAPERS = {
+    1: scrape_magma_x_menu,
+    2: scrape_prijhrastu_menu,
+}
+
+def get_deterministic_menu(r, dan_name):
+    scraper_fn = DETERMINISTIC_SCRAPERS.get(r["id"])
+    if scraper_fn is None:
+        return None
+    return scraper_fn(dan_name)
 
 def main():
     print(f"=== ZAGON BATCH ROBOTA ({datetime.now().strftime('%d.%m.%Y')}) ===")
-    
-    all_data_context = []
-    deterministic_menus = {}
-    for r in RESTAURANTS_CONFIG:
-        print(f"Berem: {r['name']}...")
-        if r["id"] == 1:
-            menu_items = scrape_magma_x_menu()
-            if menu_items:
-                deterministic_menus[r["id"]] = menu_items
-                all_data_context.append({"id": r["id"], "name": r["name"], "content": json.dumps(menu_items, ensure_ascii=False)})
-                continue
-        text = fetch_page_text(r['url'])
-        all_data_context.append({"id": r["id"], "name": r["name"], "content": text})
-
-    if deterministic_menus:
-        results = []
-        for r in RESTAURANTS_CONFIG:
-            r_data = dict(r)
-            if r["id"] in deterministic_menus:
-                r_data['menu'] = deterministic_menus[r["id"]]
-            else:
-                r_data['menu'] = [{"main": "Napaka pri branju", "detail": "", "price": "", "tags": []}]
-            results.append(r_data)
-        with open("menus.json", "w", encoding="utf-8") as f:
-            json.dump(results, f, ensure_ascii=False, indent=2)
-        print("=== KONČANO: menus.json posodobljen! (deterministično, brez AI) ===")
-        return
 
     now = datetime.now()
     dan = "petek"
@@ -92,6 +123,30 @@ def main():
         dan = ["ponedeljek", "torek", "sreda", "četrtek", "petek"][now.weekday()]
     else:
         dan = "petek"  # sobota/nedelja -> petek
+
+    all_data_context = []
+    deterministic_menus = {}
+    for r in RESTAURANTS_CONFIG:
+        print(f"Berem: {r['name']}...")
+        menu_items = get_deterministic_menu(r, dan)
+        if menu_items:
+            deterministic_menus[r["id"]] = menu_items
+            all_data_context.append({"id": r["id"], "name": r["name"], "content": json.dumps(menu_items, ensure_ascii=False)})
+            continue
+        text = fetch_page_text(r['url'])
+        all_data_context.append({"id": r["id"], "name": r["name"], "content": text})
+
+    # Če so vsi restauraciji rešene deterministično, skipamo AI celo
+    if len(deterministic_menus) == len(RESTAURANTS_CONFIG):
+        results = []
+        for r in RESTAURANTS_CONFIG:
+            r_data = dict(r)
+            r_data['menu'] = deterministic_menus[r["id"]]
+            results.append(r_data)
+        with open("menus.json", "w", encoding="utf-8") as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
+        print("=== KONČANO: menus.json posodobljen! (deterministično, brez AI) ===")
+        return
 
     prompt = f"""
     Si kulinarični asistent. Izlušči MENI za dan {dan} za vse naštete restavracije iz spodnjih podatkov. Vsako restavracijo orientiraj le na dan '{dan}' (objavljeni tedenski meniji veljajo za ta dan).
