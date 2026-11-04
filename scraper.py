@@ -375,8 +375,8 @@ def main():
                 "url": r["url"],
                 "menu": deterministic_menus.get(r["id"], [
                     {
-                        "main": "Meni trenutno ni na voljo",
-                        "detail": "Preverite kasneje",
+                        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
+                        "detail": "",
                         "price": "",
                         "tags": []
                     }
