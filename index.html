@@ -951,6 +951,15 @@
         return;
       }
 
+      // Move Restavracija Magma X to the end
+      filtered.sort((a, b) => {
+        const aIsMagma = (a.name || "").toLowerCase().includes("magma");
+        const bIsMagma = (b.name || "").toLowerCase().includes("magma");
+        if (aIsMagma && !bIsMagma) return 1;
+        if (!aIsMagma && bIsMagma) return -1;
+        return 0;
+      });
+
       filtered.forEach(restaurant => {
         const visibleDishes = restaurant.menu || [];
         const card = document.createElement('article');
