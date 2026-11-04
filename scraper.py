@@ -299,6 +299,73 @@ def scrape_sabotin_menu(dan_name):
         print(f"Napaka pri dejanskem branju Restavracije Sabotina: {e}")
         return None
 
+def scrape_vrtnica_menu(dan_name):
+    try:
+        resp = requests.get(RESTAURANTS_CONFIG[6]["url"], headers={"User-Agent": "Mozilla/5.0"}, timeout=12)
+        resp.encoding = resp.apparent_encoding
+        soup = BeautifulSoup(resp.text, "html.parser")
+        now = datetime.now()
+        weekdays = ["ponedeljek", "torek", "sreda", "četrtek", "petek", "sobota", "nedelja"]
+        today_weekday = weekdays[now.weekday()]
+        selected_menu = None
+        for group in soup.select("div.owl-carousel > div"):
+            dt = group.find("div", class_="dateTime")
+            if not dt:
+                continue
+            day_text = " ".join(s.get_text(" ", strip=True) for s in dt.find_all("span"))
+            tokens = re.split(r"[\s,]+", day_text.strip().rstrip("."))
+            wd_token = tokens[0].lower() if tokens else ""
+            group_weekday = today_weekday if wd_token == "danes" else wd_token
+            if group_weekday != dan_name:
+                continue
+            menu_block = group.find("div", class_="daillyMenu")
+            if menu_block is None:
+                continue
+            selected_menu = menu_block
+            break
+        if selected_menu is None:
+            return None
+        sections = selected_menu.find_all("div")
+        daily_section = None
+        for sec in sections:
+            h2 = sec.find("h2")
+            if h2 and "Dnevni menu" in h2.get_text(" ", strip=True):
+                daily_section = sec
+                break
+        if daily_section is None and sections:
+            daily_section = sections[0]
+        if daily_section is None:
+            return None
+        items = []
+        for li in daily_section.find_all("li"):
+            name = ""
+            detail = ""
+            price = ""
+            price_found = False
+            for span in li.find_all("span"):
+                txt = span.get_text(" ", strip=True)
+                pm = re.search(r"([\d.,]+)\s*€", txt)
+                if pm:
+                    price = pm.group(1) + " €"
+                    price_found = True
+                    continue
+                if not name and txt:
+                    name = txt
+                elif txt and not detail:
+                    detail = txt
+            if not name or not price_found:
+                continue
+            items.append({
+                "main": name.strip(),
+                "detail": detail.strip(),
+                "price": price,
+                "tags": []
+            })
+        return items
+    except Exception as e:
+        print(f"Napaka pri dejanskem branju Restavracije Vrtnice: {e}")
+        return None
+
 DETERMINISTIC_SCRAPERS = {
     1: scrape_magma_x_menu,
     2: scrape_prijhrastu_menu,
@@ -306,6 +373,7 @@ DETERMINISTIC_SCRAPERS = {
     4: scrape_eda_menu,
     5: scrape_spar_menu,
     6: scrape_sabotin_menu,
+    7: scrape_vrtnica_menu,
 }
 
 def get_deterministic_menu(r, dan_name):
