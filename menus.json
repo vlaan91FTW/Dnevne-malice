@@ -5,9 +5,45 @@
     "url": "https://magma-x.com/restavracija-magma-x/",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "Preverite kasneje",
-        "price": "",
+        "main": "Malica",
+        "detail": "glavna jed + juha ali solata",
+        "price": "8,50 €",
+        "tags": []
+      },
+      {
+        "main": "Kosilo",
+        "detail": "juha + glavna jed + solata + sladica",
+        "price": "13,50 €",
+        "tags": []
+      },
+      {
+        "main": "Kosilo X (pon, sre, čet, pet)",
+        "detail": "juha + Kosilo X + solata + sladica",
+        "price": "16,00 €",
+        "tags": []
+      },
+      {
+        "main": "Pica",
+        "detail": "Margerita, Klasika, Šunka, Tuna čebula, Vražja, Rukola,  6 sirov",
+        "price": "7,50 €",
+        "tags": []
+      },
+      {
+        "main": "Pica dneva",
+        "detail": "",
+        "price": "8,50 €",
+        "tags": []
+      },
+      {
+        "main": "Juha / solata / sladica",
+        "detail": "",
+        "price": "2,50 €",
+        "tags": []
+      },
+      {
+        "main": "Embalaža",
+        "detail": "",
+        "price": "0,70 €",
         "tags": []
       }
     ]
@@ -18,8 +54,14 @@
     "url": "https://prihrastu.si/dnevna-kosila",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "Preverite kasneje",
+        "main": "Kosilo",
+        "detail": "Zelenjavna mineštra / Svinjska pečenka z praženim krompirjem / Solata in sladica",
+        "price": "",
+        "tags": []
+      },
+      {
+        "main": "Malica",
+        "detail": "Tortelini z gorgonzolo / Solata ali sladica",
         "price": "",
         "tags": []
       }
@@ -31,9 +73,39 @@
     "url": "https://www.gostilna-zvezda.si/",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "Preverite kasneje",
-        "price": "",
+        "main": "Zelenjavna juha, Sv. ribica po kraško s praženim krompirjem",
+        "detail": "+Solata in sladica",
+        "price": "10.00",
+        "tags": []
+      },
+      {
+        "main": "Sv. ribica po kraško s praženim krompirjem",
+        "detail": "+Solata ali sladica",
+        "price": "8.00",
+        "tags": []
+      },
+      {
+        "main": "Peresniki s tuno, gorgonzolo in koruzo",
+        "detail": "+Solata ali sladica",
+        "price": "8.00",
+        "tags": []
+      },
+      {
+        "main": "Ocvrt kaneloni(šunka,sir) s hladno pašto",
+        "detail": "+Solata ali sladica",
+        "price": "8.00",
+        "tags": []
+      },
+      {
+        "main": "Segedin golaž",
+        "detail": "+Solata ali sladica",
+        "price": "8.00",
+        "tags": []
+      },
+      {
+        "main": "pice v ponedeljek se je sesul šamot v peči",
+        "detail": "+Solata ali sladica",
+        "price": "8.00",
         "tags": []
       }
     ]
@@ -44,9 +116,39 @@
     "url": "https://edarestavracija.si/kosila-malice",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "Preverite kasneje",
-        "price": "",
+        "main": "Goveja juha",
+        "detail": "Zuppa di manzo",
+        "price": "2.00 €",
+        "tags": []
+      },
+      {
+        "main": "Vegi tortilja, dolar krompir",
+        "detail": "Tortilla vegetariana, patate",
+        "price": "7.50 €",
+        "tags": []
+      },
+      {
+        "main": "Dušena govedina v omaki rdečega vina, dolar krompir, zelenjava",
+        "detail": "Manzo brasato in salsa di vino rosso, patate, verdure",
+        "price": "9.00 €",
+        "tags": []
+      },
+      {
+        "main": "Pečen file lososa s špinačo in porom v nežni smetanovi omaki",
+        "detail": "Filetto di salmone al forno con spinaci e porri in una delicata salsa alla panna",
+        "price": "10.00 €",
+        "tags": []
+      },
+      {
+        "main": "Fit krožnik",
+        "detail": "Piatto Fit (tacchino alla griglia, riso e verdure)",
+        "price": "8.50 €",
+        "tags": []
+      },
+      {
+        "main": "Dnevna sladica",
+        "detail": "Dolce del giorno",
+        "price": "2.50 €",
         "tags": []
       }
     ]
@@ -57,9 +159,63 @@
     "url": "https://pojedina.com/r/nova-gorica-interspar/",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "Preverite kasneje",
-        "price": "",
+        "main": "Boranja z mesom, slan krompir",
+        "detail": "",
+        "price": "8,76 €",
+        "tags": []
+      },
+      {
+        "main": "Tris ocvrtega mesa, pražen krompir",
+        "detail": "",
+        "price": "8,76 €",
+        "tags": []
+      },
+      {
+        "main": "Jota s klobaso, 120 g kruha",
+        "detail": "",
+        "price": "8,76 €",
+        "tags": []
+      },
+      {
+        "main": "Zelenjavni narastek s palačinkami, tzatziki omaka",
+        "detail": "",
+        "price": "8,76 €",
+        "tags": []
+      },
+      {
+        "main": "Piščančji medaljoni, priloga",
+        "detail": "",
+        "price": "8,76 €",
+        "tags": []
+      },
+      {
+        "main": "Ocvrt sir, dollar chips, tatarska omaka",
+        "detail": "",
+        "price": "8,76 €",
+        "tags": []
+      },
+      {
+        "main": "Puranji zrezek na žaru, priloga",
+        "detail": "",
+        "price": "8,76 €",
+        "tags": []
+      },
+      {
+        "main": "Solata iz solatnega bara, 400 g, (tunina)",
+        "detail": "",
+        "price": "8,76 €",
+        "tags": []
+      },
+      {
+        "main": "Dunajski zrezek (piščančji), pomfrit",
+        "detail": "",
+        "price": "8,76 €",
+        "tags": []
+      },
+      {
+        "main": "Postrv file, zelenjava z žara",
+        "detail": "",
+        "price": "8,76 €",
         "tags": []
       }
     ]
@@ -70,8 +226,20 @@
     "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "Preverite kasneje",
+        "main": "Briška mineštra",
+        "detail": "Puranji žepek po tolminsko s polento, Solata",
+        "price": "",
+        "tags": []
+      },
+      {
+        "main": "Briška mineštra s hrenovko",
+        "detail": "Sladica",
+        "price": "",
+        "tags": []
+      },
+      {
+        "main": "Špinačni njoki s siri in orehi",
+        "detail": "Solata",
         "price": "",
         "tags": []
       }
@@ -83,9 +251,45 @@
     "url": "https://www.restavracija-vrtnica.si/",
     "menu": [
       {
-        "main": "Meni trenutno ni na voljo",
-        "detail": "Preverite kasneje",
-        "price": "",
+        "main": "Dušena svinjska lička, bučna krema, popečena polenta, demi-glace omaka",
+        "detail": "",
+        "price": "9,90 €",
+        "tags": []
+      },
+      {
+        "main": "Kremna ješprenova rižota z bučo, popečen losos, beurre blanc omaka",
+        "detail": "",
+        "price": "8,20 €",
+        "tags": []
+      },
+      {
+        "main": "Goveja juha ali kremna korenčkova juha, kruhove kocke s peteršiljem in česnom Svinjski kare, obložen z edamcem, pražen krompir Solata.",
+        "detail": "",
+        "price": "9,40 €",
+        "tags": []
+      },
+      {
+        "main": "Zelenjavni krožnik: pražen krompir, dušeno kislo zelje, ocvrti jajčevci",
+        "detail": "",
+        "price": "5,90 €",
+        "tags": []
+      },
+      {
+        "main": "Mehiška piščančja tortilja, nacho omaka, priloga po izbiri",
+        "detail": "",
+        "price": "8,20 €",
+        "tags": []
+      },
+      {
+        "main": "Vampi po tržaško z rumeno polento",
+        "detail": "",
+        "price": "6,50 €",
+        "tags": []
+      },
+      {
+        "main": "Gratinirani nadevani kaneloni s špinačo in mocarelo",
+        "detail": "",
+        "price": "7,50 €",
         "tags": []
       }
     ]
