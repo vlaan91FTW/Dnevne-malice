@@ -253,12 +253,59 @@ def scrape_spar_menu(dan_name):
         print(f"Napaka pri dejanskem branju Restavracije Špar: {e}")
         return None
 
+def scrape_sabotin_menu(dan_name):
+    try:
+        resp = requests.get(RESTAURANTS_CONFIG[5]["url"], headers={"User-Agent": "Mozilla/5.0"}, timeout=12)
+        resp.encoding = resp.apparent_encoding
+        soup = BeautifulSoup(resp.text, "html.parser")
+        table = soup.find("table")
+        if not table:
+            return None
+        rows = table.find_all("tr")
+        now = datetime.now()
+        weekdays = ["ponedeljek", "torek", "sreda", "četrtek", "petek", "sobota", "nedelja"]
+        wanted = weekdays[now.weekday()] if now.weekday() < 5 else "petek"
+        selected_row = None
+        for row in rows:
+            cells = row.find_all("td")
+            if not cells:
+                continue
+            first = cells[0].get_text(" ", strip=True)
+            first_lower = first.lower()
+            if first_lower.startswith(wanted + ",") and f"{wanted}, {now.day}" in first_lower:
+                selected_row = row
+                break
+        if not selected_row:
+            return None
+        cells = selected_row.find_all("td")
+        items = []
+        meal_columns = ["Kosilo", "Malica", "Vege malica"]
+        for i, meal_name in enumerate(meal_columns, start=1):
+            if i >= len(cells):
+                break
+            cell = cells[i]
+            raw_text = cell.get_text("\n", strip=True)
+            lines = [l.strip() for l in raw_text.split("\n") if l.strip()]
+            if not lines:
+                continue
+            items.append({
+                "main": lines[0],
+                "detail": ", ".join(lines[1:]) if len(lines) > 1 else "",
+                "price": "",
+                "tags": []
+            })
+        return items
+    except Exception as e:
+        print(f"Napaka pri dejanskem branju Restavracije Sabotina: {e}")
+        return None
+
 DETERMINISTIC_SCRAPERS = {
     1: scrape_magma_x_menu,
     2: scrape_prijhrastu_menu,
     3: scrape_zvezda_menu,
     4: scrape_eda_menu,
     5: scrape_spar_menu,
+    6: scrape_sabotin_menu,
 }
 
 def get_deterministic_menu(r, dan_name):
