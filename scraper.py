@@ -366,20 +366,21 @@ def main():
     if not success:
         print(f"=== NAPAKA: AI obdelava ni uspela. Zadnja napaka: {last_error} (model: {last_model}) ===")
         # Na koncu naprej zapnimo lokalni fallback, da stran ostane delovala
+        # (a zapisujemo le za tiste, ki nimanje deterministic ni zabilo)
         fallback_results = []
         for r in RESTAURANTS_CONFIG:
             fallback_results.append({
                 "id": r["id"],
                 "name": r["name"],
                 "url": r["url"],
-                "menu": [
+                "menu": deterministic_menus.get(r["id"], [
                     {
                         "main": "Meni trenutno ni na voljo",
                         "detail": "Preverite kasneje",
                         "price": "",
                         "tags": []
                     }
-                ]
+                ])
             })
         with open("menus.json", "w", encoding="utf-8") as f:
             json.dump(fallback_results, f, ensure_ascii=False, indent=2)
