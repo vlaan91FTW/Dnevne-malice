@@ -166,10 +166,71 @@ def scrape_zvezda_menu(dan_name):
         print(f"Napaka pri dejanskem branju Gostilne in picerije Zvezde: {e}")
         return None
 
+def scrape_eda_menu(dan_name):
+    try:
+        resp = requests.get(RESTAURANTS_CONFIG[3]["url"], headers={"User-Agent": "Mozilla/5.0"}, timeout=12)
+        resp.encoding = resp.apparent_encoding
+        soup = BeautifulSoup(resp.text, "html.parser")
+        slides = soup.select("div.swiper-slide")
+        now = datetime.now()
+        selected_slide = None
+        for slide in slides:
+            time_el = slide.select_one("time.datetime")
+            if not time_el:
+                continue
+            label = time_el.get_text(strip=True)
+            m = re.search(r"(\d{1,2})\.(\d{1,2})\.(\d{4})", label)
+            if not m:
+                continue
+            if (int(m.group(1)), int(m.group(2)), int(m.group(3))) == (now.day, now.month, now.year):
+                selected_slide = slide
+                break
+        if not selected_slide:
+            return None
+        items = []
+        content = selected_slide.select_one("div.views-field-field-ponudba")
+        if not content:
+            return None
+        for p in content.select("p"):
+            strong_els = p.find_all("strong")
+            em_els = p.find_all("em")
+            price_str = ""
+            name = ""
+            diet = ""
+            for s in strong_els:
+                txt = s.get_text(strip=True)
+                pm = re.search(r"([\d.,]+)\s*€", txt)
+                if pm:
+                    price_str = pm.group(0).strip()
+                elif not name:
+                    name = txt.strip()
+                else:
+                    diet = txt.strip()
+            desc = ""
+            if em_els:
+                desc = em_els[-1].get_text(strip=True)
+            if not name and price_str:
+                full = p.get_text(" ", strip=True)
+                full = re.sub(r"[\d.,]+\s*€", "", full).strip(" .-")
+                name = full
+            if not name:
+                continue
+            items.append({
+                "main": name,
+                "detail": desc,
+                "price": price_str.replace(",", ".").strip() if price_str else "",
+                "tags": []
+            })
+        return items
+    except Exception as e:
+        print(f"Napaka pri dejanskem branju Restavracije Ede: {e}")
+        return None
+
 DETERMINISTIC_SCRAPERS = {
     1: scrape_magma_x_menu,
     2: scrape_prijhrastu_menu,
     3: scrape_zvezda_menu,
+    4: scrape_eda_menu,
 }
 
 def get_deterministic_menu(r, dan_name):
