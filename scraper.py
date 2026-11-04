@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import time
 import requests
 from bs4 import BeautifulSoup
@@ -103,9 +104,72 @@ def scrape_prijhrastu_menu(dan_name):
         print(f"Napaka pri dejanskem branju Gostilne pri Hrastu: {e}")
         return None
 
+def scrape_zvezda_menu(dan_name):
+    try:
+        resp = requests.get(RESTAURANTS_CONFIG[2]["url"], headers={"User-Agent": "Mozilla/5.0"}, timeout=12)
+        resp.encoding = resp.apparent_encoding
+        soup = BeautifulSoup(resp.text, "html.parser")
+        date_groups = soup.select("div.dateTime")
+        now = datetime.now()
+        today_date_str = f"{now.day}.{now.month:02d}.{now.year}"
+        selected_group = None
+        for group in date_groups:
+            h3 = group.find("h3")
+            if not h3:
+                continue
+            heading = h3.get_text(" ", strip=True)
+            found_today = False
+            for d in re.findall(r"\d{1,2}\.\d{1,2}\.\d{4}", heading):
+                parts = d.split(".")
+                if len(parts) == 3:
+                    dd, mm, yyyy = int(parts[0]), int(parts[1]), int(parts[2])
+                    if (dd, mm, yyyy) == (now.day, now.month, now.year):
+                        found_today = True
+            if found_today or today_date_str in heading:
+                selected_group = group
+                break
+        if not selected_group:
+            return None
+        items = []
+        menu_view = selected_group.select_one("div.menuView")
+        if not menu_view:
+            return None
+        for menu_item in menu_view.select("div.menuItem"):
+            title_el = menu_item.select_one("div.menuItemTitle h4")
+            title = title_el.get_text(strip=True) if title_el else "Jedlo"
+            boxes = menu_item.select("div.menuBoxes > div.menuBox")
+            main = ""
+            detail = ""
+            price = ""
+            for box in boxes:
+                p_el = box.find("p")
+                if not p_el:
+                    continue
+                txt = p_el.get_text(strip=True)
+                cls = p_el.get("class") or []
+                if "priceTag" in cls:
+                    price = txt.replace("€", "").replace(",", ".").strip()
+                elif "menuDesc" in cls:
+                    main = txt
+                else:
+                    detail = txt
+            if not main and not detail:
+                continue
+            items.append({
+                "main": main,
+                "detail": detail,
+                "price": price,
+                "tags": []
+            })
+        return items
+    except Exception as e:
+        print(f"Napaka pri dejanskem branju Gostilne in picerije Zvezde: {e}")
+        return None
+
 DETERMINISTIC_SCRAPERS = {
     1: scrape_magma_x_menu,
     2: scrape_prijhrastu_menu,
+    3: scrape_zvezda_menu,
 }
 
 def get_deterministic_menu(r, dan_name):
