@@ -226,11 +226,33 @@ def scrape_eda_menu(dan_name):
         print(f"Napaka pri dejanskem branju Restavracije Ede: {e}")
         return None
 
+def scrape_spar_menu(dan_name):
+    try:
+        resp = requests.get(RESTAURANTS_CONFIG[4]["url"], headers={"User-Agent": "Mozilla/5.0"}, timeout=12)
+        resp.encoding = resp.apparent_encoding
+        soup = BeautifulSoup(resp.text, "html.parser")
+        items = []
+        for li in soup.find_all("li"):
+            txt = li.get_text(" ", strip=True)
+            pm = re.match(r"^(.*),?\s+([\d.,]+)\s*€", txt)
+            if pm:
+                items.append({
+                    "main": pm.group(1).strip(),
+                    "detail": "",
+                    "price": pm.group(2) + " €",
+                    "tags": []
+                })
+        return items
+    except Exception as e:
+        print(f"Napaka pri dejanskem branju Restavracije Špar: {e}")
+        return None
+
 DETERMINISTIC_SCRAPERS = {
     1: scrape_magma_x_menu,
     2: scrape_prijhrastu_menu,
     3: scrape_zvezda_menu,
     4: scrape_eda_menu,
+    5: scrape_spar_menu,
 }
 
 def get_deterministic_menu(r, dan_name):
