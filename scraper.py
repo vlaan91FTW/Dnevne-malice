@@ -31,7 +31,7 @@ def fetch_page_text(url):
     except:
         return "Ni mogoče naložiti strani."
 
-def scrape_magma_x_menu():
+def scrape_magma_x_menu(dan_name=None):
     try:
         resp = requests.get(RESTAURANTS_CONFIG[0]["url"], headers={"User-Agent": "Mozilla/5.0"}, timeout=12)
         resp.encoding = resp.apparent_encoding
@@ -82,7 +82,7 @@ def scrape_prijhrastu_menu(dan_name):
         if not meals:
             meals = selected_row.select("div.field--name-field-ime-obroka")
         for meal in meals:
-            course_el = meal.select_one("div.field--name-field-ime-obroka")
+            course_el = meal.select_one("div.field--name-field-ime-obroka div.field__item")
             course = course_el.get_text(strip=True) if course_el else "Jedlo"
             detail_parts = []
             desc_el = meal.select_one("div.field--name-field-podnudba")
@@ -109,12 +109,16 @@ def scrape_zvezda_menu(dan_name):
         resp = requests.get(RESTAURANTS_CONFIG[2]["url"], headers={"User-Agent": "Mozilla/5.0"}, timeout=12)
         resp.encoding = resp.apparent_encoding
         soup = BeautifulSoup(resp.text, "html.parser")
-        date_groups = soup.select("div.dateTime")
         now = datetime.now()
         today_date_str = f"{now.day}.{now.month:02d}.{now.year}"
-        selected_group = None
-        for group in date_groups:
-            h3 = group.find("h3")
+        menu_views = soup.select("div.menuView")
+        selected_menu_view = None
+        for mv in menu_views:
+            container = mv.parent
+            dt = container.find("div", class_="dateTime") if container.name == "div" else None
+            if not dt:
+                continue
+            h3 = dt.find("h3")
             if not h3:
                 continue
             heading = h3.get_text(" ", strip=True)
@@ -126,21 +130,22 @@ def scrape_zvezda_menu(dan_name):
                     if (dd, mm, yyyy) == (now.day, now.month, now.year):
                         found_today = True
             if found_today or today_date_str in heading:
-                selected_group = group
+                selected_menu_view = mv
                 break
-        if not selected_group:
+        if not selected_menu_view:
             return None
+        menu_view = selected_menu_view
         items = []
-        menu_view = selected_group.select_one("div.menuView")
-        if not menu_view:
-            return None
         for menu_item in menu_view.select("div.menuItem"):
-            title_el = menu_item.select_one("div.menuItemTitle h4")
+            title_el = menu_item.select_one("h4")
             title = title_el.get_text(strip=True) if title_el else "Jedlo"
-            boxes = menu_item.select("div.menuBoxes > div.menuBox")
             main = ""
             detail = ""
             price = ""
+            main_el = menu_item.select_one("p.menuDesc")
+            if main_el:
+                main = main_el.get_text(strip=True)
+            boxes = menu_item.select("div.bottomItem > div.desertOrPrice")
             for box in boxes:
                 p_el = box.find("p")
                 if not p_el:
@@ -149,9 +154,7 @@ def scrape_zvezda_menu(dan_name):
                 cls = p_el.get("class") or []
                 if "priceTag" in cls:
                     price = txt.replace("€", "").replace(",", ".").strip()
-                elif "menuDesc" in cls:
-                    main = txt
-                else:
+                elif not detail:
                     detail = txt
             if not main and not detail:
                 continue
@@ -202,6 +205,9 @@ def scrape_eda_menu(dan_name):
                 pm = re.search(r"([\d.,]+)\s*€", txt)
                 if pm:
                     price_str = pm.group(0).strip()
+                    clean = re.sub(r"[\d.,]+\s*€", "", txt).strip()
+                    if not name and clean:
+                        name = clean
                 elif not name:
                     name = txt.strip()
                 else:
@@ -234,7 +240,7 @@ def scrape_spar_menu(dan_name):
         items = []
         for li in soup.find_all("li"):
             txt = li.get_text(" ", strip=True)
-            pm = re.match(r"^(.*),?\s+([\d.,]+)\s*€", txt)
+            pm = re.match(r"^(.*),\s+([\d.,]+)\s*€", txt)
             if pm:
                 items.append({
                     "main": pm.group(1).strip(),
