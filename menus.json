@@ -55,13 +55,13 @@
     "menu": [
       {
         "main": "Kosilo",
-        "detail": "Krompirjeva juha / Stroganov golaž z rižem / Solata in sladica",
+        "detail": "Porova juha / File brancina z dalmatinsko prilogo / Solata in sladica",
         "price": "",
         "tags": []
       },
       {
         "main": "Malica",
-        "detail": "Vegetarijanski krožnik / Solata ali sladica",
+        "detail": "Pečena piščančja bedra z krompirjem in zelenjavo iz pečice / Solata ali sladica",
         "price": "",
         "tags": []
       }
@@ -73,37 +73,37 @@
     "url": "https://www.gostilna-zvezda.si/",
     "menu": [
       {
-        "main": "Jota, Ljubljanski s krompirjem",
+        "main": "Zaprto zaradi velikega catteringa v času kosila\r\nhvala za razumevanj\r\npice v ponedeljek se je sesul šamot v peči",
         "detail": "+Solata in sladica",
         "price": "10.00",
         "tags": []
       },
       {
-        "main": "Ljubljanski s krompirjem",
+        "main": "",
         "detail": "+Solata ali sladica",
         "price": "8.00",
         "tags": []
       },
       {
-        "main": "Žlikrofi z jurčki in kraško panceto",
+        "main": "",
         "detail": "+Solata ali sladica",
         "price": "8.00",
         "tags": []
       },
       {
-        "main": "Pleskavice z duveč rižem",
+        "main": "",
         "detail": "+Solata ali sladica",
         "price": "8.00",
         "tags": []
       },
       {
-        "main": "Jota s klobaso",
+        "main": "",
         "detail": "+Solata ali sladica",
         "price": "8.00",
         "tags": []
       },
       {
-        "main": "pice v ponedeljek se je sesul šamot v peči",
+        "main": "",
         "detail": "+Solata ali sladica",
         "price": "8.00",
         "tags": []
@@ -116,27 +116,27 @@
     "url": "https://edarestavracija.si/kosila-malice",
     "menu": [
       {
-        "main": "Ohrovtova mineštra",
-        "detail": "Minestra di verza",
+        "main": "Zelenjavna mineštra",
+        "detail": "Minestrone alle verdure",
         "price": "4.00 €",
         "tags": []
       },
       {
-        "main": "Mladi sir na žaru z ješprenovo rižoto in zelenjavo",
-        "detail": "Formaggio fresco grigliato con risotto di orzo e verdure",
-        "price": "7.50 €",
+        "main": "Vegi žlikrofi z jurčkovo omako",
+        "detail": "Žlikrofi vegetariani con salsa ai funghi porcini",
+        "price": "8.00 €",
         "tags": []
       },
       {
-        "main": "Piščanec po mongolsko, dušeni riž",
-        "detail": "Pollo alla mongola, riso al vapore",
-        "price": "8.50 €",
+        "main": "Pečena svinjska rebra, pražen krompir, peperonata",
+        "detail": "Costine di maiale arrosto, patate arrosto, peperonata",
+        "price": "8.00 €",
         "tags": []
       },
       {
-        "main": "Goveje rezine s skutno zloženko in pirejem",
-        "detail": "Fettine di manzo con ricotta e purè",
-        "price": "9.00 €",
+        "main": "Kalamari po mediteransko, krompir v kosih",
+        "detail": "Calamari alla mediterranea, pezzi di patate",
+        "price": "10.00 €",
         "tags": []
       },
       {
@@ -159,25 +159,25 @@
     "url": "https://pojedina.com/r/nova-gorica-interspar/",
     "menu": [
       {
-        "main": "Oslič file po dunajsko, pečeni krompirjevi krhlji",
+        "main": "Makaronovo meso, riban sir",
         "detail": "",
         "price": "8,76 €",
         "tags": []
       },
       {
-        "main": "Puranje prsi, vrtnarska omaka, dušen riž",
+        "main": "File smuča, tržaška omaka, slan krompir, brokoli s sezamom",
         "detail": "",
         "price": "8,76 €",
         "tags": []
       },
       {
-        "main": "Ričet s klobaso, 120 g kruha",
+        "main": "Pasulj s klobaso, 120 g kruha",
         "detail": "",
         "price": "8,76 €",
         "tags": []
       },
       {
-        "main": "Ajdovi polpeti s kvinojo, divji riž z jurčki",
+        "main": "Popečen tofu s sezamom, azijski rezanci garam masala",
         "detail": "",
         "price": "8,76 €",
         "tags": []
@@ -226,19 +226,19 @@
     "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
     "menu": [
       {
-        "main": "Gobova juha",
-        "detail": "Pečenice, kislo zelje in pražen krompir, Solata",
+        "main": "Bučna juha",
+        "detail": "Gratiniran ribji file z dalmatinsko prilogo, Solata",
         "price": "",
         "tags": []
       },
       {
-        "main": "Solata z ocvrtim piščancem s sezamom",
+        "main": "Tortilja s piščancem in zelenjavo",
         "detail": "Sladica",
         "price": "",
         "tags": []
       },
       {
-        "main": "Riž z žafranom",
+        "main": "Ajdovi krapi z zimsko omako",
         "detail": "Solata",
         "price": "",
         "tags": []
@@ -251,45 +251,39 @@
     "url": "https://www.restavracija-vrtnica.si/",
     "menu": [
       {
-        "main": "Bučni ravioli, parmezanova omaka, bučno olje",
+        "main": "Svinjski file v omaki buče in pancete, zdrobova rolada z bučnimi semeni",
         "detail": "",
-        "price": "8,50 €",
+        "price": "9,90 €",
         "tags": []
       },
       {
-        "main": "Goveja juha ali kremna juha iz hokaido buče, bučno olje, bučna semena Grška musaka, jogurtova omaka z origanom Solata.",
-        "detail": "",
-        "price": "9,40 €",
-        "tags": []
-      },
-      {
-        "main": "Zelenjavni krožnik: zeliščna polenta, maslen baby korenček, kuhan brokoli z olivnim oljem",
-        "detail": "",
-        "price": "5,90 €",
-        "tags": []
-      },
-      {
-        "main": "Ocvrt file purana v zeliščni panaturi, cocktail omaka, kitajsko zelje s sezamom",
+        "main": "Domači bučni štruklji z rikoto, cimetom in medom, na kremi mascarponeja in limone, pražena bučna semena",
         "detail": "",
         "price": "8,20 €",
         "tags": []
       },
       {
-        "main": "Dušeno goveje pleče v vinski omaki, zeliščna polenta",
+        "main": "Goveja juha ali krompirjeva juha s korenčkom in porom Piščančji file v omaki gorgonzole in lešnika, riž z žafranom Solata.",
+        "detail": "",
+        "price": "9,40 €",
+        "tags": []
+      },
+      {
+        "main": "Zelenjavni krožnik: riž z žafranom, kremna špinača, cvetačni narastek",
+        "detail": "",
+        "price": "5,90 €",
+        "tags": []
+      },
+      {
+        "main": "Prekmurski bograč",
         "detail": "",
         "price": "8,50 €",
         "tags": []
       },
       {
-        "main": "Jota z domačo pečenico",
+        "main": "Ocvrti lignji, domač krompir z blitvo",
         "detail": "",
-        "price": "6,90 €",
-        "tags": []
-      },
-      {
-        "main": "Ocvrte sardele, okisan krompir z rdečo čebulo",
-        "detail": "",
-        "price": "7,90 €",
+        "price": "9,90 €",
         "tags": []
       }
     ]
