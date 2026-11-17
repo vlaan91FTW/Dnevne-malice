@@ -54,14 +54,8 @@
     "url": "https://prihrastu.si/dnevna-kosila",
     "menu": [
       {
-        "main": "Kosilo",
-        "detail": "Fižolovka / Mešano meso iz vulkanskega žara z krompirjem in zelenjavo na žaru / Solata in sladica",
-        "price": "",
-        "tags": []
-      },
-      {
-        "main": "Malica",
-        "detail": "Kostanjevi ravioli z gobovo omako / Solata ali Sladica",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
+        "detail": "",
         "price": "",
         "tags": []
       }
@@ -73,39 +67,9 @@
     "url": "https://www.gostilna-zvezda.si/",
     "menu": [
       {
-        "main": "Gobova juha, Piščančja taljata na rukoli s parmezanom in krompirjem",
-        "detail": "+Solata in sladica",
-        "price": "10.00",
-        "tags": []
-      },
-      {
-        "main": "Piščančja taljata na rukoli s parmezanom in krompirjem",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
-        "tags": []
-      },
-      {
-        "main": "Rezanci s šparglji in morskimi sadeži",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
-        "tags": []
-      },
-      {
-        "main": "Dunajski s francosko",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
-        "tags": []
-      },
-      {
-        "main": "Pasulj s klobaso",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
-        "tags": []
-      },
-      {
-        "main": "Pice Kmečka,Zelenjavna,Jurček in panceta",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
+        "detail": "",
+        "price": "",
         "tags": []
       }
     ]
@@ -116,45 +80,9 @@
     "url": "https://edarestavracija.si/kosila-malice",
     "menu": [
       {
-        "main": "Kmečka mineštra z ješprenjem in zelenjavo",
-        "detail": "Minestrone contadino con orzo e verdure",
-        "price": "4.00 €",
-        "tags": []
-      },
-      {
-        "main": "Vampi, polenta",
-        "detail": "Trippa, polenta",
-        "price": "7.50 €",
-        "tags": []
-      },
-      {
-        "main": "Lazanja s špinačo in mocarelo, preliv",
-        "detail": "Lasagna con spinaci e mozzarella, condimento",
-        "price": "7.50 €",
-        "tags": []
-      },
-      {
-        "main": "Ocvrte sardele, blitva krompir s česnom",
-        "detail": "Sardine fritte, patate con bietola all'aglio",
-        "price": "8.00 €",
-        "tags": []
-      },
-      {
-        "main": "Počasi pečena telečja pečenka, krompirjev gratin in zelenjava",
-        "detail": "Vitello arrosto a cottura lenta, gratin di patate e verdure",
-        "price": "10.00 €",
-        "tags": []
-      },
-      {
-        "main": "Fit krožnik",
-        "detail": "Piatto Fit (tacchino alla griglia, riso e verdure)",
-        "price": "8.50 €",
-        "tags": []
-      },
-      {
-        "main": "Dnevna sladica",
-        "detail": "Dolce del giorno",
-        "price": "2.50 €",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
+        "detail": "",
+        "price": "",
         "tags": []
       }
     ]
@@ -257,45 +185,9 @@
     "url": "https://www.restavracija-vrtnica.si/",
     "menu": [
       {
-        "main": "Goveja juha ali gobova juha s krompirjem Njoki z bolonjsko omako Solata.",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
         "detail": "",
-        "price": "9,40 €",
-        "tags": []
-      },
-      {
-        "main": "Zelenjavni krožnik: krompir iz pečice, blitva, ocvrti jajčevci",
-        "detail": "",
-        "price": "5,90 €",
-        "tags": []
-      },
-      {
-        "main": "Hrustljavo piščančje bedro brez kosti z žara, krompir iz pečice",
-        "detail": "",
-        "price": "7,90 €",
-        "tags": []
-      },
-      {
-        "main": "Pad thai z gamberi",
-        "detail": "",
-        "price": "8,50 €",
-        "tags": []
-      },
-      {
-        "main": "Lovke orjaškega lignja z žara, krompir z zelenjavo in črnimi olivami",
-        "detail": "",
-        "price": "13,00 €",
-        "tags": []
-      },
-      {
-        "main": "Pasulj s hrenovko ali klobaso",
-        "detail": "",
-        "price": "6,50 €",
-        "tags": []
-      },
-      {
-        "main": "Zelenjavni Wellington (nadev iz gob, špinače in oreščkov), omaka iz rdeče pese",
-        "detail": "",
-        "price": "8,20 €",
+        "price": "",
         "tags": []
       }
     ]
