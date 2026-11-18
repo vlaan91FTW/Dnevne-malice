@@ -54,8 +54,14 @@
     "url": "https://prihrastu.si/dnevna-kosila",
     "menu": [
       {
-        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
-        "detail": "",
+        "main": "Kosilo",
+        "detail": "Juha iz brokolija / Puranji file v naravni omaki z mlinci / Solata in sladica",
+        "price": "",
+        "tags": []
+      },
+      {
+        "main": "Malica",
+        "detail": "Solatni krožnik z ocvrtimi gamberi v krompirjem ovoju",
         "price": "",
         "tags": []
       }
@@ -67,9 +73,39 @@
     "url": "https://www.gostilna-zvezda.si/",
     "menu": [
       {
-        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
-        "detail": "",
-        "price": "",
+        "main": "Ješprenka,Čevapčiči s prebrancem",
+        "detail": "+Solata in sladica",
+        "price": "10.00",
+        "tags": []
+      },
+      {
+        "main": "Čevapčiči s prebrancem",
+        "detail": "+Solata ali sladica",
+        "price": "8.00",
+        "tags": []
+      },
+      {
+        "main": "Njoki z lososom in bučkami",
+        "detail": "+Solata ali sladica",
+        "price": "8.00",
+        "tags": []
+      },
+      {
+        "main": "Ocvrt piščančji file s hladno pašto",
+        "detail": "+Solata ali sladica",
+        "price": "8.00",
+        "tags": []
+      },
+      {
+        "main": "Ješprenka s klobaso",
+        "detail": "+Solata ali sladica",
+        "price": "8.00",
+        "tags": []
+      },
+      {
+        "main": "Pica Meso,4-siri,Jurčki in panceta",
+        "detail": "+Solata ali sladica",
+        "price": "8.00",
         "tags": []
       }
     ]
@@ -80,9 +116,39 @@
     "url": "https://edarestavracija.si/kosila-malice",
     "menu": [
       {
-        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
-        "detail": "",
-        "price": "",
+        "main": "Goveja juha",
+        "detail": "Zuppa di manzo",
+        "price": "2.00 €",
+        "tags": []
+      },
+      {
+        "main": "Ajdova kaša z zelenjavo in feta sirom",
+        "detail": "Grano saraceno con verdure e formaggio feta",
+        "price": "7.50 €",
+        "tags": []
+      },
+      {
+        "main": "Mehiška tortilja z mletim mesom in zelenjavo, ameriška solata",
+        "detail": "Tortilla messicana con carne macinata e verdure, insalata americana",
+        "price": "8.50 €",
+        "tags": []
+      },
+      {
+        "main": "Losos v zeliščni skorjici, špinačni pire, zelenjava žar",
+        "detail": "Salmone in crosta di erbe aromatiche, purè di spinaci, verdure grigliate",
+        "price": "10.00 €",
+        "tags": []
+      },
+      {
+        "main": "Fit krožnik (puran na žaru, riž, zelenjava)",
+        "detail": "Piatto Fit (tacchino alla griglia, riso, verdure)",
+        "price": "8.50 €",
+        "tags": []
+      },
+      {
+        "main": "Dnevna sladica",
+        "detail": "Dolce del giorno",
+        "price": "2.50 €",
         "tags": []
       }
     ]
@@ -93,25 +159,25 @@
     "url": "https://pojedina.com/r/nova-gorica-interspar/",
     "menu": [
       {
-        "main": "Puranji sote, dušen riž",
+        "main": "Piščančji zrezek na žaru, kuhana zelenjava, pira",
         "detail": "",
         "price": "8,76 €",
         "tags": []
       },
       {
-        "main": "Ocvrti mesni kaneloni, tatarska omaka, krompir iz pečice",
+        "main": "Mesna lazanja, paradižnikova omaka",
         "detail": "",
         "price": "8,76 €",
         "tags": []
       },
       {
-        "main": "Vampi po tržaško, 120 g kruha",
+        "main": "Jota s klobaso, 120 g kruha",
         "detail": "",
         "price": "8,76 €",
         "tags": []
       },
       {
-        "main": "Vegetarijanski haše s šampinjoni, polenta z lanenimi semeni",
+        "main": "Koruzni polpet, njoki z bučkami in češnjevimi paradižniki",
         "detail": "",
         "price": "8,76 €",
         "tags": []
@@ -160,19 +226,19 @@
     "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
     "menu": [
       {
-        "main": "Cvetačna kremna juha",
-        "detail": "Puranji zrezek v omaki s pršutom in ajdovimi štruklji, Solata",
+        "main": "Goveja juha",
+        "detail": "Svinjska rolada, pire krompir in brstični ohrovt na maslu, Solata",
         "price": "",
         "tags": []
       },
       {
-        "main": "Riž z gamberi in bučkami",
+        "main": "Testenine z ragujem",
         "detail": "Solata",
         "price": "",
         "tags": []
       },
       {
-        "main": "Solata z opečenim sirom in semeni",
+        "main": "Vege burger",
         "detail": "Sladica",
         "price": "",
         "tags": []
@@ -185,9 +251,45 @@
     "url": "https://www.restavracija-vrtnica.si/",
     "menu": [
       {
-        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
+        "main": "Goveja juha ali mediteranska juha iz pečene paprike, žličnik rikote Piščančji file v grški marinadi z žara, gratiniran krompir Solata.",
         "detail": "",
-        "price": "",
+        "price": "9,40 €",
+        "tags": []
+      },
+      {
+        "main": "Zelenjavni krožnik: gratiniran krompir, grah s svežim koromačem, kuhana mešana zelenjava na olivnem olju",
+        "detail": "",
+        "price": "5,90 €",
+        "tags": []
+      },
+      {
+        "main": "Čevapčiči v lepinji s kajmakom",
+        "detail": "",
+        "price": "8,20 €",
+        "tags": []
+      },
+      {
+        "main": "Goveji zrezki v naravni omaki, kruhova rolada",
+        "detail": "",
+        "price": "8,50 €",
+        "tags": []
+      },
+      {
+        "main": "Tunin zavitek, holandska omaka, solata iz mlade špinače, češnjevca in grenivke",
+        "detail": "",
+        "price": "8,00 €",
+        "tags": []
+      },
+      {
+        "main": "Vampi po tržaško z rumeno polento",
+        "detail": "",
+        "price": "6,50 €",
+        "tags": []
+      },
+      {
+        "main": "Ješprenova rižota z zelenimi šparglji, limonina krema, ovčji sir, mandljevi lističi",
+        "detail": "",
+        "price": "8,20 €",
         "tags": []
       }
     ]
