@@ -55,13 +55,13 @@
     "menu": [
       {
         "main": "Kosilo",
-        "detail": "Zelenjavna mineštra / Polnjena pleskavica z džuveč rižem / Solata in sladica",
+        "detail": "Porova juha / Kalamari na žaru z peteršiljevim krompirjem / Solata in sladica",
         "price": "",
         "tags": []
       },
       {
         "main": "Malica",
-        "detail": "Njoki z gorgonzolo in rukolo / Solata ali sladica",
+        "detail": "Piščančje perutničke z sladkimi krompirjem in BBQ omako / Solata ali sladica",
         "price": "",
         "tags": []
       }
@@ -73,37 +73,37 @@
     "url": "https://www.gostilna-zvezda.si/",
     "menu": [
       {
-        "main": "Fižolovka,Ljubljanski s pire krompirje in špinačo",
+        "main": "Ribja juha, Ocvrt oslič s krompirjevo solato",
         "detail": "+Solata in sladica",
         "price": "10.00",
         "tags": []
       },
       {
-        "main": "Ljubljanski s pire krompirjem in špinačo",
+        "main": "Ocvrt oslič s krompirjevo solato",
         "detail": "+Solata ali sladica",
         "price": "8.00",
         "tags": []
       },
       {
-        "main": "Žlikrofi z jurčki",
+        "main": "Tortelini s pršutom in pomidori",
         "detail": "+Solata ali sladica",
         "price": "8.00",
         "tags": []
       },
       {
-        "main": "Mesni pastičo",
+        "main": "Gratinirane palačinke s piščancem, porom in šparglji s sirovo omako",
         "detail": "+Solata ali sladica",
         "price": "8.00",
         "tags": []
       },
       {
-        "main": "Fižolovka s hamburško panceto",
+        "main": "Goveji golaž z njoki",
         "detail": "+Solata ali sladica",
         "price": "8.00",
         "tags": []
       },
       {
-        "main": "Pica ne",
+        "main": "Pica Siciljana,Kraška,Jurček in panceta",
         "detail": "+Solata ali sladica",
         "price": "8.00",
         "tags": []
@@ -116,27 +116,27 @@
     "url": "https://edarestavracija.si/kosila-malice",
     "menu": [
       {
-        "main": "Gobova kremna juha",
-        "detail": "Zuppa cremosa di funghi",
+        "main": "Briška mineštra",
+        "detail": "Minestra di verdure",
         "price": "4.00 €",
         "tags": []
       },
       {
-        "main": "Mladi sir na žaru z ješprenovo solato, rukolo in zelenjavo",
-        "detail": "Formaggio fresco grigliato con insalata di orzo, rucola e verdure",
+        "main": "Bučkin pire s pečeno nadevano papriko s kus kusom",
+        "detail": "Purè di zucchine con peperoni ripieni al couscous",
         "price": "7.50 €",
         "tags": []
       },
       {
-        "main": "Goveji trakci v azijski omaki s papriko, porom in kalčki, priloga",
-        "detail": "Striscioline di manzo in salsa asiatica con peperoni, porri e germogli, contorno",
-        "price": "8.50 €",
+        "main": "Mleta pečenka s pečenim krompirjem in grahom",
+        "detail": "Arrosto macinato con patate al forno e piselli",
+        "price": "8.00 €",
         "tags": []
       },
       {
-        "main": "Burger z natrgano govedino, karamelizirano čebulo, čedarjem in zeljno solato",
-        "detail": "Hamburger con carne di manzo sfilacciata, cipolle caramellate, cheddar e insalata di cavolo",
-        "price": "9.00 €",
+        "main": "Hobotnica v škartocu z zelenjavo in krompirjem",
+        "detail": "Polpo in casseruola con verdure e patate",
+        "price": "10.00 €",
         "tags": []
       },
       {
@@ -159,25 +159,25 @@
     "url": "https://pojedina.com/r/nova-gorica-interspar/",
     "menu": [
       {
-        "main": "Svinjski kotlet, dušeno sladko zelje, pražen krompir",
+        "main": "Špageti, bolonjska omaka, riban sir",
         "detail": "",
         "price": "8,76 €",
         "tags": []
       },
       {
-        "main": "Puranji cordon bleu, paradižnikov riž",
+        "main": "Ocvrt ribji file mola, slan krompir, brokoli s sezamom",
         "detail": "",
         "price": "8,76 €",
         "tags": []
       },
       {
-        "main": "Ričet s klobaso, 120 g kruha",
+        "main": "Pasulj s klobaso, 120 g kruha",
         "detail": "",
         "price": "8,76 €",
         "tags": []
       },
       {
-        "main": "Tortilje na posteljici rukole, salsa, omaka iz nacho sira",
+        "main": "Tofujevo nabodalo, mehiški riž",
         "detail": "",
         "price": "8,76 €",
         "tags": []
@@ -226,19 +226,19 @@
     "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
     "menu": [
       {
-        "main": "Ješprenjka",
-        "detail": "Ljubljanski zrezek, francoska solata, Sladica",
+        "main": "Krompirjeva juha",
+        "detail": "File orade na žaru s pečenim krompirjem z oljkami in češnjevcem, Solata",
         "price": "",
         "tags": []
       },
       {
-        "main": "Ješprenjka z dimljenim vratom",
-        "detail": "Sladica",
+        "main": "Testenine po amatriško",
+        "detail": "Solata",
         "price": "",
         "tags": []
       },
       {
-        "main": "Njoki z gorgonzolo",
+        "main": "Ocvrt sir s prilogo",
         "detail": "Solata",
         "price": "",
         "tags": []
@@ -251,43 +251,43 @@
     "url": "https://www.restavracija-vrtnica.si/",
     "menu": [
       {
-        "main": "Goveja juha ali cvetačna kremna juha z belo čokolado Pečen svinjski vrat v lovski omaki, mlinci na maslu Solata.",
+        "main": "Goveja juha ali kremna špargljeva juha, praženi arašidi Piščančje bedro iz peči z gorčico, medom in sezamovimi semeni, riž s pehtranom Solata.",
         "detail": "",
         "price": "9,40 €",
         "tags": []
       },
       {
-        "main": "Zelenjavni krožnik: mlinci, dušeno kislo zelje, porov narastek",
+        "main": "Zelenjavni krožnik: riž s pehtranom, kremna špinača, cvetača po poljsko",
         "detail": "",
         "price": "5,90 €",
         "tags": []
       },
       {
-        "main": "Piščančja nabodala satay, priloga po izbiri",
+        "main": "Svinjski file v tartufovi omaki, skutni štruklji",
         "detail": "",
-        "price": "7,90 €",
+        "price": "9,90 €",
         "tags": []
       },
       {
-        "main": "Burito z mletim mesom, rižem in zelenjavo, ocvrti krompirjevi krhlji",
+        "main": "Sarma s pire krompirjem",
         "detail": "",
-        "price": "8,20 €",
+        "price": "8,50 €",
         "tags": []
       },
       {
-        "main": "Ocvrte sardele, okisan krompir s polnozrnato gorčico",
+        "main": "Ocvrti lignji, krompir z olivnim oljem in mlado špinačo",
         "detail": "",
-        "price": "7,90 €",
+        "price": "9,90 €",
         "tags": []
       },
       {
-        "main": "Žlikrofi z omako klobase, treviškega radiča in kostanja",
+        "main": "Zajčje bedro v omaki belega vina in rožmarina, bučni njoki na maslu",
         "detail": "",
-        "price": "8,90 €",
+        "price": "8,50 €",
         "tags": []
       },
       {
-        "main": "Skutno špinačna zloženka, sirova omaka",
+        "main": "Nadevani jajčevci s kus kusom, feta sirom, pinjolami in sušenim paradižnikom, korenčkova krema, jogurtova omaka",
         "detail": "",
         "price": "7,50 €",
         "tags": []
