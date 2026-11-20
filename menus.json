@@ -226,8 +226,8 @@
     "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
     "menu": [
       {
-        "main": "Meni za dan petek ni objavljen",
-        "detail": "Preverite kasneje",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
+        "detail": "",
         "price": "",
         "tags": []
       }
@@ -239,45 +239,45 @@
     "url": "https://www.restavracija-vrtnica.si/",
     "menu": [
       {
-        "main": "Goveja juha ali kremna špargljeva juha, praženi arašidi Piščančje bedro iz peči z gorčico, medom in sezamovimi semeni, riž s pehtranom Solata.",
+        "main": "Goveja juha ali grahova kremna juha z grškim jogurtom Pečeno svinjsko pleče v gorčični omaki z medom, maslen riž Solata.",
         "detail": "",
         "price": "9,40 €",
         "tags": []
       },
       {
-        "main": "Zelenjavni krožnik: riž s pehtranom, kremna špinača, cvetača po poljsko",
+        "main": "Zelenjavni krožnik: maslen riž, kremna špinača, korenčkov narastek",
         "detail": "",
         "price": "5,90 €",
         "tags": []
       },
       {
-        "main": "Svinjski file v tartufovi omaki, skutni štruklji",
+        "main": "Dimljen puranji file z žara, priloga po izbiri",
         "detail": "",
-        "price": "9,90 €",
+        "price": "7,90 €",
         "tags": []
       },
       {
-        "main": "Sarma s pire krompirjem",
+        "main": "Počasi dušena govedina v omaki suhih sliv, skutni štruklji",
         "detail": "",
         "price": "8,50 €",
         "tags": []
       },
       {
-        "main": "Ocvrti lignji, krompir z olivnim oljem in mlado špinačo",
+        "main": "Ocvrti lignji, dalmatinska priloga",
         "detail": "",
         "price": "9,90 €",
         "tags": []
       },
       {
-        "main": "Zajčje bedro v omaki belega vina in rožmarina, bučni njoki na maslu",
+        "main": "Piščanec po mongolsko, basmati riž",
         "detail": "",
         "price": "8,50 €",
         "tags": []
       },
       {
-        "main": "Nadevani jajčevci s kus kusom, feta sirom, pinjolami in sušenim paradižnikom, korenčkova krema, jogurtova omaka",
+        "main": "Lazanja iz treviškega radiča",
         "detail": "",
-        "price": "7,50 €",
+        "price": "8,00 €",
         "tags": []
       }
     ]
