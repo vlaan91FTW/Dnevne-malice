@@ -226,8 +226,20 @@
     "url": "https://hotelsabotin.com/posebne-ponudbe/malice-in-kosila-sa/",
     "menu": [
       {
-        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
-        "detail": "",
+        "main": "Goveja juha",
+        "detail": "Piščančji zrezek v omaki, masleni rezanci, Solata",
+        "price": "",
+        "tags": []
+      },
+      {
+        "main": "Žlikrofi z gobicami in sirom",
+        "detail": "Solata",
+        "price": "",
+        "tags": []
+      },
+      {
+        "main": "Vege krožnik",
+        "detail": "Solata",
         "price": "",
         "tags": []
       }
