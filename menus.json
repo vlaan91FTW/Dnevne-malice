@@ -54,8 +54,8 @@
     "url": "https://prihrastu.si/dnevna-kosila",
     "menu": [
       {
-        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
-        "detail": "",
+        "main": "Meni za dan četrtek ni objavljen",
+        "detail": "Preverite kasneje",
         "price": "",
         "tags": []
       }
@@ -67,8 +67,8 @@
     "url": "https://www.gostilna-zvezda.si/",
     "menu": [
       {
-        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
-        "detail": "",
+        "main": "Meni za dan četrtek ni objavljen",
+        "detail": "Preverite kasneje",
         "price": "",
         "tags": []
       }
@@ -80,8 +80,8 @@
     "url": "https://edarestavracija.si/kosila-malice",
     "menu": [
       {
-        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
-        "detail": "",
+        "main": "Meni za dan četrtek ni objavljen",
+        "detail": "Preverite kasneje",
         "price": "",
         "tags": []
       }
@@ -185,8 +185,8 @@
     "url": "https://www.restavracija-vrtnica.si/",
     "menu": [
       {
-        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
-        "detail": "",
+        "main": "Meni za dan četrtek ni objavljen",
+        "detail": "Preverite kasneje",
         "price": "",
         "tags": []
       }
