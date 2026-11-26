@@ -54,19 +54,7 @@
     "url": "https://prihrastu.si/dnevna-kosila",
     "menu": [
       {
-        "main": "Kosilo",
-        "detail": "Koruzna mineštra / Stroganov golaž z rižem / Solata in sladica",
-        "price": "",
-        "tags": []
-      },
-      {
-        "main": "Malica",
-        "detail": "Sojini polpeti s sirovo omako in sladkim krompirjem / Solata ali sladica",
-        "price": "",
-        "tags": []
-      },
-      {
-        "main": "Jedlo",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
         "detail": "",
         "price": "",
         "tags": []
@@ -79,39 +67,9 @@
     "url": "https://www.gostilna-zvezda.si/",
     "menu": [
       {
-        "main": "Zelenjavna juha,Ljubljanski z ocvrtim krompirjem",
-        "detail": "+Solata in sladica",
-        "price": "10.00",
-        "tags": []
-      },
-      {
-        "main": "Ljubljanski z ocvtim krompirjem",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
-        "tags": []
-      },
-      {
-        "main": "Žlikrofi z piščancem in porom",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
-        "tags": []
-      },
-      {
-        "main": "Pleskavica s prebrancem",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
-        "tags": []
-      },
-      {
-        "main": "Solatni krožnik s kalamari",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
-        "tags": []
-      },
-      {
-        "main": "Pica Pikantna,Jurček panceta,Mešane gobe",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
+        "detail": "",
+        "price": "",
         "tags": []
       }
     ]
@@ -122,45 +80,9 @@
     "url": "https://edarestavracija.si/kosila-malice",
     "menu": [
       {
-        "main": "Domača jota",
-        "detail": "Jota",
-        "price": "4.00 €",
-        "tags": []
-      },
-      {
-        "main": "Polnozrnate testenine s češnjevim paradižnikom, pestom in rukolo",
-        "detail": "Pasta integrale con pomodorini, pesto e rucola",
-        "price": "7.50 €",
-        "tags": []
-      },
-      {
-        "main": "Pečenica s kislim zeljem in praženim krompirjem",
-        "detail": "Salsiccia con crauti e patate",
-        "price": "8.00 €",
-        "tags": []
-      },
-      {
-        "main": "Piščančji wok z brokolijem, korenjem in sezamom, basmati riž",
-        "detail": "Pollo saltato in padella con broccoli, carote e sesamo, riso basmati",
-        "price": "8.00 €",
-        "tags": []
-      },
-      {
-        "main": "Bograč",
-        "detail": "Goulash con patate",
-        "price": "8.50 €",
-        "tags": []
-      },
-      {
-        "main": "Fit krožnik",
-        "detail": "Piatto Fit (tacchino alla griglia, riso e verdure)",
-        "price": "8.50 €",
-        "tags": []
-      },
-      {
-        "main": "Dnevna sladica",
-        "detail": "Dolce del giorno",
-        "price": "2.50 €",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
+        "detail": "",
+        "price": "",
         "tags": []
       }
     ]
@@ -263,45 +185,9 @@
     "url": "https://www.restavracija-vrtnica.si/",
     "menu": [
       {
-        "main": "Goveja juha ali fižolova juha s paštico Štefani pečenka, pire krompir, paradižnikova omaka Solata.",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
         "detail": "",
-        "price": "9,40 €",
-        "tags": []
-      },
-      {
-        "main": "Zelenjavni krožnik: pire krompir, grah na rdeče, ocvrt brstični ohrovt",
-        "detail": "",
-        "price": "5,90 €",
-        "tags": []
-      },
-      {
-        "main": "Piščančji file v tempuri, sladko-pekoča omaka, riževa solata z zelenjavo",
-        "detail": "",
-        "price": "8,50 €",
-        "tags": []
-      },
-      {
-        "main": "Mešano meso z žara, prebranec",
-        "detail": "",
-        "price": "8,20 €",
-        "tags": []
-      },
-      {
-        "main": "Ocvrti sardoni, okisan krompir s treviškim radičem",
-        "detail": "",
-        "price": "7,90 €",
-        "tags": []
-      },
-      {
-        "main": "Špageti carbonara",
-        "detail": "",
-        "price": "8,50 €",
-        "tags": []
-      },
-      {
-        "main": "Lečin polpet z zelenjavo, cvetačni pire, omaka gorgonzole z lešniki",
-        "detail": "",
-        "price": "7,70 €",
+        "price": "",
         "tags": []
       }
     ]
