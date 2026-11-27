@@ -54,14 +54,8 @@
     "url": "https://prihrastu.si/dnevna-kosila",
     "menu": [
       {
-        "main": "Kosilo",
-        "detail": "Bučna juha / File orade z dalmatinsko prilogo / Solata in sladica",
-        "price": "",
-        "tags": []
-      },
-      {
-        "main": "Malica",
-        "detail": "Peresniki s piščancem in šampinjoni / Solata ali sladica",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
+        "detail": "",
         "price": "",
         "tags": []
       }
@@ -73,39 +67,9 @@
     "url": "https://www.gostilna-zvezda.si/",
     "menu": [
       {
-        "main": "Špargljeva juha,Ocvrte sardele z krompirjevo solato",
-        "detail": "+Solata in sladica",
-        "price": "10.00",
-        "tags": []
-      },
-      {
-        "main": "Ocvrte sardele z krompirjevo solato",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
-        "tags": []
-      },
-      {
-        "main": "Špageti milanese",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
-        "tags": []
-      },
-      {
-        "main": "Klobase z matevžem in repo",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
-        "tags": []
-      },
-      {
-        "main": "Divjačinski golaž z njoki",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
-        "tags": []
-      },
-      {
-        "main": "Pica Siciljana,Kraška,Jurček in panceta",
-        "detail": "+Solata ali sladica",
-        "price": "8.00",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
+        "detail": "",
+        "price": "",
         "tags": []
       }
     ]
@@ -116,39 +80,9 @@
     "url": "https://edarestavracija.si/kosila-malice",
     "menu": [
       {
-        "main": "Čičirikina mineštra z zelenjavo",
-        "detail": "Zuppa di ceci con verdure",
-        "price": "4.00 €",
-        "tags": []
-      },
-      {
-        "main": "Cvetačni polpeti z zeliščno",
-        "detail": "Polpette di cavolfiore alle erbe aromatiche",
-        "price": "7.50 €",
-        "tags": []
-      },
-      {
-        "main": "Mesne kroglice v paradižnikovi omaki, kremna polenta in zelenjava",
-        "detail": "Arrosto macinato con patate al forno e piselli",
-        "price": "8.50 €",
-        "tags": []
-      },
-      {
-        "main": "File ribe v limonini omaki s kaprami, blitva krompir",
-        "detail": "Polpo in casseruola con verdure e patate",
-        "price": "10.00 €",
-        "tags": []
-      },
-      {
-        "main": "Fit krožnik",
-        "detail": "Piatto Fit (tacchino alla griglia, riso e verdure)",
-        "price": "8.50 €",
-        "tags": []
-      },
-      {
-        "main": "Dnevna sladica",
-        "detail": "Dolce del giorno",
-        "price": "2.50 €",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
+        "detail": "",
+        "price": "",
         "tags": []
       }
     ]
@@ -239,45 +173,9 @@
     "url": "https://www.restavracija-vrtnica.si/",
     "menu": [
       {
-        "main": "Goveja juha ali grahova kremna juha z grškim jogurtom Pečeno svinjsko pleče v gorčični omaki z medom, maslen riž Solata.",
+        "main": "Ker podatki trenutno niso na voljo, meni še ni naložen. Prosimo, poskusite kasneje",
         "detail": "",
-        "price": "9,40 €",
-        "tags": []
-      },
-      {
-        "main": "Zelenjavni krožnik: maslen riž, kremna špinača, korenčkov narastek",
-        "detail": "",
-        "price": "5,90 €",
-        "tags": []
-      },
-      {
-        "main": "Dimljen puranji file z žara, priloga po izbiri",
-        "detail": "",
-        "price": "7,90 €",
-        "tags": []
-      },
-      {
-        "main": "Počasi dušena govedina v omaki suhih sliv, skutni štruklji",
-        "detail": "",
-        "price": "8,50 €",
-        "tags": []
-      },
-      {
-        "main": "Ocvrti lignji, dalmatinska priloga",
-        "detail": "",
-        "price": "9,90 €",
-        "tags": []
-      },
-      {
-        "main": "Piščanec po mongolsko, basmati riž",
-        "detail": "",
-        "price": "8,50 €",
-        "tags": []
-      },
-      {
-        "main": "Lazanja iz treviškega radiča",
-        "detail": "",
-        "price": "8,00 €",
+        "price": "",
         "tags": []
       }
     ]
